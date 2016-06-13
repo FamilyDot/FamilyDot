@@ -8,7 +8,6 @@
 @section('content')
 
 <div id="form">
-        <h1><a href="home">Don't have an account?</h1>
 
     <div id="login-form">
         {{ Form::open(array('action' =>('HomeController@showHome'), 'method' => 'POST')) }}
@@ -23,6 +22,7 @@
                     <input class="btn btn-success" id="btn_sub"  type="submit" value="Login">
                 </div>
         {{ Form::close() }}
+        <h1><a href="home">Don't have an account?</h1>
     </div>
 </div>
 @stop

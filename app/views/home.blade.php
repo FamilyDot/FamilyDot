@@ -9,7 +9,6 @@
 
 <div id="form">
     <div id="link">
-        <h1><a href="login">Have an account?</h1>
     </div>
 
     <div id="signup-form">
@@ -29,6 +28,7 @@
                     <input class="btn btn-success" id="btn_sub"  type="submit" value="Signup">
                 </div>
         {{ Form::close() }}
+        <h1><a href="login">Have an account?</h1>
     </div>
 </div>
 @stop
