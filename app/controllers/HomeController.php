@@ -23,6 +23,7 @@ class HomeController extends BaseController {
 	public function showUser()
 	{
 		return View::make('user');
+	}
 
 	public function showFamdash()
 	{
