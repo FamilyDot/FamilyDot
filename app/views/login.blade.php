@@ -8,9 +8,7 @@
 @section('content')
 
 <div id="form">
-    <div id="link">
         <h1><a href="home">Don't have an account?</h1>
-    </div>
 
     <div id="login-form">
         {{ Form::open(array('action' =>('HomeController@showHome'), 'method' => 'POST')) }}
