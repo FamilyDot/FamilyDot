@@ -15,9 +15,23 @@ class HomeController extends BaseController {
 	|
 	*/
 
-	public function showLanding()
+	public function showHome()
 	{
-		return View::make('landing');
+		return View::make('home');
+	}
+
+	public function showUser()
+	{
+		return View::make('user');
+
+	public function showFamdash()
+	{
+		return View::make('famdash');
+	}
+
+	public function showLogin()
+	{
+		return View::make('login');
 	}
 
 }
