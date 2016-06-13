@@ -11,20 +11,11 @@
 |
 */
 
-Route::get('/landing', "HomeController@showLanding");
+Route::get('/home', "HomeController@showHome");
 
+Route::get('/user', "HomeController@showUser");
 
-Route::get('/home', function()
-{
-    return View::make('landing');
-});
+Route::get('/famdash', "HomeController@showFamdash");
 
-Route::get('/user', function()
-{
-    return View::make('userPage');
-});
+Route::get('/login', "HomeController@showLogin");
 
-Route::get('/famDash', function()
-{
-    return View::make('famDashPage');
-});
