@@ -12,7 +12,7 @@
 </div>
 
 
-{{ Form::open(array('action' =>(''), 'method' => 'POST')) }}
+{{ Form::open(array('action' =>('HomeController@showLanding'), 'method' => 'POST')) }}
 
 
 <div id="signup">
