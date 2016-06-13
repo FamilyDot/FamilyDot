@@ -15,3 +15,18 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+Route::get('/login', function()
+{
+    return View::make('loginPage');
+});
+
+Route::get('/user', function()
+{
+    return View::make('userPage');
+});
+
+Route::get('/famDash', function()
+{
+    return View::make('famDashPage');
+});
