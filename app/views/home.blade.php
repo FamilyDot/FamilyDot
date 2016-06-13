@@ -14,7 +14,7 @@
 
     <div id="signup-form">
             {{-- the action is temporary need to go back and redo --}}
-        {{ Form::open(array('action' =>('HomeController@showLanding'), 'method' => 'POST')) }}
+        {{ Form::open(array('action' =>('HomeController@showLogin'), 'method' => 'POST')) }}
 
 
         <div id="signup">

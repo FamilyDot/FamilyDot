@@ -13,7 +13,7 @@
     </div>
 
     <div id="login-form">
-        {{ Form::open(array('action' =>('HomeController@showLanding'), 'method' => 'POST')) }}
+        {{ Form::open(array('action' =>('HomeController@showHome'), 'method' => 'POST')) }}
 
 
         <div id="signup">
