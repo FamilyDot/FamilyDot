@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration {
             $table->integer('family_id')->unsigned();
             $table->foreign('family_id')->references('id')->on('families');
             $table->string('image_url')->nullable();
-            $table->string('admin');
+            $table->boolean('admin')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });
