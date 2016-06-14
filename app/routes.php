@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/home', "HomeController@showHome");
+Route::get('/', "HomeController@showHome");
 
 Route::get('/user', "HomeController@showUser");
 
