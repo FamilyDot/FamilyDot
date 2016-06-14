@@ -1,0 +1,19 @@
+body{
+    background-color: rgb(252,250,0);
+}
+
+#logo{
+    margin-left: 20em;
+    margin-top: 10em;
+}
+#form{
+    margin-top: -20em;
+    margin-left: 25em;
+}
+    #username-field, #email-field, #password-field, #dob-field, #family-field{
+        margin-bottom: 1em;
+        height: 2em;
+    }
+    #btn_sub{
+        margin-bottom: 1em;
+    }
