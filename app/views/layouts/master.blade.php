@@ -16,7 +16,6 @@
 </main>
     <!-- for if you dont want in the container -->
     @yield('body') 
-
     <!-- jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <!-- Latest compiled and minified JavaScript -->
