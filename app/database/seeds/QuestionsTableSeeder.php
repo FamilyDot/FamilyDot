@@ -6,7 +6,8 @@ class QuestionsTableSeeder extends Seeder {
     {
         DB::table('questions')->delete();
 
-        //User::create(array('email' => 'foo@bar.com'));
+        $question = new Question();
+
     }
 
 }
