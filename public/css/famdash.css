@@ -1,9 +1,25 @@
 body{
     background-color: rgb(252,250,0);
 }
-.card-block{
+.card-block, #mission{
     background-color: white;
 }
 .row, h1, .card-block {
     text-align: center;
 }
+.fa-trash, img{
+    float: right;
+}
+
+.fa-smile-o{
+    float:left;
+}
+
+
+/*should the button be used this color can be changed kind of hacky*/
+.btn-primary, .btn-primary:hover {
+    background: #9655a0;
+    border-color: #9655a0;
+    color: #ffffff;
+}
+
