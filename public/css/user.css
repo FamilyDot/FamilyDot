@@ -1,0 +1,25 @@
+#user_pic    {
+
+    float: left;
+    width: 200px;
+    height: 300px;
+
+}
+
+#pic_row    {
+
+    padding-top: 80px;
+}
+
+#familyDot  {
+
+    width: 45px;
+    height: 35px;
+    margin-top: 5px;    
+}
+
+#pencil {
+
+    font-size:1.5em;
+    margin-top: 10px;
+}
