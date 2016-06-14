@@ -1,0 +1,9 @@
+body{
+    background-color: rgb(252,250,0);
+}
+.card-block{
+    background-color: white;
+}
+.row, h1, .card-block {
+    text-align: center;
+}
