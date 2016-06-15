@@ -52,26 +52,35 @@ class HomeController extends BaseController {
  			return Redirect::back();
  		}
  	}
+
  	public function doSignup()
 	{
+	  	$user = new User();
+	  	$familyName= Input::get('name');
+	  	$family = Family::where('name', "=", $familyName)->first();
 
-		$user = new User();
+	    if($family == null) { 
+		    $family = new Family();
+		    $family->name = $familyName;
+		    $family->save();
+	   	}
+
 	    $user->email = Input::get('email');
 	    $user->password = Input::get('password');
 	    $user->username = Input::get('username');
-	    $user->birth_day  = Input::get('birth_day');
-	    $user->first_name  = Input::get('first_name');
-	    $user->last_name  = Input::get('last_name');
-	    $user->family_name  = Input::get('family_name');
-	    // FamilyController::store();
-
+	    $user->birth_day = Input::get('birth_day');
+	    $user->first_name = Input::get('first_name');
+	    $user->last_name = Input::get('last_name');
+	    $user->family_id = $family->id;
 
 	    if(Input::get('password')==Input::get('passwordValidate')){
 		   	$user->save();	
-	    } else {
+	    }else {
 	    	dd("It didn't work");
 	    }
+// Run that shit!
  	}
-
-
 }
+
+
+

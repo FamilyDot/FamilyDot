@@ -11,7 +11,7 @@ body{
     margin-left: 25em;
 }
     #username-field, #email-field, #password-field, #passwordValidate-field, #birth_day-field, 
-    #last_name-field, #first_name-field, #family_name-field{
+    #last_name-field, #first_name-field, #name-field{
         margin-bottom: 1em;
         height: 2em;
     }
