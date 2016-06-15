@@ -33,11 +33,9 @@ class FamilyController extends BaseController {
 
     public function destroy($id)
     {
-        if(Auth::user()->admin) {
+        if(Auth::user()->isAdmin) {
 
-            // $allUsers = find all users with $id;
-            // $allUsers->delete();
-
+    // #### THIS WILL DESTROY YOUR FAMILY!! ####
             $family = Family::find($id);
             $family->delete();
 
