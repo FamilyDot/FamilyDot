@@ -17,3 +17,8 @@ body{
         margin-bottom: 1em;
     }
 
+.btn-primary, .btn-primary:hover {
+    background: #9655a0;
+    border-color: #9655a0;
+    color: #ffffff;
+}
