@@ -28,7 +28,7 @@
                         {{ Form::password('password', array('class'=>'form-control', 'placeholder'=>'Password', 'id'=>'pass-field')) }}
                         <div id="button">
                             <input class="btn btn-primary my-btn" id="btn_sub"  type="submit" value="Login">
-                                <br><a href="home">Don't have an account?</a>
+                                <br><a href="{{{action('HomeController@doSignup')}}}">Don't have an account?</a>
                         </div>
                     </div>
                     

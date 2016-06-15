@@ -20,12 +20,6 @@ class HomeController extends BaseController {
 		return View::make('home');
 	}
 
-	public function showUser($family_id)
-	{
-		$questions = DB::table('questions')->where('family_id', $family_id)->get();
-		return View::make('user')->with("questions", $questions);
-	}
-
 	public function showFamdash()
 	{
 		return View::make('famdash');
@@ -34,7 +28,7 @@ class HomeController extends BaseController {
 	public function showLogin()
 	{	
 		if (Auth::check()) {
-			return Redirect::action('HomeController@showFamdash'); //this is working because i can't go back to login form since i'm already logged in. so make a logout function to test it some more
+			return Redirect::action('UsersController@show', Auth::id()); //this is working because i can't go back to login form since i'm already logged in. so make a logout function to test it some more
 		} else {
 	    	return View::make("login");
 		}
@@ -46,7 +40,7 @@ class HomeController extends BaseController {
  		$password = Input::get('password');
  
  		if (Auth::attempt(array('email' => $email, 'password' => $password))) {
- 	    	return Redirect::intended('/famdash');
+ 	    	return Redirect::action('UsersController@show', $user->id);
  		} else {
  		    // login failed, go back to the login screen
  			return Redirect::back();
@@ -74,9 +68,11 @@ class HomeController extends BaseController {
 	    $user->family_id = $family->id;
 
 	    if(Input::get('password')==Input::get('passwordValidate')){
-		   	$user->save();	
+		   	$user->save();
+		   	return Redirect::action('UsersController@show', $user->id);
 	    }else {
-	    	dd("It didn't work");
+	    	return Redirect::back()->withInput();
+	    	// dd("It didn't work");
 	    }
 // Run that shit!
  	}
