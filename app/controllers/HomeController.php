@@ -35,4 +35,38 @@ class HomeController extends BaseController {
 		return View::make('login');
 	}
 
+	public function doLogin()
+ 	{	
+ 		$email= Input::get('email');
+ 		$password = Input::get('password');
+ 
+ 		if (Auth::attempt(array('email' => $email, 'password' => $password))) {
+ 	    	return Redirect::intended('/');
+ 		} else {
+ 		    // login failed, go back to the login screen
+ 			return Redirect::back();
+ 		}
+ 	}
+
+
+
+
+
+
+	// public function doLogin()
+	// {	
+	// 	$email= Input::get('email');
+	// 	$password = Input::get('password');
+
+	// 	if (Auth::attempt(array('email' => $email, 'password' => $password))) {
+	//     	return Redirect::action('HomeController@showHome');
+	//     	// return View::make('home');
+	// } else {
+	// 		// Session::flash('errorMessage', 'Please enter correct information');
+	// 		// $value = Session::get('errorMessage');
+	// 	    // login failed, go back to the login screen
+	// 		return Redirect::back();
+	// 		}
+	// }
+
 }
