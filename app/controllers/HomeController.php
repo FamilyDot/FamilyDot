@@ -26,7 +26,7 @@ class HomeController extends BaseController {
 	}
 
 	public function showLogin()
-	{	
+	{
 		if (Auth::check()) {
 			return Redirect::action('UsersController@show', Auth::id()); //this is working because i can't go back to login form since i'm already logged in. so make a logout function to test it some more
 		} else {
@@ -35,10 +35,10 @@ class HomeController extends BaseController {
 	}
 
 	public function doLogin()
- 	{	
+ 	{
  		$email= Input::get('email');
  		$password = Input::get('password');
- 
+
  		if (Auth::attempt(array('email' => $email, 'password' => $password))) {
  	    	return Redirect::action('UsersController@show', $user->id);
  		} else {
@@ -49,33 +49,15 @@ class HomeController extends BaseController {
 
  	public function doSignup()
 	{
-	  	$user = new User();
-	  	$familyName= Input::get('name');
-	  	$family = Family::where('name', "=", $familyName)->first();
+    $validator = new SignUpValidator();
+    $validator->validate(Input::all());
 
-	    if($family == null) { 
-		    $family = new Family();
-		    $family->name = $familyName;
-		    $family->save();
-	   	}
+    $family = Family::findOrCreateWithName(Input::get('name'));
+    $user = User::signUp(Input::all(), $family);
 
-	    $user->email = Input::get('email');
-	    $user->password = Input::get('password');
-	    $user->username = Input::get('username');
-	    $user->birth_day = Input::get('birth_day');
-	    $user->first_name = Input::get('first_name');
-	    $user->last_name = Input::get('last_name');
-	    $user->family_id = $family->id;
-
-	    if(Input::get('password')==Input::get('passwordValidate')){
-		   	$user->save();
-		   	return Redirect::action('UsersController@show', $user->id);
-	    }else {
-	    	return Redirect::back()->withInput();
-	    	// dd("It didn't work");
-	    }
-// Run that shit!
- 	}
+    Session::flash('successMessage', 'We created your account!');
+    return Redirect::action('UsersController@show', $user->id);
+  }
 }
 
 

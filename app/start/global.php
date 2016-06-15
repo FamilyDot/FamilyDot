@@ -15,8 +15,11 @@ ClassLoader::addDirectories(array(
 
 	app_path().'/commands',
 	app_path().'/controllers',
+  app_path().'/errors',
 	app_path().'/models',
+  app_path().'/validators',
 	app_path().'/database/seeds',
+
 
 ));
 
@@ -49,6 +52,21 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 App::error(function(Exception $exception, $code)
 {
 	Log::error($exception);
+});
+
+// Handles ANY exception raised that is from the class ValidationFailure
+App::error(function(ValidationFailure $exception) {
+  Session::flash('errorMessage', $exception->message);
+
+  return Redirect::back()->withInput()->withErrors($exception->validator);
+});
+
+App::missing(function($exception) {
+  return Response::view('errors.missing', array(), 404);
+});
+
+App::error(function(\Illuminate\Database\Eloquent\ModelNotFoundException $exception) {
+  return Response::view('errors.missing', array(), 404);
 });
 
 /*

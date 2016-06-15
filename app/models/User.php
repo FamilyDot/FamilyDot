@@ -28,4 +28,21 @@ class User extends BaseModel implements UserInterface, RemindableInterface {
         return $this->belongsTo('Family');
     }
 
+    public static function signUp($attributes, $family)
+    {
+      $user = new User();
+
+      $user->email = $attributes['email'];
+      $user->password = $attributes['password'];
+      $user->username = $attributes['username'];
+      $user->birth_day = $attributes['birth_day'];
+      $user->first_name = $attributes['first_name'];
+      $user->last_name = $attributes['last_name'];
+      $user->family_id = $family->id;
+
+      $user->save();
+
+      return $user;
+    }
+
 }

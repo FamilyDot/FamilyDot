@@ -14,6 +14,7 @@
 Route::get('/', "HomeController@showHome");
 
 Route::resource('/users','UsersController');
+Route::resource('/family','FamilyController');
 
 Route::get('/famdash', "HomeController@showFamdash");
 

@@ -4,16 +4,9 @@ class FamilyController extends BaseController {
 
     public function show($id)
     {
-        try {
-            $family = Family::findOrFail($id);
-            return View::make('famdash')->with(['family' => $family]);
+      $family = Family::findOrFail($id);
 
-        } catch(Exception $e) {
-            App::abort(404);
-        }
-
-        $post = Family::find($id);
-        return View::make('famdash')->with('family', $family);
+      return View::make('famdash')->with(['family' => $family]);
     }
 
     public function store()
@@ -28,7 +21,7 @@ class FamilyController extends BaseController {
     {
         if (Auth::user()->admin) {
 
-            $family = Family::find($id);
+            $family = Family::findOrFail($id);
             $family->name = strtolower(Input::get('name'));
             $family->mission_statement = Input::get('mission_statement');
             $family->save();
@@ -43,10 +36,10 @@ class FamilyController extends BaseController {
         if(Auth::user()->isAdmin) {
 
     // #### THIS WILL DESTROY YOUR FAMILY!! ####
-            $family = Family::find($id);
+            $family = Family::findOrFail($id);
             $family->delete();
 
-            // return Redirect::action('HomeController@index');
+         //    return Redirect::action('HomeController@index');
         }
     }
 
