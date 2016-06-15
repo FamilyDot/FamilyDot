@@ -13,4 +13,10 @@ class Family extends BaseModel
     {
         return $this->hasMany('User');
     }
+
+    public function questions() 
+    {
+
+        return $this->hasMany('Question');
+    }
 }
