@@ -19,16 +19,30 @@ class FamilyController extends BaseController {
 
     public function update($id)
     {
-        $family = Family::find($id);
+        if (Auth::user()->admin) {
 
-        $family->name = strtolower(Input::get('name'));
-        $family->mission_statement = Input::get('mission_statement');
-        $family->save();
+            $family = Family::find($id);
+            $family->name = strtolower(Input::get('name'));
+            $family->mission_statement = Input::get('mission_statement');
+            $family->save();
+
+        } else {
+            // Show error: 'Sorry but only admins can perform this action.'
+        }
     }
 
-    public function destroy()
+    public function destroy($id)
     {
+        if(Auth::user()->admin) {
 
+            // $allUsers = find all users with $id;
+            // $allUsers->delete();
+
+            $family = Family::find($id);
+            $family->delete();
+
+            // return Redirect::action('HomeController@index');
+        }
     }
 
 }
