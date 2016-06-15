@@ -12,7 +12,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->family_id = 1;
         $question->save();
         $question = new Question();
-        $question->body = 'What was one thing that really impresses you?';
+        $question->question = 'What was one thing that really impresses you?';
         $question->user_id = 2;
         $question->family_id = 1;
         $question->save();
