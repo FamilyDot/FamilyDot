@@ -14,23 +14,30 @@
 </div>
     <div class='container' >
         <div id= 'pic_row' class= 'row'>
-            <div class="col-md-4">
-                <div class='col-md-8'>
-                  <img src="uploads/kid1.jpg" alt="kid" id='user_pic'>  
-                    <h3>The Users Name goes here </h3>
+            <div class="col-md-3">
+                                   
+                  <img src="uploads/kid1.jpg" alt="kid" id='user_pic'>
+                   <div>
+                   <h3>{{{ $questions->user_id }}}</h3>
                     <h4>other info </h4>
                     <h4>other info </h4>
                     <h4>other info </h4>
                     <h4>other info </h4>
-                    <br>
-                </div>
-            </div>
-      
-        </div>
-      
-    </div><!-- <-container div--> 
-@stop
+                    </div>
 
+                    
+                </div>
+                <div class='col-md-8'>
+                    <h1 class= 'container'>Question</h1>
+                        @foreach($questions as $question)
+                        <h2><a href="{{{ action('HomeController@showUser', $question->family_id)}}}">{{{ $question->question }}}</a></h2>
+                    @endforeach
+                </div>    
+        </div>
+    </div>  
+</div><!-- <-container div--> 
+@stop
+</body>
 
 
 
