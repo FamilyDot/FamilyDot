@@ -16,7 +16,7 @@ class CreateFamilyTable extends Migration {
     {
       $table->increments('id');
       $table->string('name');
-      $table->string('mission_statement');
+      $table->string('mission_statement')->default('Create an environment where each of us can find support and encouragement in achieving our life’s goals.');
       $table->timestamps();
 
     });
