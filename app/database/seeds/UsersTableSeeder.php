@@ -14,7 +14,7 @@ class UsersTableSeeder extends Seeder {
         $user->last_name = 'Campbell';
         $user->birth_day = '1981-02-18';
         $user->family_id = 1;
-        $user->admin = 1;
+        $user->isAdmin = 1;
         $user->save();
 
         $user = new User();
