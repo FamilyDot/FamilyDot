@@ -13,7 +13,7 @@
         </div>
     <div id="form"> 
        <!-- the action is temporary need to go back and redo -->
-            {{ Form::open(array('action' =>('HomeController@showHome'), 'method' => 'POST')) }}
+            {{ Form::open(array('action' =>('HomeController@doLogin'), 'method' => 'POST')) }}
                     <div class="col-md-4 col-md-offset-4">
                             {{ $errors->first('email', '<span class="help-block">:message</span>') }}
                         {{ Form::label('email', 'Email', array('class' => 'sr-only')) }}
