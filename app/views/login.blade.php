@@ -9,7 +9,7 @@
 <div id="row">
     <div>    
         <div id="logo">
-            <img src="/uploads/FamilyDot-logo (1).png">
+            <img src="/uploads/house-7.png">
         </div>
     <div id="form"> 
        <!-- the action is temporary need to go back and redo -->
