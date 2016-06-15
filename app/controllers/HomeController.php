@@ -20,12 +20,7 @@ class HomeController extends BaseController {
 		return View::make('home');
 	}
 
-	public function showUser($family_id)
-	{
-		$questions = DB::table('questions')->where('family_id', $family_id)->get();
-		return View::make('user')->with("questions", $questions);
-	}
-
+	
 	public function showFamdash()
 	{
 		return View::make('famdash');
