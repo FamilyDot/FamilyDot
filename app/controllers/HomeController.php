@@ -61,7 +61,7 @@ class HomeController extends BaseController {
 	    $user->birth_day  = Input::get('birth_day');
 	    $user->first_name  = Input::get('first_name');
 	    $user->last_name  = Input::get('last_name');
-	    // $user->family_name  = Input::get('family_name');
+	    $user->family_name  = Input::get('family_name');
 	    // FamilyController::store();
 
 
