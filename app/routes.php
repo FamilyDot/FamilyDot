@@ -20,3 +20,5 @@ Route::get('/famdash', "HomeController@showFamdash");
 Route::get('/login', "HomeController@showLogin");
 
 Route::post('/login', "HomeController@doLogin");
+
+Route::post('/', "HomeController@doSignup");
