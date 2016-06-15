@@ -44,7 +44,7 @@
 
                         <div id="button">
                             <input class="btn btn-primary" id="btn_sub"  type="submit" value="Signup">
-                                <br><a href="login">Have an account?</a>
+                                <br><a href="{{{action('HomeController@showLogin')}}}">Have an account?</a>
                         </div>
                     </div>
                 </div>
