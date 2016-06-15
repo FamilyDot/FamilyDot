@@ -9,7 +9,7 @@
 <div id="row">
     <div>    
         <div id="logo">
-            <img src="/uploads/familyDot.png">
+            <img src="/uploads/FamilyDot-logo (1).png">
         </div>
 
     <div id="form">

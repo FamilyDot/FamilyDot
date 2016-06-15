@@ -9,7 +9,7 @@
 <div id="row">
     <div>    
         <div id="logo">
-            <img src="/uploads/familyDot.png">
+            <img src="/uploads/FamilyDot-logo (1).png">
         </div>
     <div id="form"> 
        <!-- the action is temporary need to go back and redo -->
@@ -27,7 +27,7 @@
                         {{ Form::label('password', 'Password', array('class' => 'sr-only')) }}
                         {{ Form::password('password', array('class'=>'form-control', 'placeholder'=>'Password', 'id'=>'pass-field')) }}
                         <div id="button">
-                            <input class="btn btn-success" id="btn_sub"  type="submit" value="Login">
+                            <input class="btn btn-primary my-btn" id="btn_sub"  type="submit" value="Login">
                                 <br><a href="home">Don't have an account?</a>
                         </div>
                     </div>
