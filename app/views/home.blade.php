@@ -38,8 +38,8 @@
                         {{ Form::label('last_name', 'last_name', array('class' => 'sr-only')) }}
                         {{ Form::text('last_name',  null,  array('class' =>'form-control', 'placeholder'=> 'Last Name','id'=>'last_name-field')) }}
 
-                        {{ Form::label('family_name', 'family_name', array('class' => 'sr-only')) }}
-                        {{ Form::text('family_name',  null,  array('class' =>'form-control', 'placeholder'=> 'Family Name','id'=>'family_name-field')) }}
+                        {{ Form::label('name', 'name', array('class' => 'sr-only')) }}
+                        {{ Form::text('name',  null,  array('class' =>'form-control', 'placeholder'=> 'Family Name','id'=>'name-field')) }}
 
 
                         <div id="button">
