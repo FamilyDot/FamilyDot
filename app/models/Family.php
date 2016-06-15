@@ -2,10 +2,15 @@
 
 class Family extends BaseModel
 {
-  protected $table = 'families';
+    protected $table = 'families';
 
-  public static $rules = array(
-    'name'              => 'required|max:100',
-    'mission_statement' => 'required|max:1000'
-  );
+    public static $rules = array(
+        'name'              => 'required|max:100',
+        'mission_statement' => 'required|max:1000'
+    );
+
+    public function users()
+    {
+        return $this->hasMany('User');
+    }
 }
