@@ -15,7 +15,7 @@ class BaseModel extends Eloquent
         $this->attributes['username'] = strtolower($value);
     }
 
-      public function setPasswordAttribute($value)
+    public function setPasswordAttribute($value)
     {
         $this->attributes['password'] = Hash::make($value);
     }
