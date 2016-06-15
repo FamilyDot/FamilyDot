@@ -2,20 +2,27 @@
 
 class FamilyController extends BaseController {
 
+    public function show($id)
+    {
+        try {
+            $family = Family::findOrFail($id);
+            return View::make('famdash')->with(['family' => $family]);
+
+        } catch(Exception $e) {
+            App::abort(404);
+        }
+
+        $post = Family::find($id);
+        return View::make('famdash')->with('family', $family);
+    }
+
     public function store()
     {
         $family = new Family();
         $family->name = strtolower(Input::get('name'));
         $family->save();
 
-        // To Use ?
-        //FamilyController::store();
     }
-
-    // public function edit()
-    // {
-
-    // }
 
     public function update($id)
     {
