@@ -13,7 +13,7 @@
 
 Route::get('/', "HomeController@showHome");
 
-Route::get('/user', "HomeController@showUser");
+Route::get('/user/{family_id}', "HomeController@showUser");
 
 Route::get('/famdash', "HomeController@showFamdash");
 
