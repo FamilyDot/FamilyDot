@@ -14,7 +14,7 @@
 
     <div id="form">
                 {{-- the action is temporary need to go back and redo --}}
-            {{ Form::open(array('action' =>('HomeController@showLogin'), 'method' => 'POST')) }}
+            {{ Form::open(array('action' =>('HomeController@doSignup'), 'method' => 'POST')) }}
                 <div class="row">
                     <div class="col-md-4  col-md-offset-4">
                         {{ Form::label('username', 'Username', array('class' => 'sr-only')) }}
@@ -26,14 +26,22 @@
                         {{ Form::label('password', 'Password', array('class' => 'sr-only')) }}
                         {{ Form::text('password',  null,  array('class' =>'form-control', 'placeholder'=> 'Password','id'=>'password-field')) }}
 
-                        {{ Form::label('password', 'Password', array('class' => 'sr-only')) }}
-                        {{ Form::text('password',  null,  array('class' =>'form-control', 'placeholder'=> 'Confirm Password','id'=>'password-field')) }}
+                        {{ Form::label('passwordValidate', 'PasswordValidate', array('class' => 'sr-only')) }}
+                        {{ Form::text('passwordValidate',  null,  array('class' =>'form-control', 'placeholder'=> 'Confirm Password','id'=>'passwordValidate-field')) }}
 
-                        {{ Form::label('dateOfBirth', 'DateOfBirth', array('class' => 'sr-only')) }}    
-                        {{ Form::text('dateOfBirth',  null,  array('class' =>'form-control', 'placeholder'=> 'Date Of Birth', 'id'=>'dob-field')) }}
+                        {{ Form::label('birth_day', 'birth_day', array('class' => 'sr-only')) }}    
+                        {{ Form::text('birth_day',  null,  array('class' =>'form-control', 'placeholder'=> 'Birthday', 'id'=>'birth_day-field')) }}
 
-                        {{ Form::label('family', 'Family', array('class' => 'sr-only')) }}
-                        {{ Form::text('family',  null,  array('class' =>'form-control', 'placeholder'=> 'Family Name','id'=>'family-field')) }}
+                        {{ Form::label('first_name', 'first_name', array('class' => 'sr-only')) }}
+                        {{ Form::text('first_name',  null,  array('class' =>'form-control', 'placeholder'=> 'First Name','id'=>'first_name-field')) }}
+
+                        {{ Form::label('last_name', 'last_name', array('class' => 'sr-only')) }}
+                        {{ Form::text('last_name',  null,  array('class' =>'form-control', 'placeholder'=> 'Last Name','id'=>'last_name-field')) }}
+
+                        {{ Form::label('family_name', 'family_name', array('class' => 'sr-only')) }}
+                        {{ Form::text('family_name',  null,  array('class' =>'form-control', 'placeholder'=> 'Family Name','id'=>'family_name-field')) }}
+
+
                         <div id="button">
                             <input class="btn btn-primary" id="btn_sub"  type="submit" value="Signup">
                                 <br><a href="login">Have an account?</a>
