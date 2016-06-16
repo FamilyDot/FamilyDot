@@ -17,10 +17,12 @@ class QuestionController extends BaseController
         $question->user_id = $user->id;
         
         if ($validator->fails()) {
-            return Redirect::back();    
+            return Redirect::back();  
+            Session::flash('errorMessage', 'Could not save question');  //this line may have to be deleted
         } else{
             $question->save();
             return Redirect::action('UsersController@show');
+            Session::flash('successMessage', 'Question Saved!');
         }
     }
 
@@ -33,7 +35,8 @@ class QuestionController extends BaseController
         $question->question = Input::get('question');
         
         if ($validator->fails()) {
-            return Redirect::back();    
+            return Redirect::back(); 
+            Session::flash('errorMessage', 'Could not update question');  //this line may have to be deleted   
         } else{
             $question->save();
             return Redirect::action('UsersController@show');
