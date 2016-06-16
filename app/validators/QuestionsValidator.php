@@ -5,7 +5,7 @@ class QuestionsValidator
     public function validate($attributes)
     {
         $questionRules = array(
-            'username'          => 'required|max:1000'
+            'question'      => 'required|max:1000'
         );
 
         $validator = Validator::make($attributes, $questionRules);
