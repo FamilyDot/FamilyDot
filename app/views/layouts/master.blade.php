@@ -41,7 +41,7 @@
         <h4 class="modal-title" id="myModalLabel"></h4>
       </div>
       <div class="modal-body">
-        <textarea rows="4" cols="75">
+        <textarea rows="4" cols="50">
 
         </textarea>
 
