@@ -53,16 +53,21 @@ class HomeController extends BaseController {
 
  	public function doSignup()
 	{
-    $validator = new SignUpValidator();
-    $validator->validate(Input::all());
+	    $validator = new SignUpValidator();
+	    $validator->validate(Input::all());
 
-    $family = Family::findOrCreateWithName(Input::get('name'));
-    $user = User::signUp(Input::all(), $family);
+	    $family = Family::findOrCreateWithName(Input::get('name'));
+	    $user = User::signUp(Input::all(), $family);
 
-    Session::flash('successMessage', 'We created your account!');
-    return Redirect::action('UsersController@show', $user->id);
-  }
+	    Session::flash('successMessage', 'We created your account!');
+	    return Redirect::action('UsersController@show', $user->id);
+  	}
+
+	public function doLogout()
+	{
+		Auth::logout();
+		return View::make("login");
+	}
+
 }
-
-
 

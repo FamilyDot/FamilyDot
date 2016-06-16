@@ -60,7 +60,7 @@
             <li><a href="#">Another action</a></li>
             <li><a href="#">Something else here</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Log Out</a></li>
+            <li><a href="{{ action('HomeController@doLogout') }}">Logout</a></li>
           </ul>
         </li>
       </ul><form class="navbar-form navbar-right" role="search">

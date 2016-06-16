@@ -27,4 +27,8 @@ Route::post('/login', "HomeController@doLogin");
 
 Route::post('/', "HomeController@doSignup");
 
+Route::get('/famdash', 'HomeController@doLogout');
+
+Route::get('/users', 'HomeController@doLogout');
+
 
