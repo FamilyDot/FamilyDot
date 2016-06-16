@@ -1,21 +1,17 @@
 <?php
 
-class SignUpValidator
+class AnswerValidator
 {
     public function validate($attributes)
     {
         $signUpRules = array(
-            'username'          => 'required|max:1000|unique:users',
-            'email'             => 'required|email|unique:users',
-            'password'          => 'required|min:8',
-            'passwordValidate'  => 'required|same:password',
-            'name'              => 'required',
+            'answer' => 'required|max:1000',
         );
 
         $validator = Validator::make($attributes, $signUpRules);
 
         if ($validator->fails()) {
-            throw new ValidationFailure('Failed to create account.', $validator);
+            throw new ValidationFailure('Cannot be blank. Must be less than 1000 characters', $validator);
         }
     }
 }
