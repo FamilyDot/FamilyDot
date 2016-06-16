@@ -36,15 +36,19 @@ class HomeController extends BaseController {
 
 	public function doLogin()
  	{
+ 		$validator = new LoginValidator();
+ 		$validator->validate(Input::all());
+
  		$email= Input::get('email');
  		$password = Input::get('password');
 
  		if (Auth::attempt(array('email' => $email, 'password' => $password))) {
- 	    	return Redirect::action('UsersController@show', $user->id);
+ 	    	return Redirect::action('UsersController@show', Auth::user()->id);
  		} else {
  		    // login failed, go back to the login screen
  			return Redirect::back();
  		}
+ 		return Redirect::action('UsersController@show', $user->id);
  	}
 
  	public function doSignup()
