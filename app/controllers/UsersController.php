@@ -42,10 +42,10 @@ class UsersController extends \BaseController {
 	 * @return Response
 	 */
 	public function show($id)
-	{
+	{	
+		
 		$user=User::find($id);
-		$family=Family::find($user->family_id);
-		return View::make('user')->with("user", $user)->with('family', $family);
+		return View::make('user')->with("user", $user);
 	}
 
 
