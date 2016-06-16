@@ -6,7 +6,7 @@ class Family extends BaseModel
 
     public static $rules = array(
         'name'              => 'required|max:100',
-        'mission_statement' => 'required|max:1000'
+        'mission_statement' => 'required|max:1000',
     );
 
     public function users()
@@ -14,9 +14,22 @@ class Family extends BaseModel
         return $this->hasMany('User');
     }
 
-    public function questions() 
+    public function questions()
     {
 
         return $this->hasMany('Question');
+    }
+
+    public static function findOrCreateWithName($familyName)
+    {
+      $family = Family::where('name', "=", $familyName)->first();
+
+      if ($family == null) {
+        $family = new Family();
+        $family->name = $familyName;
+        $family->save();
+      }
+
+      return $family;
     }
 }

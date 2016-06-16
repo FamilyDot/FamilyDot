@@ -44,7 +44,7 @@
         <textarea rows="4" cols="75">
 
         </textarea>
-        
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -72,10 +72,20 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+    @if (Session::has('successMessage'))
+        <div class="alert alert-success">
+            <p class="flow-text center-align" id="alert">{{{ Session::get('successMessage') }}}</p>
+        </div>
+    @endif
+    @if (Session::has('errorMessage'))
+        <div class="alert alert-danger">{{{ Session::get('errorMessage') }}}</div>
+    @endif
+
     @yield('content')
 </main>
     <!-- for if you dont want in the container -->
-    @yield('body') 
+    @yield('body')
     <!-- jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <!-- Latest compiled and minified JavaScript -->
