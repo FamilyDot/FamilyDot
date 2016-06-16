@@ -7,7 +7,6 @@ class QuestionController extends BaseController
         $validator = new QuestionsValidator();
         $validator->validate(Input::all());
 
-
         $user = Auth::user();
         $family_id = $user->family_id;
 
@@ -43,8 +42,6 @@ class QuestionController extends BaseController
         }
     }
 
-        return Redirect::action('UsersController@show');
-    }
 
     public function destroy($id)
     {
