@@ -56,7 +56,7 @@ App::error(function(Exception $exception, $code)
 
 // Handles ANY exception raised that is from the class ValidationFailure
 App::error(function(ValidationFailure $exception) {
-  Session::flash('errorMessage', $exception->message);
+  Session::flash('errorMessage', $exception->getMessage());
 
   return Redirect::back()->withInput()->withErrors($exception->validator);
 });
