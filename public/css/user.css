@@ -9,6 +9,7 @@
 #pic_row    {
 
     padding-top: 80px;
+    margin-bottom: 50px;
 }
 
 #familyDot  {
@@ -22,4 +23,16 @@
 
     font-size:1.5em;
     margin-top: 10px;
+}
+
+#card {
+  width: 500px;
+  margin: 24px 0;
+  padding: 16px;
+  background-color: white;
+}
+
+#user_info {
+
+    padding-top: 300px;
 }
