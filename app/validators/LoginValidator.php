@@ -4,9 +4,9 @@ class LoginValidator
 {
     public function validate($attributes)
     {
-        $loginRules = array()
-            'email'             => 'required|email|users',
-            'password'          => 'required|min:8',
+        $loginRules = array(
+            'email'             => 'required|email',
+            'password'          => 'required|min:8'
 
         );
 
