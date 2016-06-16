@@ -43,7 +43,7 @@ class HomeController extends BaseController {
  		$password = Input::get('password');
 
  		if (Auth::attempt(array('email' => $email, 'password' => $password))) {
- 	    	return Redirect::action('UsersController@show', $user->id);
+ 	    	return Redirect::action('UsersController@show', Auth::user()->id);
  		} else {
  		    // login failed, go back to the login screen
  			return Redirect::back();
