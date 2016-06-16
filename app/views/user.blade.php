@@ -7,10 +7,10 @@
 <body>
 @section('content')
 
+<div class="center-text" id="title">
+    <h1>{{{ $user->family->mission_statement }}}</h1><br>
+</div>
 <div class='container' >
-    <div class="center-text title">
-        <h1>{{{ $user->family->mission_statement }}}</h1><br>
-    </div>
 
     <br>
     <div id= 'pic_row' class= 'row'>
@@ -29,10 +29,10 @@
             @foreach($user->family->questions as $question)
                 <div class="question" id="{{{ $question->id }}}" data-toggle="modal" data-target="#AnswerModal">
                     <div class="w3-card-4" id="card">
-                        <h2><strong>{{{User::find($question->user_id)->username}}}</strong> {{{ $question->question }}}</h2><hr>
+                        <h2><span class="username username-question">{{{User::find($question->user_id)->username}}}</span> {{{ $question->question }}}</h2><hr>
 
                         @foreach($question->answers as $answer)
-                            <h4><strong>{{{ User::find($answer->user_id)->username }}}</strong> {{{ $answer->answer }}}</h4>
+                            <h4><span class="username ">{{{ User::find($answer->user_id)->username }}}</span> {{{ $answer->answer }}}</h4>
                         @endforeach
                     </div>
                 </div>
