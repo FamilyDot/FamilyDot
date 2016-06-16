@@ -4,13 +4,13 @@ class AnswerController extends BaseController {
 
     public function store()
     {
-        $validator = new AnswerValidator();
+        $validator = new AnswersValidator();
         $validator->validate(Input::all());
 
         $user = Auth::user();
-        $answer = createAnswer(Input::all(), $user);
+        Answer::createAnswer(Input::all(), $user);
 
-        Session::flash('successMessage', 'We created your account!');
+        Session::flash('successMessage', 'Thanks for your answer.');
         return Redirect::back();
     }
 
@@ -29,7 +29,6 @@ class AnswerController extends BaseController {
         $answer->delete();
 
         return Redirect::back();
-        }
     }
 
 }

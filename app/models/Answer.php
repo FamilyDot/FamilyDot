@@ -14,9 +14,9 @@ class Answer extends BaseModel
         return $this->belongsTo('Question');
     }
 
-    public function createAnswer($attributes, $user)
+    public static function createAnswer($attributes, $user)
     {
-        $answer = new Answer();
+        $answer = new self();
 
         $answer->answer = $attributes['answer'];
         $answer->user_id = $user->id;

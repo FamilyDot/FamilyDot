@@ -8,15 +8,14 @@
 
 #pic_row    {
 
-    padding-top: 80px;
-    margin-bottom: 50px;
+    margin: 190px auto;
 }
 
 #familyDot  {
 
     width: 45px;
     height: 35px;
-    margin-top: 5px;    
+    margin-top: 5px;
 }
 
 #pencil {
@@ -26,14 +25,19 @@
 }
 
 #card {
-  width: 500px;
-  margin: 24px 0;
   padding: 16px;
   background-color: white;
+  border-bottom: 1px solid #dddddd;
 }
 
-#user_info {
+.user_info {
+    position: fixed;
+}
 
-    padding-top: 300px;
+.title {
+    position: fixed;
+    padding-top: 40px;
+    z-index: 99;
+    background-color: rgb(252,250,0);
 }
 

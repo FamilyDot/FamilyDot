@@ -11,7 +11,7 @@
 <body>
     @yield('upperbody')
     @yield('abovecontainer')
-<nav class="navbar navbar-default" id="navbar">
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
