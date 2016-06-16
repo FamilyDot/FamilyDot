@@ -14,7 +14,8 @@
 </div>
     <div class='container' >
         <div id= 'pic_row' class= 'row'>
-            <div class="col-md-3">            
+
+            <div class="col-md-3">
                 <img src="/uploads/kid1.jpg" alt="kid" id='user_pic'>
                     <div id="user_info">
                         <h3>{{{ $user->username }}}</h3>
@@ -22,15 +23,14 @@
                         <h4>{{{ $user->last_name }}}</h4>
                         <h4>{{{ $user->email }}}</h4>
                         <h4>{{{ $user->birth_day }}}</h4>
-                    </div>     
+                    </div>
             </div>
             <div class='col-md-8'>
             <h1 class= 'container'>Question</h1>
                 <div>
-                    
-                    
-                    
                         @foreach($user->family->questions as $question)
+
+
                          <div class="w3-card-4" id="card" data-toggle="modal" data-target="#myModal">
                         <h4>{{{User::find($question->user_id)->username}}}</h4>
                         <h2>{{{ $question->question }}}</h2>
@@ -40,7 +40,7 @@
                                 @endforeach
                          </div>
                         @endforeach
-                  
+
                              <!-- Button trigger modal -->
                      <!-- Modal -->
                         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -54,7 +54,7 @@
                               </div>
                               <div class="modal-body">
                                 <textarea rows="4" cols="50">
-                                </textarea>     
+                                </textarea>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -67,17 +67,21 @@
             </div>
         </div>
     </div>
-
 @stop
-@yield('bottomscript')
+
+@section('bottomscript')
+<script type="text/javascript">
+$(document).ready(function(){
+    "use strict";
+
+    var $question_id = null;
+
+    $(".question").click(function(event) {
+      $question_id = event.target.id;
+    });
+})
+</script>
+@stop
 
 </body>
-
-
-
-
-
-
-
-
 
