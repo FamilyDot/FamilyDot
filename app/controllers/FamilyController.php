@@ -2,11 +2,15 @@
 
 class FamilyController extends BaseController {
 
+    public function __construct()
+    {
+        $this->beforeFilter('auth', array('except' => array()));
+    }
+
     public function show($id)
     {
-      $family = Family::findOrFail($id);
-
-      return View::make('famdash')->with(['family' => $family]);
+        $family = Family::findOrFail($id);
+        return View::make('famdash')->with(['family' => $family]);
     }
 
     public function store()

@@ -9,19 +9,19 @@
 @section('content')
 
 <div class="row">
-    
-    <h1 class="container">{{{ $family->mission_statement }}}</h1>
+
+    <h1 class="container">{{{ $user->family->mission_statement }}}</h1>
     <hr>
-    
+
             <h1 class= 'container'>Family Posts</h1>
         <div class="col-md-9 col-md-offset-3">
-                @foreach($posts as $post)
+                @foreach($user->family->posts as $post)
                 <div class="w3-card-4" id="card" data-toggle="modal" data-target="#myModal">
-                 <p>{{{ $post->body }}}</p>     
+                 <p>{{{ $post->body }}}</p>
                 </div>
                 @endforeach
     </div>
-                  
+
                              <!-- Button trigger modal -->
                      <!-- Modal -->
                         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -35,7 +35,7 @@
                               </div>
                               <div class="modal-body">
                                 <textarea rows="4" cols="50">
-                                </textarea>     
+                                </textarea>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
