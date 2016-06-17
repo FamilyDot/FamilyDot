@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', "HomeController@showFamily");
+
+Route::get('/', 'HomeController@showHome');
 
 Route::resource('/users','UsersController');
 
@@ -21,18 +22,18 @@ Route::get('/family', "HomeController@showFamily");
 
 Route::resource('/answer', 'AnswerController');
 
-Route::get('/login', "HomeController@showLogin");
+Route::get('/login', 'HomeController@showLogin');
 
-Route::post('/login', "HomeController@doLogin");
+Route::post('/login', 'HomeController@doLogin');
 
 // Route::get('/famdash', "HomeController@showLogin");
 
-Route::get('/users', "HomeController@showLogin");
+Route::get('/users', 'HomeController@showLogin');
 
-Route::post('/', "HomeController@doSignup");
+Route::post('/', 'HomeController@doSignup');
 
 Route::get('/logout', 'HomeController@doLogout');
 
-// Route::get('/users', 'HomeController@doLogout');
 
+Route::post('/question', 'QuestionController@store');
 
