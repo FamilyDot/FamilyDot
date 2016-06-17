@@ -7,6 +7,11 @@ class UsersController extends \BaseController {
 	 *
 	 * @return Response
 	 */
+  public function __construct()
+  {
+      $this->beforeFilter('auth', array('except' => array('/', 'login')));
+  }
+
 	public function index()
 	{
 		//
@@ -41,11 +46,27 @@ class UsersController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
+
+  // #### SECURITY MODEL THAT RESEMBELS GITHUB'S ####
 	public function show($id)
-	{	
-		
-		$user=User::find($id);
-		return View::make('user')->with("user", $user);
+	{
+		if(Auth::check()) {
+      $user = Auth::user();
+
+      $user_of_profile = User::find($id);
+      $user_family_id = $user->family_id;
+
+      if($user_of_profile != null && $user_family_id == $user_of_profile->family_id) {
+
+          $user=User::find($id);
+      		return View::make('user')->with("user", $user);
+      }
+
+      return View::make('errors.missing');
+    }
+
+
+    return View::make('login');
 	}
 
 

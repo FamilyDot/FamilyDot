@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('topscript')
-    <link rel="stylesheet"  href="/../css/login.css">
+    {{-- <link rel="stylesheet"  href="/../css/login.css"> --}}
     <link rel="stylesheet" type="text/css" href="/../css/user.css">
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 @stop

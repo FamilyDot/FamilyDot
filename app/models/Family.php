@@ -20,6 +20,11 @@ class Family extends BaseModel
         return $this->hasMany('Question');
     }
 
+    public function posts()
+    {
+        return $this->hasMany('Post');
+    }
+
     public static function findOrCreateWithName($familyName)
     {
       $family = Family::where('name', "=", $familyName)->first();
