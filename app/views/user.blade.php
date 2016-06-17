@@ -4,6 +4,7 @@
     {{-- <link rel="stylesheet"  href="/../css/login.css"> --}}
     <link rel="stylesheet" type="text/css" href="/../css/user.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+
 @stop
 <body>
 @section('content')

@@ -8,21 +8,11 @@ class QuestionController extends BaseController
         $validator->validate(Input::all());
 
         $user = Auth::user();
-        $family_id = $user->family_id;
 
-        $question = new Question();
-        $question->question = Input::get('question');
-        $question->family_id = $family_id;
-        $question->user_id = $user->id;
-        
-        if ($validator->fails()) {
-            return Redirect::back();  
-            Session::flash('errorMessage', 'Could not save question');  //this line may have to be deleted
-        } else{
-            $question->save();
-            return Redirect::action('UsersController@show');
-            Session::flash('successMessage', 'Question Saved!');
-        }
+        Question::createQuestion(Input::all(), $user);
+
+        Session::flash('successMessage', 'Sending question through space and time to you family!');
+        return Redirect::back();
     }
 
     public function update($id)
@@ -32,10 +22,10 @@ class QuestionController extends BaseController
 
         $question = Question::find($id);
         $question->question = Input::get('question');
-        
+
         if ($validator->fails()) {
-            return Redirect::back(); 
-            Session::flash('errorMessage', 'Could not update question');  //this line may have to be deleted   
+            return Redirect::back();
+            Session::flash('errorMessage', 'Could not update question');  //this line may have to be deleted
         } else{
             $question->save();
             return Redirect::action('UsersController@show');

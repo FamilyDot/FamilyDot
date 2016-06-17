@@ -54,13 +54,15 @@ body {
 }
 
 .img-circle {
-    
+
     float:left;
     border-radius: 50%;
     width: 40px;
     height: 40px;
-
 }
 
-
+.alert {
+    padding-top: 60px;
+    z-index: 100;
+}
 
