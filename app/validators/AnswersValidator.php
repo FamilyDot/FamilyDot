@@ -1,6 +1,6 @@
 <?php
 
-class AnswerValidator
+class AnswersValidator
 {
     public function validate($attributes)
     {
