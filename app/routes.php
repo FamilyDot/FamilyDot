@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', "HomeController@showHome");
+Route::get('/', "HomeController@showFamily");
 
 Route::resource('/users','UsersController');
 
