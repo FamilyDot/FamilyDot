@@ -17,11 +17,13 @@ class HomeController extends BaseController {
 
 	public function showHome()
 	{
+
     if(!Auth::check()){
 
   		return View::make('home');
     }
     return Redirect::action('UsersController@show', Auth::user()->id);
+
 	}
 
 	public function showFamily()

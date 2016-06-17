@@ -12,28 +12,26 @@
 <div class="center-text" id="title">
     <h1>{{{ $user->family->mission_statement }}}</h1><br>
 </div>
-<div class='container' >
-
+<div class='container'>
     <br>
     <div id= 'pic_row' class= 'row'>
         <div class="col-md-3">
             <div class="user_info">
-                <!-- <img src="/uploads/will.jpg" alt="kid" id='user_pic'> -->
                 <img src="{{{ $user->image_url }}}">
-
                 <h3>{{{ $user->username }}}</h3>
                 <h4>{{{ $user->first_name }}}</h4>
                 <h4>{{{ $user->last_name }}}</h4>
                 <h4>{{{ $user->email }}}</h4>
                 <h4>{{{ $user->birth_day }}}</h4>
             </div>
-        </div> <!-- end of user colomn -->
+        </div> <!-- end of user column -->
 
         <div class='col-md-6 questions'>
             @foreach($user->family->questions as $question)
                 <div class="question" id="{{{ $question->id }}}" data-toggle="modal" data-target="#AnswerModal">
                     <div class="w3-card-4" id="card">
                     <img class="img-circle" src="{{{User::find($question->user_id)->image_url}}}">
+   
                         <h2><span class="username username-question"></span> {{{ $question->question }}}</h2><hr>
 
                         @foreach($question->answers as $answer)
@@ -42,7 +40,6 @@
                     </div>
                 </div>
             @endforeach
-
             <!-- Modal -->
             <div class="modal fade" id="AnswerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -65,7 +62,6 @@
                     </div>
                 </div>
             </div> <!-- end of modal -->
-
         </div><!-- end of questions column -->
     </div> <!-- end pic-row -->
 
@@ -74,15 +70,12 @@
 
 @section('bottomscript')
 <script type="text/javascript">
-    $(document).ready(function(){
+        $(document).ready(function(){
         "use strict";
-
         var $question_id = null;
-
         $(".question").click(function() {
             $question_id = $(this).attr('id');
-
-            $("#question_input").val($question_id);
+        $("#question_input").val($question_id);
         });
     })
 </script>

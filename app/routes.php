@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/', 'HomeController@showHome');
 
 Route::resource('/users','UsersController');
