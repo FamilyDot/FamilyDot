@@ -20,9 +20,12 @@ class HomeController extends BaseController {
 		return View::make('home');
 	}
 
-	public function showFamdash()
-	{
-		return View::make('famdash');
+	public function showFamdash($id)
+	{	
+		$posts=Post::where('family_id', $id)->get();
+		$family=Family::find($id);
+		$users=DB::table('users')->where('family_id', $id)->get();
+		return View::make('famdash')->with('users',$users)->with('family', $family)->with('posts', $posts);
 	}
 
 	public function showLogin()
