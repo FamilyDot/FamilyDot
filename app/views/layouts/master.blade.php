@@ -11,7 +11,7 @@
 <body>
     @yield('upperbody')
     @yield('abovecontainer')
-<nav class="navbar navbar-default" id="navbar">
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -28,7 +28,26 @@
       <ul class="nav navbar-nav navbar-right">
       <!-- <span class="glyphicon glyphicon-pencil" id= 'pencil'></span> -->
         <!-- Button trigger modal -->
-<button type="button" span class="glyphicon glyphicon-pencil" id= 'pencil' data-toggle="modal" data-target="#myModal"></button>
+<button type="button" span class="glyphicon glyphicon-pencil" id='pencil' data-toggle="modal" data-target="#myModal">Create</button>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Users picture <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Edit Profile</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="{{ action('HomeController@doLogout') }}">Logout</a></li>
+          </ul>
+        </li>
+      </ul><form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -53,25 +72,6 @@
     </div>
   </div>
 </div>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Users picture <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Edit Profile</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Log Out</a></li>
-          </ul>
-        </li>
-      </ul><form class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
 
     @if (Session::has('successMessage'))
         <div class="alert alert-success">
@@ -91,7 +91,7 @@
   <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <script type="text/javascript">
-   $("#modalopener").click(function() {
+    $("#modalopener").click(function() {
     $("#modal-dialog").modal('hide');
    });
 </script>

@@ -19,9 +19,16 @@ Route::resource('/family','FamilyController');
 
 Route::get('/famdash/{id}', "HomeController@showFamdash");
 
+Route::resource('/answer', 'AnswerController');
+
 Route::get('/login', "HomeController@showLogin");
 
 Route::post('/login', "HomeController@doLogin");
 
 Route::post('/', "HomeController@doSignup");
+
+Route::get('/famdash', 'HomeController@doLogout');
+
+Route::get('/users', 'HomeController@doLogout');
+
 
