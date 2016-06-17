@@ -28,12 +28,16 @@ class HomeController extends BaseController {
 
 	public function showFamily()
 	{
-    $user = Auth::user();
+    if(!Auth::check()) {
 
-		// $posts=Post::where('family_id', $id)->get();
-		// $family=Family::find($id);
-		// $users=DB::table('users')->where('family_id', $id)->get();
-    // dd(' we are here: HomeController@showFamdash');
+      $user = Auth::user();
+
+  		// $posts=Post::where('family_id', $id)->get();
+  		// $family=Family::find($id);
+  		// $users=DB::table('users')->where('family_id', $id)->get();
+      // dd(' we are here: HomeController@showFamdash');
+      return Redirect::action('HomeController@showLogin');
+    }
 		return View::make('family')->with('user', $user);
 	}
 
