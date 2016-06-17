@@ -20,7 +20,7 @@ class CreatePostsTable extends Migration {
           $table->foreign('user_id')->references('id')->on('users');
           $table->integer('family_id')->unsigned();
           $table->foreign('family_id')->references('id')->on('families');
-          $table->string('image_url')->nullable();
+          $table->string('img_url')->nullable();
           $table->timestamps();
       });
 	}
