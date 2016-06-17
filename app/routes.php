@@ -17,7 +17,7 @@ Route::resource('/users','UsersController');
 
 Route::resource('/family','FamilyController');
 
-Route::get('/famdash/{id}', "HomeController@showFamdash");
+Route::get('/famdash', "HomeController@showFamdash");
 
 Route::resource('/answer', 'AnswerController');
 
@@ -25,10 +25,14 @@ Route::get('/login', "HomeController@showLogin");
 
 Route::post('/login', "HomeController@doLogin");
 
+// Route::get('/famdash', "HomeController@showLogin");
+
+Route::get('/users', "HomeController@showLogin");
+
 Route::post('/', "HomeController@doSignup");
 
-Route::get('/famdash', 'HomeController@doLogout');
+Route::get('/doLogout', 'HomeController@doLogout');
 
-Route::get('/users', 'HomeController@doLogout');
+// Route::get('/users', 'HomeController@doLogout');
 
 
