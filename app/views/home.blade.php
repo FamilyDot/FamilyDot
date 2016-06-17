@@ -17,15 +17,17 @@
             {{ Form::open(array('action' =>('HomeController@doSignup'), 'method' => 'POST')) }}
                 <div class="row">
                     <div class="col-md-4  col-md-offset-4">
+                            {{ $errors->first('username', '<span class="help-block">:message</span>') }}
                         {{ Form::label('username', 'Username', array('class' => 'sr-only')) }}
                         {{ Form::text('username',  null,  array('class' =>'form-control', 'placeholder'=> 'Username (Required)','id'=>'username-field')) }}
-
+                            {{ $errors->first('email', '<span class="help-block">:message</span>') }}
                         {{ Form::label('email', 'Email', array('class' => 'sr-only')) }}
                         {{ Form::text('email',  null,  array('class' =>'form-control', 'placeholder'=> 'Email (Required)','id'=>'email-field')) }}
 
+                            {{ $errors->first('password', '<span class="help-block">:message</span>') }}
                         {{ Form::label('password', 'Password', array('class' => 'sr-only')) }}
                         {{ Form::text('password',  null,  array('class' =>'form-control', 'placeholder'=> 'Password (Required)','id'=>'password-field')) }}
-
+                            {{ $errors->first('confirm password', '<span class="help-block">:message</span>') }}
                         {{ Form::label('passwordValidate', 'PasswordValidate', array('class' => 'sr-only')) }}
                         {{ Form::text('passwordValidate',  null,  array('class' =>'form-control', 'placeholder'=> 'Confirm Password (Required)','id'=>'passwordValidate-field')) }}
 
@@ -37,7 +39,7 @@
 
                         {{ Form::label('last_name', 'last_name', array('class' => 'sr-only')) }}
                         {{ Form::text('last_name',  null,  array('class' =>'form-control', 'placeholder'=> 'Last Name','id'=>'last_name-field')) }}
-
+                            {{ $errors->first('Family Name', '<span class="help-block">:message</span>') }}
                         {{ Form::label('name', 'name', array('class' => 'sr-only')) }}
                         {{ Form::text('name',  null,  array('class' =>'form-control', 'placeholder'=> 'Family Name (Required)','id'=>'name-field')) }}
 
