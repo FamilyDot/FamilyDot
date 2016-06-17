@@ -38,8 +38,8 @@ class User extends BaseModel implements UserInterface, RemindableInterface {
       $user->birth_day = $attributes['birth_day'];
       $user->first_name = $attributes['first_name'];
       $user->last_name = $attributes['last_name'];
+      $user->image_url = $attributes['image_url'];
       $user->family_id = $family->id;
-
       $user->save();
 
       return $user;

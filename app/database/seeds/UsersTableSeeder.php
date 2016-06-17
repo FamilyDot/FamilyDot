@@ -14,27 +14,30 @@ class UsersTableSeeder extends Seeder {
         $user->last_name = 'Campbell';
         $user->birth_day = '1981-02-18';
         $user->family_id = 1;
+        $user->image_url = '/uploads/will.jpg';
         $user->isAdmin = 1;
         $user->save();
 
         $user = new User();
-        $user->email = 'example@example.com';
+        $user->email = 'mauro@example.com';
         $user->password = 'password';
-        $user->username = 'gwen333';
-        $user->first_name = 'Gwen';
-        $user->last_name = 'Campbell';
-        $user->birth_day = '2002-09-17';
+        $user->username = 'mauro';
+        $user->first_name = 'Mauro';
+        $user->last_name = 'Cabrales';
+        $user->birth_day = '1980-04-21';
         $user->family_id = 1;
+        $user->image_url = '/uploads/mauro.jpg';
         $user->save();
 
         $user = new User();
-        $user->email = 'holly@site.com';
+        $user->email = 'michah@site.com';
         $user->password = 'password';
-        $user->username = 'holly777';
-        $user->first_name = 'Holly';
-        $user->last_name = 'Campbell';
+        $user->username = 'Mikeuh';
+        $user->first_name = 'Micah';
+        $user->last_name = 'Smith';
         $user->birth_day = '1983-01-13';
         $user->family_id = 1;
+        $user->image_url = '/uploads/micah.jpg';
         $user->save();
 
     }

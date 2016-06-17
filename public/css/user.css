@@ -46,3 +46,14 @@
     /*box-shadow: 0px 2px 5px #999999;*/
 }
 
+.img-circle {
+    
+    float:left;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+
+}
+
+
+
