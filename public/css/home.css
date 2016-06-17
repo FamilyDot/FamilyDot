@@ -19,8 +19,8 @@ body{
         margin-bottom: 1em;
     }
 
-.navbar {
-    padding: 0;
+#navbar {
+    visibility: hidden;
 }
 
 .btn-primary, .btn-primary:hover {
