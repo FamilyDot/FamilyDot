@@ -11,6 +11,8 @@
 <body>
     @yield('upperbody')
     @yield('abovecontainer')
+
+
 <nav class="navbar navbar-default navbar-fixed-top" id="navbar">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -26,11 +28,10 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-      <!-- <span class="glyphicon glyphicon-pencil" id= 'pencil'></span> -->
         <!-- Button trigger modal -->
-<button type="button" span class="glyphicon glyphicon-pencil" id='pencil' data-toggle="modal" data-target="#myModal">Create</button>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Users picture <span class="caret"></span></a>
+          @if(Auth::check())
+          <a class="dropdown-toggle img-responsive" style="padding-top:7px;" data-toggle="dropdown" role="button" aria-haspopup="true" ><img style="height:40px;width:40px;" src="{{{ $user->image_url }}}"></a>
           <ul class="dropdown-menu">
             <li><a href="#">Edit Profile</a></li>
             <li><a href="#">Another action</a></li>
@@ -39,6 +40,8 @@
             <li><a href="{{ action('HomeController@doLogout') }}">Logout</a></li>
           </ul>
         </li>
+        @endif
+        <button type="button" span class="glyphicon glyphicon-pencil" id='pencil' data-toggle="modal" data-target="#myModal">Create</button>
       </ul><form class="navbar-form navbar-right" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
