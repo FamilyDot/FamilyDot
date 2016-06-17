@@ -11,28 +11,28 @@
 |
 */
 
-Route::get('/', "HomeController@showHome");
+Route::get('/', 'HomeController@showHome');
 
 Route::resource('/users','UsersController');
 
 Route::resource('/family','FamilyController');
 
-Route::get('/famdash', "HomeController@showFamdash");
+Route::get('/famdash', 'HomeController@showFamdash');
 
 Route::resource('/answer', 'AnswerController');
 
-Route::get('/login', "HomeController@showLogin");
+Route::get('/login', 'HomeController@showLogin');
 
-Route::post('/login', "HomeController@doLogin");
+Route::post('/login', 'HomeController@doLogin');
 
 // Route::get('/famdash', "HomeController@showLogin");
 
-Route::get('/users', "HomeController@showLogin");
+Route::get('/users', 'HomeController@showLogin');
 
-Route::post('/', "HomeController@doSignup");
+Route::post('/', 'HomeController@doSignup');
 
 Route::get('/doLogout', 'HomeController@doLogout');
 
-// Route::get('/users', 'HomeController@doLogout');
 
+Route::post('/question', 'QuestionController@store');
 

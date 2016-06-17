@@ -28,7 +28,7 @@
       <ul class="nav navbar-nav navbar-right">
       <!-- <span class="glyphicon glyphicon-pencil" id= 'pencil'></span> -->
         <!-- Button trigger modal -->
-<button type="button" span class="glyphicon glyphicon-pencil" id='pencil' data-toggle="modal" data-target="#myModal">Create</button>
+        <button type="button" span class="glyphicon glyphicon-pencil" id='pencil' data-toggle="modal" data-target="#askQuestion">Ask</button>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Users picture <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -39,7 +39,8 @@
             <li><a href="{{ action('HomeController@doLogout') }}">Logout</a></li>
           </ul>
         </li>
-      </ul><form class="navbar-form navbar-right" role="search">
+      </ul>
+      <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
         </div>
@@ -50,27 +51,28 @@
 </nav>
 
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h4 class="modal-title" id="myModalLabel"></h4>
-      </div>
-      <div class="modal-body">
-        <textarea rows="4" cols="50">
+<div class="modal fade" id="askQuestion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Ask a Question</h4>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="{{{ action('QuestionController@store') }}}">
+                    {{ Form::token() }}
+                    <div class="form-group">
+                        <textarea class="form-control" rows="4" cols="50" name="question"></textarea>
+                    </div>
 
-        </textarea>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
     @if (Session::has('successMessage'))
