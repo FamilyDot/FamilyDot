@@ -20,7 +20,6 @@ ClassLoader::addDirectories(array(
   app_path().'/validators',
 	app_path().'/database/seeds',
 
-
 ));
 
 /*
@@ -56,7 +55,7 @@ App::error(function(Exception $exception, $code)
 
 // Handles ANY exception raised that is from the class ValidationFailure
 App::error(function(ValidationFailure $exception) {
-  Session::flash('errorMessage', $exception->getMessage());
+  Session::flash('errorMessage', $exception->getMessage()); // was: $exception->message
 
   return Redirect::back()->withInput()->withErrors($exception->validator);
 });

@@ -22,3 +22,7 @@ body{
     border-color: #9655a0;
     color: #ffffff;
 }
+
+#navbar {
+    visibility: hidden;
+}
