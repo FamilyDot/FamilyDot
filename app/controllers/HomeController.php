@@ -20,7 +20,7 @@ class HomeController extends BaseController {
 		return View::make('home');
 	}
 
-	public function showFamdash()
+	public function showFamily()
 	{
     $user = Auth::user();
 
@@ -28,7 +28,7 @@ class HomeController extends BaseController {
 		// $family=Family::find($id);
 		// $users=DB::table('users')->where('family_id', $id)->get();
     // dd(' we are here: HomeController@showFamdash');
-		return View::make('famdash')->with('user', $user);
+		return View::make('family')->with('user', $user);
 	}
 
 	public function showLogin()
