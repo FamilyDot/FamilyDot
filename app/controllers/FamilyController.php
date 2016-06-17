@@ -10,7 +10,7 @@ class FamilyController extends BaseController {
     public function show($id)
     {
         $family = Family::findOrFail($id);
-        return View::make('famdash')->with(['family' => $family]);
+        return View::make('family')->with(['family' => $family]);
     }
 
     public function store()
