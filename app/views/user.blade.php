@@ -1,28 +1,26 @@
 @extends('layouts.master')
 @section('topscript')
-    <!-- google fonts -->
     {{-- <link rel="stylesheet"  href="/../css/login.css"> --}}
     <link rel="stylesheet" type="text/css" href="/../css/user.css">
+    <!-- google fonts -->
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
 
 @stop
 <body>
 @section('content')
 
+<div class='container'>
 <div class="center-text" id="title">
     <h1>{{{ $user->family->mission_statement }}}</h1><br>
 </div>
-<div class='container'>
     <br>
     <div id= 'pic_row' class= 'row'>
         <div class="col-md-3">
-            <div class="user_info">
-                <img src="{{{ $user->image_url }}}">
-                <h3>{{{ $user->username }}}</h3>
-                <h4>{{{ $user->first_name }}}</h4>
-                <h4>{{{ $user->last_name }}}</h4>
+            <div class="user_info well">
+                <img class="img-rounded" src="{{{ $user->image_url }}}">
+                <h3>@{{{ $user->username }}}</h3>
+                <h4>{{{ $user->first_name }}} {{{ $user->last_name }}}</h4>
                 <h4>{{{ $user->email }}}</h4>
-                <h4>{{{ $user->birth_day }}}</h4>
             </div>
         </div> <!-- end of user column -->
 
@@ -30,12 +28,17 @@
             @foreach($user->family->questions as $question)
                 <div class="question" id="{{{ $question->id }}}" data-toggle="modal" data-target="#AnswerModal">
                     <div class="w3-card-4" id="card">
-                    <img class="img-circle" src="{{{User::find($question->user_id)->image_url}}}">
-   
-                        <h2><span class="username username-question"></span> {{{ $question->question }}}</h2><hr>
+
+                        <h2><img class="img-circle" src="{{{User::find($question->user_id)->image_url}}}"><span class="username username-question"></span>{{{ $question->question }}}</h2>
+
+                        @if (!empty($question->answers[0]))
+                            <hr>
+                        @endif
 
                         @foreach($question->answers as $answer)
-                            <h4><span class="username ">{{{ User::find($answer->user_id)->username }}}</span> {{{ $answer->answer }}}</h4>
+                            <div class="answers">
+                                <p><span class="username">{{{ User::find($answer->user_id)->username }}}    </span>{{{ $answer->answer }}}</p>
+                            </div>
                         @endforeach
                     </div>
                 </div>
