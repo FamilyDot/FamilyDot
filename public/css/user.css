@@ -6,16 +6,9 @@ body {
     font-size: 1.8em;
 }*/
 #user_pic    {
-
     float: left;
     width: 200px;
     height: 300px;
-
-}
-
-#pic_row    {
-
-    margin: 190px auto;
 }
 
 #familyDot  {
@@ -26,7 +19,6 @@ body {
 }
 
 #pencil {
-
     font-size:1.5em;
     margin-top: 10px;
 }
@@ -34,17 +26,15 @@ body {
 #card {
   padding: 16px;
   background-color: white;
-  border-bottom: 1px solid #dddddd;
+  border-left: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
+  border-top: 1px solid #dddddd;
   box-shadow: 0px 2px -5px #dddddd;
-}
-
-.user_info {
-    position: fixed;
 }
 
 #title {
     margin: 0px auto;
-    position: fixed;
+    /*position: absolute;*/
     padding-top: 60px;
     padding-right: 40px;
     padding-left: 40px;
@@ -54,11 +44,11 @@ body {
 }
 
 .img-circle {
-
+    border: 5px solid #FFFFFF !important;
     float:left;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
 }
 
 .alert {
@@ -66,3 +56,64 @@ body {
     z-index: 100;
 }
 
+#navbar {
+    height: 46px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    background-color: #fff;
+}
+
+#ask-button {
+    font-size: 1.5rem;
+    color: #222;
+    background-color: #E1FEFF;
+    cursor: pointer;
+    height: 32px;
+    margin-top: 7px;
+    margin-right: 20px;
+    border-bottom: 3px solid #88A6A7;
+    border-radius: 5px;
+}
+
+.ask-inner {
+    padding: 5px;
+}
+
+.username {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #777;
+}
+
+#search-input {
+    background-color: #eeeeee;
+    border-radius: 17px;
+    font-size: 1.2rem;
+    width: 200px;
+}
+
+.user-image {
+    border: 7px solid orange;
+    border-radius: 13px;
+}
+
+.answers p {
+    font-size: 1.5rem;
+}
+
+.well {
+    background-color: #FFF;
+}
+
+.question h2 {
+    color: #FF8F6E;
+}
+
+#fa-search {
+    float: right;
+}
+
+.familydot-logo {
+    height: 40px;
+    width: 46px;
+    margin-top: 5px;
+}

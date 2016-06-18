@@ -24,7 +24,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-      <a href="/"><img  id= 'familyDot' src="/uploads/FamilyDot-logo (1).png"></a>
+      <a href="/family">{{ HTML::image('img/Final-contestant.png', 'family dot logo', array('class' => 'familydot-logo')) }}</a>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -32,7 +32,7 @@
           <!-- Button trigger modal -->
 
           <li class="dropdown">
-            <a class="dropdown-toggle img-responsive" style="padding-top:7px;" data-toggle="dropdown" role="button" aria-haspopup="true" ><img style="height:40px;width:40px;" src="{{{ $user->image_url }}}"></a>
+            <a class="dropdown-toggle img-responsive img-rounded" style="padding-top:7px;" data-toggle="dropdown" role="button" aria-haspopup="true" ><img class="img-rounded" style="height:32px;width:32px;" src="{{{ $user->image_url }}}"></a>
             <ul class="dropdown-menu">
               <li><a href="#">Edit Profile</a></li>
               <li><a href="#">Another action</a></li>
@@ -42,16 +42,18 @@
             </ul>
           </li>
           <li>
-            <button type="button" span class="btn btn-xs glyphicon glyphicon-pencil" id='pencil' data-toggle="modal" data-target="#askQuestion">Ask</button>
+            <button type="button" span class="btn btn-xs " id='ask-button' data-toggle="modal" data-target="#askQuestion"><span class="ask-inner"><i class="fa fa-2x fa-comments-o" aria-hidden="true"></i>  Ask</span></button>
           </li>
         </ul>
         <form class="navbar-form navbar-right" role="search">
 
 
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
+            <input type="text" class="form-control" id="search-input" placeholder="Search Questions">
+            <div class="icon" id="fa-search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
           </div>
-          <button type="submit" class="btn btn-default">Submit</button>
         </form>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -100,6 +102,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="https://use.fontawesome.com/8687895f96.js"></script>
 <script type="text/javascript">
     $("#modalopener").click(function() {
     $(".modal-dialog").modal('hide');
