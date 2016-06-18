@@ -85,8 +85,10 @@ body {
 }
 
 #search-input {
-    background-color: #DADADA;
-    border-radius: 10px;
+    background-color: #eeeeee;
+    border-radius: 17px;
+    font-size: 1.2rem;
+    width: 200px;
 }
 
 .user-image {
@@ -104,4 +106,14 @@ body {
 
 .question h2 {
     color: #FF8F6E;
+}
+
+#fa-search {
+    float: right;
+}
+
+.familydot-logo {
+    height: 40px;
+    width: 46px;
+    margin-top: 5px;
 }

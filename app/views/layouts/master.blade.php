@@ -24,7 +24,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-      <a href="/"><img  id= 'familyDot' src="/uploads/FamilyDot-logo (1).png"></a>
+      <a href="/family">{{ HTML::image('img/Final-contestant.png', 'family dot logo', array('class' => 'familydot-logo')) }}</a>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -49,9 +49,11 @@
 
 
           <div class="form-group">
-            <input type="text" class="form-control" id="search-input" placeholder="Search">
+            <input type="text" class="form-control" id="search-input" placeholder="Search Questions">
+            <div class="icon" id="fa-search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
           </div>
-          <button type="submit" class="btn btn-default">Submit</button>
         </form>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
