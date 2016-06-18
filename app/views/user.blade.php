@@ -17,7 +17,9 @@
     <div id= 'pic_row' class= 'row'>
         <div class="col-md-3">
             <div class="user_info well">
-                <img class="img-rounded" src="{{{ $user->image_url }}}">
+                <div class="user-image">
+                    <img class="img-rounded img-responsive" src="{{{ $user->image_url }}}">
+                </div>
                 <h3>@{{{ $user->username }}}</h3>
                 <h4>{{{ $user->first_name }}} {{{ $user->last_name }}}</h4>
                 <h4>{{{ $user->email }}}</h4>
@@ -28,8 +30,7 @@
             @foreach($user->family->questions as $question)
                 <div class="question" id="{{{ $question->id }}}" data-toggle="modal" data-target="#AnswerModal">
                     <div class="w3-card-4" id="card">
-
-                        <h2><img class="img-circle" src="{{{User::find($question->user_id)->image_url}}}"><span class="username username-question"></span>{{{ $question->question }}}</h2>
+                        <img class="img-circle" src="{{{User::find($question->user_id)->image_url}}}"><h2><span class="username username-question"></span>{{{ $question->question }}}</h2>
 
                         @if (!empty($question->answers[0]))
                             <hr>
@@ -37,7 +38,7 @@
 
                         @foreach($question->answers as $answer)
                             <div class="answers">
-                                <p><span class="username">{{{ User::find($answer->user_id)->username }}}    </span>{{{ $answer->answer }}}</p>
+                                <p><span class="username">@{{{ User::find($answer->user_id)->username }}}    </span>{{{ $answer->answer }}}</p>
                             </div>
                         @endforeach
                     </div>
