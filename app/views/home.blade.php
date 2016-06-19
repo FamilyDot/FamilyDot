@@ -9,10 +9,10 @@
 <!-- need to relook at this -->
 <div class="container">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-7">
             <img src="/img/Final-contestant.png">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             {{ Form::open(array('action' =>('HomeController@doSignup'), 'method' => 'POST')) }}
 
                             {{ $errors->first('username', '<span class="help-block">:message</span>') }}
@@ -41,10 +41,9 @@
                         {{ Form::label('name', 'name', array('class' => 'sr-only')) }}
                         {{ Form::text('name',  null,  array('class' =>'form-control', 'placeholder'=> 'Family Name (Required)','id'=>'name-field')) }}
                     
-                        <div id="button" class="col-md-3">
                             <input class="btn btn-primary" id="btn_sub"  type="submit" value="Signup">
                             <p><a href="{{{action('HomeController@showLogin')}}}">Have an account?</a></p>
-                        </div>
+                       
             {{ Form::close() }}
         </div>
     </div>
