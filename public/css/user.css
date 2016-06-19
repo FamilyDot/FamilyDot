@@ -2,6 +2,9 @@ body {
     background-color: rgb(245,248,250);
     font-family: 'Roboto Condensed', sans-serif !important;
 }
+h1{
+    color: white; 
+}
 /*#user_questions{
     font-size: 1.8em;
 }*/
@@ -39,7 +42,7 @@ body {
     padding-right: 40px;
     padding-left: 40px;
     z-index: 99;
-    background-color: #E1FEFF;
+    background-color: rgb(27,177,178);
     box-shadow: 0px 2px 5px #999999;
 }
 
@@ -116,4 +119,35 @@ body {
     height: 40px;
     width: 46px;
     margin-top: 5px;
+}
+
+
+/* ----------- iPhone 5 and 5S ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* ----------- iPhone 6 ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+
+}
+
+/* ----------- Galaxy S5 ----------- */
+
+/* Portrait and Landscape */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) {
+
 }
