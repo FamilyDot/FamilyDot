@@ -104,7 +104,7 @@ body {
     background-color: #FFF;
 }
 
-.question h2 {
+.question {
     color: #FF8F6E;
 }
 
@@ -116,4 +116,8 @@ body {
     height: 40px;
     width: 46px;
     margin-top: 5px;
+}
+
+.answer-model-link {
+    float: right;
 }
