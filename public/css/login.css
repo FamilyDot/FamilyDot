@@ -1,28 +1,36 @@
 body{
     background-color: rgb(252,250,0);
 }
-
-#logo{
+.container{
+    margin-top: 10em;
+    text-align: center;
+}
+/*#logo{
     margin-left: 20em;
     margin-top: 10em;
-}
-#form{
+}*/
+/*#form{
     margin-top: -13em;
     margin-left: 25em;
+}*/
+    #email-field, #pass-field {
+        height: 2em;
+        width:20em;
+        margin-bottom: 1em;
+    }
+#btn_sub{
+    margin-bottom: 1em;
 }
-    #email-field, #pass-field{
-        margin-bottom: 1em;
-    }
-    #btn_sub{
-        margin-bottom: 1em;
-    }
 
+/*#form{
+    margin-top: 10%;
+}*/
+#navbar {
+    visibility: hidden;
+}
 .btn-primary, .btn-primary:hover {
     background: #9655a0;
     border-color: #9655a0;
     color: #ffffff;
 }
 
-#navbar {
-    visibility: hidden;
-}

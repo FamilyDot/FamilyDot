@@ -18,11 +18,11 @@
         <div class="col-md-3">
             <div class="user_info well">
                 <div class="user-image">
-                    <img class="img-rounded img-responsive" src="{{{ $user->image_url }}}">
+                    <img class="img-rounded img-responsive profile_image" src="{{{ $user->image_url }}}">
                 </div>
-                <h3>@{{{ $user->username }}}</h3>
-                <h4>{{{ $user->first_name }}} {{{ $user->last_name }}}</h4>
-                <h4>{{{ $user->email }}}</h4>
+                <!-- <h3>@{{{ $user->username }}}</h3> -->
+                <h4> Hi, {{{ $user->first_name }}} {{{ $user->last_name }}}!</h4>
+                {{-- <h4>{{{ $user->email }}}</h4> --}}
             </div>
         </div> <!-- end of user column -->
 
@@ -39,7 +39,7 @@
 
                         @foreach($question->answers as $answer)
                             <div class="answers">
-                                <p><span class="username">@{{{ User::find($answer->user_id)->username }}}    </span>{{{ $answer->answer }}}</p>
+                                <p><span class="username">{{{ User::find($answer->user_id)->first_name }}}    </span>{{{ $answer->answer }}}</p>
                             </div>
                         @endforeach
                     </div>
@@ -53,7 +53,7 @@
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
-                            <h4 class="modal-title" id="myModalLabel"></h4>
+                            <h4 class="modal-title" id="myModalLabel">Answer Question</h4>
                         </div>
 
                         <div class="modal-body">

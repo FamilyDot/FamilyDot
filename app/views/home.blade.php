@@ -6,17 +6,15 @@
 
 
 @section('content')
-<div id="row">
-    <div>    
-        <div id="logo">
+<!-- need to relook at this -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-7">
             <img src="/img/Final-contestant.png">
         </div>
-
-    <div id="form">
-                {{-- the action is temporary need to go back and redo --}}
+        <div class="col-md-3">
             {{ Form::open(array('action' =>('HomeController@doSignup'), 'method' => 'POST')) }}
-                <div class="row">
-                    <div class="col-md-4  col-md-offset-4">
+
                             {{ $errors->first('username', '<span class="help-block">:message</span>') }}
                         {{ Form::label('username', 'Username', array('class' => 'sr-only')) }}
                         {{ Form::text('username',  null,  array('class' =>'form-control', 'placeholder'=> 'Username (Required)','id'=>'username-field')) }}
@@ -42,14 +40,10 @@
                             {{ $errors->first('Family Name', '<span class="help-block">:message</span>') }}
                         {{ Form::label('name', 'name', array('class' => 'sr-only')) }}
                         {{ Form::text('name',  null,  array('class' =>'form-control', 'placeholder'=> 'Family Name (Required)','id'=>'name-field')) }}
-
-
-                        <div id="button">
+                    
                             <input class="btn btn-primary" id="btn_sub"  type="submit" value="Signup">
-                                <br><a href="{{{action('HomeController@showLogin')}}}">Have an account?</a>
-                        </div>
-                    </div>
-                </div>
+                            <p><a href="{{{action('HomeController@showLogin')}}}">Have an account?</a></p>
+                       
             {{ Form::close() }}
         </div>
     </div>
