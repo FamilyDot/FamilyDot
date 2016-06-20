@@ -107,7 +107,7 @@ h1{
     background-color: #FFF;
 }
 
-.question h2 {
+.question {
     color: #FF8F6E;
 }
 
@@ -120,6 +120,7 @@ h1{
     width: 46px;
     margin-top: 5px;
 }
+
 
 
 /* ----------- iPhone 5 and 5S ----------- */
@@ -149,5 +150,9 @@ h1{
   and (device-width: 360px) 
   and (device-height: 640px) 
   and (-webkit-device-pixel-ratio: 3) {
+
+}
+.answer-model-link {
+    float: right;
 
 }

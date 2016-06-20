@@ -28,12 +28,13 @@
 
         <div class='col-md-6 questions'>
             @foreach($user->family->questions as $question)
-                <div class="question" id="{{{ $question->id }}}" data-toggle="modal" data-target="#AnswerModal">
+                <div class="question" id="{{{ $question->id }}}">
                     <div class="w3-card-4" id="card">
-                        <img class="img-circle" src="{{{User::find($question->user_id)->image_url}}}"><h2><span class="username username-question"></span>{{{ $question->question }}}</h2>
-
+                        <img class="img-circle" src="{{{User::find($question->user_id)->image_url}}}">
+                        <h2 data-userid="user_{{{ $question->user_id }}}"><span>{{{ $question->question }}}</span></h2>
+                        <p class="answer-model-link" id="answer_to_question_{{{ $question->id }}}"><a  data-toggle="modal" data-target="#AnswerModal">Answer</a></p>
                         @if (!empty($question->answers[0]))
-                            <hr>
+                            <div><br><hr></div>
                         @endif
 
                         @foreach($question->answers as $answer)
@@ -74,12 +75,39 @@
 
 @section('bottomscript')
 <script type="text/javascript">
-        $(document).ready(function(){
-        "use strict";
+    $(document).ready(function(){
+    "use strict";
+
         var $question_id = null;
         $(".question").click(function() {
             $question_id = $(this).attr('id');
         $("#question_input").val($question_id);
+        });
+
+        $('#fullname').click(function(){
+            var name = $(this).text();
+            $(this).html('');
+            $('<input></input>')
+                .attr({
+                    'type': 'text',
+                    'name': 'fname',
+                    'id': 'txt_fullname',
+                    'size': '30',
+                    'value': name
+                })
+                .appendTo('#fullname');
+            $('#txt_fullname').focus();
+        });
+
+        $(document).on('blur','#txt_fullname', function(){
+            var name = $(this).val();
+            $.ajax({
+              type: 'post',
+              url: 'change-name.xhr?name=' + name,
+              success: function(){
+                $('#fullname').text(name);
+              }
+            });
         });
     })
 </script>
