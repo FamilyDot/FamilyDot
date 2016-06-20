@@ -78,12 +78,15 @@
     $(document).ready(function(){
     "use strict";
 
+        // Needed to grab the question id for storing answers in the DB
         var $question_id = null;
         $(".question").click(function() {
             $question_id = $(this).attr('id');
         $("#question_input").val($question_id);
         });
 
+        // Refactoring to allow user to edit question in place sending an AJAX
+        // request to update the DB and component
         $('#fullname').click(function(){
             var name = $(this).text();
             $(this).html('');
