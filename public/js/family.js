@@ -1,6 +1,8 @@
 $('#sub_survey').click(function(e){
+    $('#myModal').modal('show');
     var random = Math.floor((Math.random() * 100) + 1);
-    alert('Congratulations, your family\'s health score is: '+ random + '!');
+    $("#health").html(random);
+    // alert('Congratulations, your family\'s health score is: '+ random + '!');
 });
 
 

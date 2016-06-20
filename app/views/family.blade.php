@@ -16,9 +16,7 @@
                 @foreach($user->family->posts as $post)
                     <!-- Button trigger modal -->
                     <div class="w3-card-4" id="card">
-                        <img class="img-circle" src="{{{User::find($post->user_id)->image_url}}}">
                         <p>{{{ $post->body }}}</p>
-
                         <div id="rad_btns">
                             <input type="radio" name="answers[{{$post->id}}]" class="number" value="1"> 1 
                             <input type="radio" name="answers[{{$post->id}}]" class="number" value="2"> 2 
@@ -44,16 +42,12 @@
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
-                                <h4 class="modal-title" id="myModalLabel"></h4>
+                                <h4 class="modal-title" id="myModalLabel">Congrats your family's average health is <span id="health"></span>!</h4>
                         </div>
-                        <div class="modal-body">
-                            <textarea rows="4" cols="50">
-                            </textarea>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
+                        <!-- <div class="modal-footer"> -->
+                            <button type="button" id="close" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                        <!-- </div> -->
                     </div>
                 </div>
             </div>
@@ -61,6 +55,8 @@
         <!-- </div>
     </div> -->
 </div>
-<script type="text/javascript" src="/js/family.js"></script>
 
+    <!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/family.js"></script>
 @stop

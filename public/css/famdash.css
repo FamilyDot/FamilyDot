@@ -14,7 +14,12 @@ h1{
 #number {
     margin-left: .05em;
 }
+#close{
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
 #sub_survey{
+    margin-top: 2em;
     margin-bottom: 5em;
 }
 
