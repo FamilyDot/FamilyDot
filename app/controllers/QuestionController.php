@@ -17,19 +17,28 @@ class QuestionController extends BaseController
 
     public function update($id)
     {
-        $validator = new QuestionsValidator();
-        $validator->validate(Input::all());
+        $questionRules = array(
+            'question' => 'required|max:1000'
+        );
 
-        $question = Question::find($id);
-        $question->question = Input::get('question');
+        $validator = Validator::make(Input::all(), $questionRules);
+
+        $response = [];
 
         if ($validator->fails()) {
-            return Redirect::back();
-            Session::flash('errorMessage', 'Could not update question');  //this line may have to be deleted
-        } else{
+
+            $response['errors'] = $validator->errors();
+            $response['success'] = false;
+            $statusCode = 422;
+        } else {
+            $question = Question::find($id);
+            $question->question = Input::get('question');
             $question->save();
-            return Redirect::action('UsersController@show');
+            $response['success'] = true;
+            $statusCode = 200;
         }
+
+        return Response::json($response, $statusCode);
     }
 
 

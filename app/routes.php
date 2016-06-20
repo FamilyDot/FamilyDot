@@ -37,5 +37,6 @@ Route::get('/logout', 'HomeController@doLogout');
 
 Route::post('/question', 'QuestionController@store');
 
-Route::resource('/edit', 'UsersController');
+Route::put('/question/{id}', 'QuestionController@update');
+
 

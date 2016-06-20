@@ -10,9 +10,9 @@
 @section('content')
 
 <div class='container'>
-<div class="center-text" id="title">
-    <h1>{{{ $user->family->mission_statement }}}</h1><br>
-</div>
+    <div class="center-text" id="title">
+        <h1>{{{ $user->family->mission_statement }}}</h1><br>
+    </div>
     <br>
     <div id= 'pic_row' class= 'row'>
         <div class="col-md-3">
@@ -27,11 +27,12 @@
         </div> <!-- end of user column -->
 
         <div class='col-md-6 questions'>
+            {{ Form::token() }}
             @foreach($user->family->questions as $question)
                 <div class="question" id="{{{ $question->id }}}">
                     <div class="w3-card-4" id="card">
                         <img class="img-circle" src="{{{User::find($question->user_id)->image_url}}}">
-                        <h2 data-userid="user_{{{ $question->user_id }}}"><span>{{{ $question->question }}}</span></h2>
+                        <h2 class="users_question" id="user-{{{ $question->user_id }}}" data-question-id="{{{ $question->id }}}" data-auth="{{{ ($question->user_id == Auth::user()->id) }}}"><span>{{{ $question->question }}}</span></h2>
                         <p class="answer-model-link" id="answer_to_question_{{{ $question->id }}}"><a  data-toggle="modal" data-target="#AnswerModal">Answer</a></p>
                         @if (!empty($question->answers[0]))
                             <div><br><hr></div>
@@ -74,43 +75,7 @@
 @stop
 
 @section('bottomscript')
-<script type="text/javascript">
-    $(document).ready(function(){
-    "use strict";
-
-        var $question_id = null;
-        $(".question").click(function() {
-            $question_id = $(this).attr('id');
-        $("#question_input").val($question_id);
-        });
-
-        $('#fullname').click(function(){
-            var name = $(this).text();
-            $(this).html('');
-            $('<input></input>')
-                .attr({
-                    'type': 'text',
-                    'name': 'fname',
-                    'id': 'txt_fullname',
-                    'size': '30',
-                    'value': name
-                })
-                .appendTo('#fullname');
-            $('#txt_fullname').focus();
-        });
-
-        $(document).on('blur','#txt_fullname', function(){
-            var name = $(this).val();
-            $.ajax({
-              type: 'post',
-              url: 'change-name.xhr?name=' + name,
-              success: function(){
-                $('#fullname').text(name);
-              }
-            });
-        });
-    })
-</script>
+    <script src="/../js/userspage_edit_question.js" type="text/javascript"></script>
 @stop
 
 </body>
