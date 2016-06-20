@@ -34,7 +34,7 @@
                     </div>
                 @endforeach
                 </form>
-                <input class="btn btn-primary" id="btn_sub"  type="submit" value="Submit Survey">
+                <input class="btn btn-primary" id="sub_survey"  type="submit" value="Submit Survey">
             </div>    
                  <!-- Modal -->
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
