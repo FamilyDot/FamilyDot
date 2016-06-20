@@ -10,13 +10,25 @@
     <h1 style='padding-top:70px;' class="container">{{{ $user->family->mission_statement }}}</h1>
     <hr>
     </div>
-        <h1 id="familyPosts" class= 'container'>Family Posts</h1>
+        <h1 id="familyPosts" class= 'container'>This weeks survey</h1>
             <div class="col-md-6 col-md-offset-3">
                 @foreach($user->family->posts as $post)
                     <!-- Button trigger modal -->
                     <div class="w3-card-4" id="card" data-toggle="modal" data-target="#myModal">
                         <img class="img-circle" src="{{{User::find($post->user_id)->image_url}}}">
                         <p>{{{ $post->body }}}</p>
+                        <div id="rad_btns">
+                            <input type="radio" name="number" class="number" value="1"> 1
+                            <input type="radio" name="number" class="number" value="2"> 2
+                            <input type="radio" name="number" class="number" value="3"> 3
+                            <input type="radio" name="number" class="number" value="4"> 4
+                            <input type="radio" name="number" class="number" value="5"> 5
+                            <input type="radio" name="number" class="number" value="6"> 6
+                            <input type="radio" name="number" class="number" value="7"> 7
+                            <input type="radio" name="number" class="number" value="8"> 8
+                            <input type="radio" name="number" class="number" value="9"> 9
+                            <input type="radio" name="number" class="number" value="10"> 10
+                        </div>
                     </div>
                 @endforeach
             </div>    
