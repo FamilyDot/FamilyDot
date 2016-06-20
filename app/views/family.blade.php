@@ -3,7 +3,6 @@
     <!-- font awsome cdn -->
     <script src="https://use.fontawesome.com/f5fdf2e9f7.js"></script>
     <link rel="stylesheet"  href="/../css/famdash.css">
-     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 @stop
 @section('content')
 <div class="row">
@@ -11,15 +10,28 @@
     <h1 style='padding-top:70px;' class="container">{{{ $user->family->mission_statement }}}</h1>
     <hr>
     </div>
-        <h1 id="familyPosts" class= 'container'>Family Posts</h1>
+        <h1 id="familyPosts" class= 'container'>This weeks survey</h1>
             <div class="col-md-6 col-md-offset-3">
                 @foreach($user->family->posts as $post)
                     <!-- Button trigger modal -->
                     <div class="w3-card-4" id="card" data-toggle="modal" data-target="#myModal">
                         <img class="img-circle" src="{{{User::find($post->user_id)->image_url}}}">
                         <p>{{{ $post->body }}}</p>
+                        <div id="rad_btns">
+                            <input type="radio" name="number" class="number" value="1"> 1 
+                            <input type="radio" name="number" class="number" value="2"> 2 
+                            <input type="radio" name="number" class="number" value="3"> 3 
+                            <input type="radio" name="number" class="number" value="4"> 4 
+                            <input type="radio" name="number" class="number" value="5"> 5 
+                            <input type="radio" name="number" class="number" value="6"> 6 
+                            <input type="radio" name="number" class="number" value="7"> 7 
+                            <input type="radio" name="number" class="number" value="8"> 8 
+                            <input type="radio" name="number" class="number" value="9"> 9 
+                            <input type="radio" name="number" class="number" value="10"> 10 
+                        </div>
                     </div>
                 @endforeach
+                <input class="btn btn-primary" id="btn_sub"  type="submit" value="Submit Survey">
             </div>    
                  <!-- Modal -->
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -46,4 +58,6 @@
         <!-- </div>
     </div> -->
 </div>
+<script type="text/javascript" src="/js/family.js"></script>
+
 @stop

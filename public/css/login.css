@@ -5,6 +5,9 @@ body{
     margin-top: 10em;
     text-align: center;
 }
+/*#picture{
+    float: left;
+}*/
 /*#logo{
     margin-left: 20em;
     margin-top: 10em;
@@ -13,7 +16,7 @@ body{
     margin-top: -13em;
     margin-left: 25em;
 }*/
-    #email-field, #pass-field {
+    #email-field, #pass-field, p {
         height: 2em;
         width:20em;
         margin-bottom: 1em;
@@ -22,9 +25,10 @@ body{
     margin-bottom: 1em;
 }
 
-/*#form{
+#form{
     margin-top: 10%;
-}*/
+    /*float:right;*/
+}
 #navbar {
     visibility: hidden;
 }

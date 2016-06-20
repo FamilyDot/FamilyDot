@@ -68,7 +68,7 @@ h1{
 #ask-button {
     font-size: 1.5rem;
     color: #222;
-    background-color: #E1FEFF;
+    background-color: #FFF;
     cursor: pointer;
     height: 32px;
     margin-top: 7px;
@@ -124,6 +124,9 @@ h1{
     height: 40px;
     width: 46px;
     margin-top: 5px;
+}
+#bs-example-navbar-collapse-1 {
+  background-color: #FFF;
 }
 
 

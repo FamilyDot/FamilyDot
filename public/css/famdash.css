@@ -11,6 +11,11 @@ h1{
 {
     background-color:rgb(27,177,178);
 }
+#number {
+    margin-left: .05em;
+}
+
+
 .card-block, #mission{
     background-color: white;
 }
@@ -24,6 +29,7 @@ h1{
 .fa-smile-o{
     float:left;
 }
+
 
 
 /*should the button be used this color can be changed kind of hacky*/
