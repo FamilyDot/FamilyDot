@@ -11,7 +11,7 @@ class QuestionController extends BaseController
 
         Question::createQuestion(Input::all(), $user);
 
-        Session::flash('successMessage', 'Sending question through space and time to you family!');
+        Session::flash('successMessage', 'Sending question through space and time to your family!');
         return Redirect::back();
     }
 

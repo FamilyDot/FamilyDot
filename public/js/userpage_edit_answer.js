@@ -1,10 +1,10 @@
 $(document).ready(function(){
     "use strict";
 
-    var $question_id = null;
-    $(".question").click(function() {
-        $question_id = $(this).attr('id');
-    $("#question_input").val($question_id);
+    var $answer_id = null;
+    $(".answer").click(function() {
+        $answer_id = $(this).attr('id');
+    $("#answer_input").val($answer_id);
     });
 
     // #### HELPER FUNCTIONS ####
@@ -20,47 +20,47 @@ $(document).ready(function(){
 
     // If user owns question
     // if ($('.users_question').data('auth') === 1) {
-    var originalQuestion = "";
+    var originalAnswer = "";
 
-    function onUsersQuestionClick(){
+    function onUsersAnswerClick(){
         if ($(this).data('auth') != 1) {
             return;
         }
-        var question = $(this).text();
-        originalQuestion = question;
+        var answer = $(this).text();
+        originalAnswer = answer;
 
         $(this).html('');
         $('<input>')
             .attr({
                 'type': 'text',
-                'name': 'question',
-                'id': 'question-input',
+                'name': 'answer',
+                'id': 'answer-input',
                 'size': '30',
-                'value': question,
-                'data-question-id': $(this).data('question-id'),
+                'value': answer,
+                'data-answer-id': $(this).data('answer-id'),
                 'data-token-value': $('input[name="_token"]').val()
             })
             .appendTo($(this));
-        $('#question-input').focus();
-        $('.users_question').off();
+        $('#answer-input').focus();
+        $('.users_answer').off();
     }
 
-    $('.users_question').click(onUsersQuestionClick);
+    $('.users_answer').click(onUsersQuestionClick);
 
-    $(document).on('blur','#question-input', function(){
-        var question = $(this).val();
+    $(document).on('blur','#answer-input', function(){
+        var answer = $(this).val();
         var token = $(this).data('token-value');
-        var id = $(this).data('question-id');
+        var id = $(this).data('answer-id');
         var $that = $(this);
         $.ajax({
           type: 'put',
-          data: {'question':question, '_token':token},
-          url: "/question/" + id,
+          data: {'answer':answer, '_token':token},
+          url: "/answer/" + id,
           success: function(data){
             if (data.success) {
                 // do success stuff
                 // $('.users_question').text(question);
-                $that.parent().html(question);
+                $that.parent().html(answer);
             } else {
                 // validation Failed
             }
@@ -71,10 +71,10 @@ $(document).ready(function(){
                 return;
             }
                 console.log("Something Failed yo!");
-                $that.val(originalQuestion);
+                $that.val(originalAnswer);
                 $that.focus();
             }
         });
-        $('.users_question').click(onUsersQuestionClick);
+        $('.users_answer').click(onUsersAnswerClick);
     });
 })

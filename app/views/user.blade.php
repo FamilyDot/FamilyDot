@@ -41,6 +41,9 @@
                         @foreach($question->answers as $answer)
                             <div class="answers">
                                 <p><span class="username">{{{ User::find($answer->user_id)->first_name }}}    </span>{{{ $answer->answer }}}</p>
+                                @if ($answer->user_id == Auth::user()->id)
+                                    <i class="edit-answer" id="{{{ $answer->id }}}"
+                                @endif
                             </div>
                         @endforeach
                     </div>

@@ -11,12 +11,11 @@
 |
 */
 
-
 Route::get('/', 'HomeController@showHome');
 
 Route::resource('/users','UsersController');
 
-// Route::resource('/family','FamilyController');
+Route::get('/users', 'HomeController@showLogin');
 
 Route::get('/family', "HomeController@showFamily");
 
@@ -26,17 +25,11 @@ Route::get('/login', 'HomeController@showLogin');
 
 Route::post('/login', 'HomeController@doLogin');
 
-// Route::get('/famdash', "HomeController@showLogin");
-
-Route::get('/users', 'HomeController@showLogin');
-
 Route::post('/', 'HomeController@doSignup');
 
 Route::get('/logout', 'HomeController@doLogout');
 
-
 Route::post('/question', 'QuestionController@store');
 
 Route::put('/question/{id}', 'QuestionController@update');
-
 
