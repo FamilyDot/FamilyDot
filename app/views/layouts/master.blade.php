@@ -34,8 +34,8 @@
           <li class="dropdown">
             <a class="dropdown-toggle img-responsive img-rounded" style="padding-top:7px;" data-toggle="dropdown" role="button" aria-haspopup="true" ><img class="img-rounded" style="height:32px;width:32px;" src="{{{ $user->image_url }}}"></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Edit Profile</a></li>
-              <li><a href="#">Another action</a></li>
+              <li><a href="/users/{{{Auth::id()}}}">Profile</a></li>
+              <li><a href="/users/{{{Auth::id()}}}/edit">Edit Profile</a></li>
               <li><a href="#">Something else here</a></li>
               <li role="separator" class="divider"></li>
               <li><a href="{{ action('HomeController@doLogout') }}">Logout</a></li>
@@ -92,6 +92,9 @@
     @endif --}}
     @if (Session::has('errorMessage'))
         <div class="alert alert-danger">{{{ Session::get('errorMessage') }}}</div>
+    @endif
+    @if(Session::has('successMessage'))
+      <div class="alert alert-success">{{{Session::get('successMessage')}}}</div>
     @endif
 
     @yield('content')
