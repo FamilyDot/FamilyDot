@@ -1,6 +1,6 @@
-$('#btn_sub').click(function(e){
+$('#sub_survey').click(function(e){
     var random = Math.floor((Math.random() * 100) + 1);
-    alert('Congratulations, your family\'s health score is : '+ random);
+    alert('Congratulations, your family\'s health score is: '+ random + '!');
 });
 
 
