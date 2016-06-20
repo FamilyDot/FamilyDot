@@ -93,8 +93,13 @@ h1{
     font-size: 1.2rem;
     width: 200px;
 }
-
+/*
 .user-image {
+  
+    border: 7px solid orange;
+    border-radius: 13px;
+}*/
+.profile_image{
     border: 7px solid orange;
     border-radius: 13px;
 }

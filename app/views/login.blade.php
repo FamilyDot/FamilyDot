@@ -8,10 +8,8 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-7">
+        <div class="col-md-12">
             <img src="/img/Final-contestant.png">
-        </div>
-        <div class="col-md-3"> 
        <!-- the action is temporary need to go back and redo -->
             {{ Form::open(array('action' =>('HomeController@doLogin'), 'method' => 'POST')) }}
           
@@ -19,10 +17,6 @@
                         {{ Form::label('email', 'Email', array('class' => 'sr-only')) }}
                         {{ Form::text('email',  null,  array('class' =>'form-control', 'placeholder'=> 'Email','id'=>'email-field')) }}
                
-                
-
-               
-       
                             {{ $errors->first('password', '<span class="help-block">:message</span>') }}
                         {{ Form::label('password', 'Password', array('class' => 'sr-only')) }}
                         {{ Form::password('password', array('class'=>'form-control', 'placeholder'=>'Password', 'id'=>'pass-field')) }}

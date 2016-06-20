@@ -18,7 +18,7 @@
         <div class="col-md-3">
             <div class="user_info well">
                 <div class="user-image">
-                    <img class="img-rounded img-responsive" src="{{{ $user->image_url }}}">
+                    <img class="img-rounded img-responsive profile_image" src="{{{ $user->image_url }}}">
                 </div>
                 <!-- <h3>@{{{ $user->username }}}</h3> -->
                 <h4> Hi, {{{ $user->first_name }}} {{{ $user->last_name }}}!</h4>
