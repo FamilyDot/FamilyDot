@@ -1,0 +1,78 @@
+$(document).ready(function(){
+    "use strict";
+    // #### HELPER FUNCTIONS ####
+    function questionUpdateAjaxRequest() {
+
+    }
+
+    // Needed to grab the question id for storing answers in the DB
+    var $question_id = null;
+    $(".question").click(function() {
+        $question_id = $(this).attr('id');
+    $("#question_input").val($question_id);
+    });
+
+    // Refactoring to allow user to edit question in place sending an AJAX
+    // request to update the DB and component
+    // When I click on data-userid="user_{{{ $question->user_id }}}" open input for update to question
+
+    // If user owns question
+    // if ($('.users_question').data('auth') === 1) {
+    var originalQuestion = "";
+
+    function onUsersQuestionClick(){
+        if ($(this).data('auth') != 1) {
+            return;
+        }
+        var question = $(this).text();
+        originalQuestion = question;
+
+        $(this).html('');
+        $('<input></input>')
+            .attr({
+                'type': 'text',
+                'name': 'question',
+                'id': 'question-input',
+                'size': '30',
+                'value': question,
+                'data-question-id': $(this).data('question-id'),
+                'data-token-value': $('input[name="_token"]').val()
+            })
+            .appendTo($(this));
+        $('#question-input').focus();
+        $('.users_question').off();
+    }
+
+    $('.users_question').click(onUsersQuestionClick);
+
+    $(document).on('blur','#question-input', function(){
+        var question = $(this).val();
+        var token = $(this).data('token-value');
+        var id = $(this).data('question-id');
+        var $that = $(this);
+        $.ajax({
+          type: 'put',
+          data: {'question':question, '_token':token},
+          url: "/question/" + id,
+          success: function(data){
+            if (data.success) {
+                // do success stuff
+                // $('.users_question').text(question);
+                $that.parent().html(question);
+            } else {
+                // validation Failed
+            }
+          },
+          error: function(xhr, error, code) {
+            if (xhr.code == 500) {
+                alert('server error');
+                return;
+            }
+                console.log("Something Failed yo!");
+                $that.val(originalQuestion);
+                $that.focus();
+            }
+        });
+        $('.users_question').click(onUsersQuestionClick);
+    });
+})
