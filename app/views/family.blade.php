@@ -3,7 +3,6 @@
     <!-- font awsome cdn -->
     <script src="https://use.fontawesome.com/f5fdf2e9f7.js"></script>
     <link rel="stylesheet"  href="/../css/famdash.css">
-     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 @stop
 @section('content')
 <div class="row">
