@@ -18,19 +18,20 @@
                         <img class="img-circle" src="{{{User::find($post->user_id)->image_url}}}">
                         <p>{{{ $post->body }}}</p>
                         <div id="rad_btns">
-                            <input type="radio" name="number" class="number" value="1"> 1
-                            <input type="radio" name="number" class="number" value="2"> 2
-                            <input type="radio" name="number" class="number" value="3"> 3
-                            <input type="radio" name="number" class="number" value="4"> 4
-                            <input type="radio" name="number" class="number" value="5"> 5
-                            <input type="radio" name="number" class="number" value="6"> 6
-                            <input type="radio" name="number" class="number" value="7"> 7
-                            <input type="radio" name="number" class="number" value="8"> 8
-                            <input type="radio" name="number" class="number" value="9"> 9
-                            <input type="radio" name="number" class="number" value="10"> 10
+                            <input type="radio" name="number" class="number" value="1"> 1 
+                            <input type="radio" name="number" class="number" value="2"> 2 
+                            <input type="radio" name="number" class="number" value="3"> 3 
+                            <input type="radio" name="number" class="number" value="4"> 4 
+                            <input type="radio" name="number" class="number" value="5"> 5 
+                            <input type="radio" name="number" class="number" value="6"> 6 
+                            <input type="radio" name="number" class="number" value="7"> 7 
+                            <input type="radio" name="number" class="number" value="8"> 8 
+                            <input type="radio" name="number" class="number" value="9"> 9 
+                            <input type="radio" name="number" class="number" value="10"> 10 
                         </div>
                     </div>
                 @endforeach
+                <input class="btn btn-primary" id="btn_sub"  type="submit" value="Submit Survey">
             </div>    
                  <!-- Modal -->
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -57,4 +58,6 @@
         <!-- </div>
     </div> -->
 </div>
+<script type="text/javascript" src="/js/family.js"></script>
+
 @stop
