@@ -46,5 +46,4 @@ class FamilyController extends BaseController {
          //    return Redirect::action('HomeController@index');
         }
     }
-
 }
