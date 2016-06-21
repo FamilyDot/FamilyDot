@@ -5,6 +5,10 @@ $('#sub_survey').click(function(e){
     // alert('Congratulations, your family\'s health score is: '+ random + '!');
 });
 
+$('#sub_posts').click(function(e){
+    $('#myModalPost').modal('show');
+});
+
 
 
 
