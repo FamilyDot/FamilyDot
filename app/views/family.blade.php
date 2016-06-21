@@ -9,8 +9,8 @@
     <div id="ms">
     <h1 style='padding-top:70px;' class="container">{{{ $user->family->mission_statement }}}</h1>
     <hr>
-    </div>
-        <h1 id="familyPosts" class= 'container'>This weeks survey</h1>
+
+
             <div class="col-md-6 col-md-offset-3">
                 <form>
                 @foreach($user->family->posts as $post)
