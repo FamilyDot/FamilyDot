@@ -60,17 +60,20 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                                 <h4 class="modal-title" id="myModalLabel">Create a Post?</h4>
-                        </div>                        
+                        </div>
+
+                        {{Form::open(array('method' => 'POST', 'action' => 'PostController@store'))}}                      
                         <div class="modal-body">
-                            <textarea rows="4" cols="50">
+                            <textarea name="body" rows="4" cols="50">
                             </textarea>
                         </div>
                         <!-- "modal-footer"> -->
                         <div id="save_changes" class="modal-footer">
-                            <!-- <button type="button" id="close" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-                            <button   type="button" class="btn btn-primary">Save changes</button>
+                            <button  type="submit" class="btn btn-primary">Save changes</button>
                         </div>
-                        <!-- </div> -->
+                        {{Form::close()}}
+                      
+
                     </div>
                 </div>
             </div>

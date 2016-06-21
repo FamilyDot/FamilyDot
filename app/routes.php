@@ -17,7 +17,6 @@ Route::resource('/users','UsersController');
 
 Route::get('/users', 'HomeController@showLogin');
 
-Route::get('/family', "HomeController@showFamily");
 
 Route::resource('/answer', 'AnswerController');
 
@@ -36,3 +35,6 @@ Route::put('/question/{id}', 'QuestionController@update');
 Route::resource('/question', 'QuestionController');
 
 Route::delete('/question', 'QuestionController@destroy');
+
+Route::get('/family', "HomeController@showFamily");
+Route::post('/family', 'PostController@store');
