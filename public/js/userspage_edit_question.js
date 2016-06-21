@@ -2,7 +2,7 @@ $(document).ready(function(){
     "use strict";
 
     var $question_id = null;
-    $(".question").click(function() {
+    $(".answer-link").click(function() {
         $question_id = $(this).attr('id');
     $("#question_input").val($question_id);
     });
@@ -12,6 +12,27 @@ $(document).ready(function(){
 
     }
 
+    function setHoverEffect() {
+        $(".users_question").hover(function() {
+            if($(this).data('auth') != 1) {
+                return;
+            }
+            $( this ).css({'color': "#777777"} );
+
+            }, function() {
+
+            if($(this).data('auth') != 1) {
+                return;
+            }
+          $( this ).css({'color': "#FF8F6E"});
+        });
+    }
+
+    function showDelete() {
+
+    }
+
+    setHoverEffect();
     // Needed to grab the question id for storing answers in the DB
 
     // Refactoring to allow user to edit question in place sending an AJAX
@@ -45,6 +66,7 @@ $(document).ready(function(){
         $('.users_question').off();
     }
 
+    // Set listener
     $('.users_question').click(onUsersQuestionClick);
 
     $(document).on('blur','#question-input', function(){
@@ -76,5 +98,6 @@ $(document).ready(function(){
             }
         });
         $('.users_question').click(onUsersQuestionClick);
+        setHoverEffect();
     });
 })

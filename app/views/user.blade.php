@@ -29,11 +29,11 @@
         <div class='col-md-6 questions'>
             {{ Form::token() }}
             @foreach($user->family->questions as $question)
-                <div class="question" id="{{{ $question->id }}}">
+                <div class="question" id="">
                     <div class="w3-card-4" id="card">
                         <img class="img-circle" src="{{{User::find($question->user_id)->image_url}}}">
                         <h2 class="users_question" id="user-{{{ $question->user_id }}}" data-question-id="{{{ $question->id }}}" data-auth="{{{ ($question->user_id == Auth::user()->id) }}}"><span>{{{ $question->question }}}</span></h2>
-                        <p class="answer-model-link" id="answer_to_question_{{{ $question->id }}}"><a  data-toggle="modal" data-target="#AnswerModal">Answer</a></p>
+                        <p class="answer-model-link" id="answer_to_question_{{{ $question->id }}}"><a class="answer-link" id="{{{ $question->id }}}" data-toggle="modal" data-target="#AnswerModal">Answer</a></p>
                         @if (!empty($question->answers[0]))
                             <div><br><hr></div>
                         @endif
