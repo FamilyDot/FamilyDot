@@ -4,8 +4,7 @@ class PostController extends BaseController
 {
     public function store()
     {
-        $validator = new PostsValidator();
-        $validator->validate(Input::all());
+        $validator = Validator::make(Input::all(), Post::$rules);
 
 
         $user = Auth::user();
@@ -22,6 +21,7 @@ class PostController extends BaseController
             Session::flash('errorMessage', 'Could not save post');  //this line may have to be deleted
         } else{
             $post->save();
+            return Redirect::back();
             Session::flash('successMessage', 'Post saved!');    
         }
 

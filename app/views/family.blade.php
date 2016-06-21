@@ -28,10 +28,10 @@
 
     <div class="col-md-4 col-md-offset-1">
     <h1 id="family_survey">Family Survey</h1>
-        <form>
+       <!--  <form> -->
             @foreach($user->family->posts as $post)
                 <!-- Button trigger modal -->
-                <div class="w3-card-4" id="card">
+  <!--               <div class="w3-card-4" id="card">
                     <p>{{{ $post->survey_question }}}</p>
                     <div id="rad_btns">
                         <input type="radio" name="answers[{{$post->id}}]" class="number" value="1"> 1 
@@ -45,9 +45,9 @@
                         <input type="radio" name="answers[{{$post->id}}]" class="number" value="9"> 9 
                         <input type="radio" name="answers[{{$post->id}}]" class="number" value="10"> 10 
                     </div>
-                </div>
-            @endforeach
-        </form>
+                </div> -->
+      <!--       @endforeach
+        </form> -->
         <input class="btn btn-primary" id="sub_survey"  type="submit" value="Submit Survey">
     </div> 
 
@@ -60,17 +60,20 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                                 <h4 class="modal-title" id="myModalLabel">Create a Post?</h4>
-                        </div>                        
-                        <div class="modal-body">
-                            <textarea rows="4" cols="50">
-                            </textarea>
                         </div>
-                        <!-- "modal-footer"> -->
-                        <div id="save_changes" class="modal-footer">
-                            <!-- <button type="button" id="close" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-                            <button   type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                        <!-- </div> -->
+
+                        {{Form::open(array('method' => 'POST', 'action' => 'PostController@store'))}}                      
+                            <div class="modal-body">
+                                <textarea name="body" rows="4" id="text" cols="50">
+                                </textarea>
+                            </div>
+                            <!-- "modal-footer"> -->
+                            <div id="save_changes" class="modal-footer">
+                                <button  type="submit" class="btn btn-primary">Save changes</button>
+                            </div>
+                        {{Form::close()}}
+                      
+
                     </div>
                 </div>
             </div>
@@ -80,7 +83,7 @@
 
 
                 <!-- Modal for survey -->
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!--             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -92,7 +95,7 @@
                     </div>
                 </div>
             </div>
-    </div>
+    </div> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="/js/family.js" type="text/javascript"></script>
 @stop

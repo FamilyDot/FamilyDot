@@ -87,9 +87,7 @@ class UsersController extends \BaseController {
 
       return View::make('errors.missing');
     }
-
-
-    return View::make('login');
+    return View::make('users');
 	}
 
 

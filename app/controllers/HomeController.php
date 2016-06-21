@@ -45,7 +45,7 @@ class HomeController extends BaseController
  		} else {
  		    // login failed, go back to the login screen
  			return Redirect::back();
- 		}
+        }
  		return Redirect::action('UsersController@show', $user->id);
  	}
 
@@ -57,9 +57,18 @@ class HomeController extends BaseController
 	    $family = Family::findOrCreateWithName(Input::get('name'));
 	    $user = User::signUp(Input::all(), $family);
 
-	    Session::flash('successMessage', 'We created your account!');
-	    return Redirect::action('UsersController@show', $user->id);
-  	}
+
+        $credentials = array(
+            'email' => Input::get('email'),
+            'password' => Input::get('password')
+        );
+
+        if (Auth::attempt($credentials)) {
+    	    return Redirect::action('UsersController@show', $user->id);   
+        }
+        // Session::flash('successMessage', 'Wecreated your account!');
+  	     // return View::make('home');
+    }
 
 	public function doLogout()
 	{
