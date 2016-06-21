@@ -79,7 +79,7 @@
 
 
 
-                 <!-- Modal for survey -->
+                <!-- Modal for survey -->
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -92,12 +92,8 @@
                     </div>
                 </div>
             </div>
-            <!-- </div> -->
-        <!-- </div>
-    </div> -->
-</div>
-
-    <!-- jquery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<script type="text/javascript" src="/js/family.js"></script>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="/js/family.js" type="text/javascript"></script>
 @stop
+
