@@ -72,9 +72,9 @@
                         </div>
 
                         <div class="modal-body">
-                            <form method="DELETE" action="{{{ action('AnswerController@store') }}}">
+                            <form class="" method="POST" action="{{{ action('AnswerController@store') }}}">
                                 {{ Form::token() }}
-                                <textarea rows="4" cols="50" name="answer"></textarea>
+                                <textarea rows="2" cols="30" name="answer"></textarea>
                                 <input id="question_input" name="question_id" type="hidden" value="">
                                 <button class="btn btn-primary" type="submit">Submit</button>
                             </form>
