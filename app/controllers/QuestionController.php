@@ -42,11 +42,12 @@ class QuestionController extends BaseController
     }
 
 
-    public function destroy($id)
+    public function destroy()
     {
+        $id = Input::get('question_id');
         $question = Question::find($id);
-        $question->destroy();
+        $question->delete();
 
-        return Redirect::action('UsersController@show');
+        return Redirect::action('UsersController@show', Auth::id());
     }
 }
