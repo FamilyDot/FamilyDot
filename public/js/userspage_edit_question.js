@@ -1,4 +1,4 @@
-$(document).ready(function(){
+// $(document).ready(function(){
     "use strict";
 
     var $question_id = null;
@@ -8,7 +8,12 @@ $(document).ready(function(){
     });
 
     // #### HELPER FUNCTIONS ####
-    function questionUpdateAjaxRequest() {
+
+    function addQuestionIdToDeleteModal(){
+
+        var questionId = $("#question-input").attr('data-question-id');
+        $('#question-id-input').val(questionId);
+        console.log('zach was right');
 
     }
 
@@ -28,9 +33,10 @@ $(document).ready(function(){
         });
     }
 
-    function showDelete() {
+    $('#modal-delete').on('hide.bs.modal', function (e) {
+        $('#question-input').focus();
+    })
 
-    }
 
     setHoverEffect();
     // Needed to grab the question id for storing answers in the DB
@@ -47,6 +53,10 @@ $(document).ready(function(){
         if ($(this).data('auth') != 1) {
             return;
         }
+
+        var $deleteButton = $(this).parent().next().children();
+        $deleteButton.toggleClass('hidden');
+
         var question = $(this).text();
         originalQuestion = question;
 
@@ -56,7 +66,7 @@ $(document).ready(function(){
                 'type': 'text',
                 'name': 'question',
                 'id': 'question-input',
-                'size': '30',
+                'size': '25',
                 'value': question,
                 'data-question-id': $(this).data('question-id'),
                 'data-token-value': $('input[name="_token"]').val()
@@ -69,7 +79,22 @@ $(document).ready(function(){
     // Set listener
     $('.users_question').click(onUsersQuestionClick);
 
-    $(document).on('blur','#question-input', function(){
+    // //test with alert
+    // $('.delete').on('click', function() {
+    //     alert('this is you deleting shit');
+    // });
+
+    $(document).on('blur','#question-input', function(e){
+        // check and see if the event target is the delete button: If it is, just stop
+
+        console.log(e.relatedTarget);
+        var target = e.relatedTarget;
+
+        if ($(target).attr('id') == 'delete') {
+            addQuestionIdToDeleteModal();
+            return;
+        }
+
         var question = $(this).val();
         var token = $(this).data('token-value');
         var id = $(this).data('question-id');
@@ -98,6 +123,9 @@ $(document).ready(function(){
             }
         });
         $('.users_question').click(onUsersQuestionClick);
+        var $deleteButton = $(this).parent().parent().next().children();
+        $deleteButton.toggleClass('hidden');
+
         setHoverEffect();
     });
-})
+// })

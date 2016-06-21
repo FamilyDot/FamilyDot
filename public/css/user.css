@@ -3,7 +3,7 @@ body {
     font-family: 'Roboto Condensed', sans-serif !important;
 }
 h1{
-    color: white; 
+    color: white;
 }
 /*#user_questions{
     font-size: 1.8em;
@@ -96,7 +96,7 @@ h1{
 }
 /*
 .user-image {
-  
+
     border: 7px solid orange;
     border-radius: 13px;
 }*/
@@ -137,8 +137,8 @@ h1{
 /* ----------- iPhone 5 and 5S ----------- */
 
 /* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 320px) 
+@media only screen
+  and (min-device-width: 320px)
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
 
@@ -147,23 +147,33 @@ h1{
 /* ----------- iPhone 6 ----------- */
 
 /* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2) { 
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2) {
 
 }
 
 /* ----------- Galaxy S5 ----------- */
 
 /* Portrait and Landscape */
-@media screen 
-  and (device-width: 360px) 
-  and (device-height: 640px) 
+@media screen
+  and (device-width: 360px)
+  and (device-height: 640px)
   and (-webkit-device-pixel-ratio: 3) {
 
 }
 .answer-model-link {
     float: right;
 
+}
+
+#delete {
+    margin-top: 20px;
+    color: red;
+    float: right;
+}
+
+.hidden {
+    visibility: hidden;
 }
