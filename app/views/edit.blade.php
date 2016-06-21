@@ -13,7 +13,6 @@ Edit page
 <div class="container">
 <h1 style="padding-top:60px; color:black;">Edit your profile!</h1>
 
-    <button style="float:right;">Delete Profile</button>
 
     
 
@@ -30,6 +29,7 @@ Edit page
     {{ Form::text('password', $user->password) }}</div>
     <br>
     {{ Form::submit('submit') }}
+     <button type="submit" class="btn btn-danger btn-mini">Delete</button>
     {{ Form::close() }}
 
 </div>
