@@ -83,7 +83,7 @@
 
 
                 <!-- Modal for survey -->
-           <!--  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!--             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -95,8 +95,8 @@
                     </div>
                 </div>
             </div>
-    </div>
+    </div> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="/js/family.js" type="text/javascript"></script> -->
+    <script src="/js/family.js" type="text/javascript"></script>
 @stop
 
