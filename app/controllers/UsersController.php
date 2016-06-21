@@ -34,33 +34,33 @@ class UsersController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function store()
-	{
-		$validator = Validator::make(Input::all(), User::$rules);
+	// public function store()
+	// {
+	// 	$validator = Validator::make(Input::all(), User::$rules);
 
-		if($validator->fails()) {
-	        // validation failed, redirect to the post create page with validation errors and old inputs
-	        Session::flash('errorMessage', 'Your Account edit has not been saved');
-	        $value = Session::get('successMessage');
-	        return Redirect::back()->withInput()->withErrors($validator);
-	    } 
-	    else 
-	    {
-	       // validation succeeded, create and save the edit
+	// 	if($validator->fails()) {
+	//         // validation failed, redirect to the post create page with validation errors and old inputs
+	//         Session::flash('errorMessage', 'Your Account edit has not been saved');
+	//         $value = Session::get('successMessage');
+	//         return Redirect::back()->withInput()->withErrors($validator);
+	//     }
+	//     else
+	//     {
+	//        // validation succeeded, create and save the edit
 
-			$user = new User();
-			$user->username =Input::get('username');
-			$user->email =Input::get('email');
-			$user->picture =Input::get('image_url');
-			$user->password =Input::get('password');
-			$user->user_id = Auth::id();
-			$user->save();
+	// 		$user = new User();
+	// 		$user->username =Input::get('username');
+	// 		$user->email =Input::get('email');
+	// 		$user->picture =Input::get('image_url');
+	// 		$user->password =Input::get('password');
+	// 		$user->user_id = Auth::id();
+	// 		$user->save();
 
-			Session::flash('successMessage', 'Your edit has been saved');
-			$value = Session::get('successMessage');
-			return Redirect::action ('UsersController@show', $post->id);
-		}
-	}
+	// 		Session::flash('successMessage', 'Your edit has been saved');
+	// 		$value = Session::get('successMessage');
+	// 		return Redirect::action ('UsersController@show', $post->id);
+	// 	}
+	// }
 
 
 	/**
@@ -114,15 +114,15 @@ class UsersController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		
+
 		$user = User::find($id);
 		$user->username =Input::get('username');
 		$user->email =Input::get('email');
 		$user->image_url =Input::get('image_url');
 		$user->password =Input::get('password');
-		
 
-		if($user -> save())	
+
+		if($user -> save())
 
 			{
 			Session::flash('successMessage', 'Your edit has been saved');
