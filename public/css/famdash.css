@@ -2,12 +2,6 @@ body{
     background-color: rgb(245,248,250);
     font-family: 'Roboto Condensed', sans-serif !important;
 }
-/*h1{
-    color: white;
-}*/
-/*#familyPosts{
-    color: rgb(126,139,143);
-}*/
 #family_survey, #family_posts{
     color: gray;
 }
@@ -18,6 +12,9 @@ body{
 #number {
     margin-left: .05em;
 }
+#save_changes{
+    text-align: center;
+}
 #close{
     margin-top: 1.5em;
     margin-bottom: 1.5em;
@@ -26,7 +23,6 @@ body{
     margin-top: 2em;
     margin-bottom: 5em;
 }
-
 /*.card-block, #mission{
     background-color: white;
 }*/
@@ -40,8 +36,6 @@ body{
 .fa-smile-o{
     float:left;
 }
-
-
 
 /*should the button be used this color can be changed kind of hacky*/
 .btn-primary, .btn-primary:hover {
