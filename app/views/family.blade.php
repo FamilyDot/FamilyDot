@@ -31,7 +31,7 @@
         <form>
             @foreach($user->family->posts as $post)
                 <!-- Button trigger modal -->
-                <div class="w3-card-4" id="card">
+  <!--               <div class="w3-card-4" id="card">
                     <p>{{{ $post->survey_question }}}</p>
                     <div id="rad_btns">
                         <input type="radio" name="answers[{{$post->id}}]" class="number" value="1"> 1 
@@ -45,7 +45,7 @@
                         <input type="radio" name="answers[{{$post->id}}]" class="number" value="9"> 9 
                         <input type="radio" name="answers[{{$post->id}}]" class="number" value="10"> 10 
                     </div>
-                </div>
+                </div> -->
             @endforeach
         </form>
         <input class="btn btn-primary" id="sub_survey"  type="submit" value="Submit Survey">
@@ -83,7 +83,7 @@
 
 
                 <!-- Modal for survey -->
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+           <!--  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -97,6 +97,6 @@
             </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="/js/family.js" type="text/javascript"></script>
+    <script src="/js/family.js" type="text/javascript"></script> -->
 @stop
 
