@@ -28,7 +28,7 @@
 
     <div class="col-md-4 col-md-offset-1">
     <h1 id="family_survey">Family Survey</h1>
-        <form>
+       <!--  <form> -->
             @foreach($user->family->posts as $post)
                 <!-- Button trigger modal -->
   <!--               <div class="w3-card-4" id="card">
@@ -46,8 +46,8 @@
                         <input type="radio" name="answers[{{$post->id}}]" class="number" value="10"> 10 
                     </div>
                 </div> -->
-            @endforeach
-        </form>
+      <!--       @endforeach
+        </form> -->
         <input class="btn btn-primary" id="sub_survey"  type="submit" value="Submit Survey">
     </div> 
 
@@ -63,14 +63,14 @@
                         </div>
 
                         {{Form::open(array('method' => 'POST', 'action' => 'PostController@store'))}}                      
-                        <div class="modal-body">
-                            <textarea name="body" rows="4" cols="50">
-                            </textarea>
-                        </div>
-                        <!-- "modal-footer"> -->
-                        <div id="save_changes" class="modal-footer">
-                            <button  type="submit" class="btn btn-primary">Save changes</button>
-                        </div>
+                            <div class="modal-body">
+                                <textarea name="body" rows="4" id="text" cols="50">
+                                </textarea>
+                            </div>
+                            <!-- "modal-footer"> -->
+                            <div id="save_changes" class="modal-footer">
+                                <button  type="submit" class="btn btn-primary">Save changes</button>
+                            </div>
                         {{Form::close()}}
                       
 
