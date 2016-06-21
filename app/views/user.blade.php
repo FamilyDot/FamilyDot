@@ -28,7 +28,7 @@
 
         <div class='col-md-6 questions'>
             {{ Form::token() }}
-            @foreach($user->family->questions as $question)
+            @foreach($questions as $question)
                 <div class="question" id="">
                     <div class="w3-card-4" id="card">
                         <div class="row">
@@ -47,8 +47,8 @@
                         @if (!empty($question->answers[0]))
                             <div><br><hr></div>
                         @endif
-
-                        @foreach($question->answers as $answer)
+                        <?php $answers = DB::table('answers')->where('question_id', $question->id)->orderBy('created_at', 'desc')->get(); ?>
+                        @foreach($answers as $answer)
                             <div class="answers">
                                 <p><span class="username">{{{ User::find($answer->user_id)->first_name }}}    </span>{{{ $answer->answer }}}</p>
                              {{--    @if ($answer->user_id == Auth::user()->id)

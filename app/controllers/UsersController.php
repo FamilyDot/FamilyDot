@@ -78,11 +78,11 @@ class UsersController extends \BaseController {
 
       $user_of_profile = User::find($id);
       $user_family_id = $user->family_id;
-
+      $questions = DB::table('questions')->where('family_id', $user_family_id)->orderBy('created_at', 'desc')->get();
       if($user_of_profile != null && $user_family_id == $user_of_profile->family_id) {
 
           $user=User::find($id);
-      		return View::make('user')->with("user", $user);
+      		return View::make('user')->with("user", $user)->with("questions", $questions);
       }
 
       return View::make('errors.missing');
