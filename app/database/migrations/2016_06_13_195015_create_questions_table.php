@@ -17,9 +17,9 @@ class CreateQuestionsTable extends Migration {
           $table->increments('id');
           $table->string('question');
           $table->integer('user_id')->unsigned()->nullable();
-          $table->foreign('user_id')->references('id')->on('users');
+          $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
           $table->integer('family_id')->unsigned()->nullable();
-          $table->foreign('family_id')->references('id')->on('families');
+          $table->foreign('family_id')->references('id')->on('families')->onDelete('cascade');
           $table->timestamps();
       });
 	}
