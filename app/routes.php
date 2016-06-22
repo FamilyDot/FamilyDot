@@ -41,3 +41,5 @@ Route::post('/family', 'PostController@store');
 
 Route::put('/users/{id}', 'UsersController@addTwitter');
 
+Route::post('/family', 'FamilyController@calculateFamilyHappiness');
+
