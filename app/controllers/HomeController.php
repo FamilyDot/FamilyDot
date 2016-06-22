@@ -5,12 +5,11 @@ class HomeController extends BaseController
 	public function showHome()
 	{
 
-    if(!Auth::check()){
+        if(!Auth::check()){
 
-  		return View::make('home');
-    }
-    return Redirect::action('UsersController@show', Auth::user()->id);
-
+      		return View::make('home');
+        }
+        return Redirect::action('UsersController@show', Auth::user()->id);
 	}
 
 	public function showFamily()
@@ -18,7 +17,20 @@ class HomeController extends BaseController
         if(Auth::check()) {
             $user = Auth::user();
 
-            return View::make('family')->with('user', $user);
+            $survey = array(
+            "How happy are you with the amount og time your family is spending together?",
+            "Is your family happy?",
+            "How active is your family",
+            "How healthy are the foods your family eats",
+            "Do you feel like the family has everything it needs?",
+            "Money does not play a big part of our happiness",
+            "I am comfortable to be myself when I am at home.",
+            "Home is my safe place.",
+            "How well is your family setting and working towards goals?",
+            "Does your family provide encouragement when you need it most?"
+            );
+
+            return View::make('family')->with('user', $user)->with('survey', $survey);
         }
         return Redirect::action('HomeController@showLogin');
 	}
