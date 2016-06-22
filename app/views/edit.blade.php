@@ -60,6 +60,12 @@ Edit page
         {{ Form::text('image_url', $user->image_url, ['class' => 'textBox']) }}
     </div>
     <div class="form-group labels">
+        {{ Form::label('twitter_username', 'Twitter User name') }}
+    </div>
+        <div class="form-group">
+        {{ Form::text('twitter_username', $user->twitter_username, ['class' => 'textBox']) }}
+    </div>
+    <div class="form-group labels">
         {{ Form::label('password', 'Password') }}
     </div>
     <div class="form-group">
