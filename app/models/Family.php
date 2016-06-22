@@ -50,7 +50,7 @@ class Family extends BaseModel
 
        foreach($arrayOfallFamilyMembers as $key=>$user) {
             if ($user['twitter_username']) {
-                $indexedArray[] = $user['twitter_username'];
+                $indexedArray[] = trim($user['twitter_username']);
             }
         }
         foreach($indexedArray as $index=>$twitter_username) {

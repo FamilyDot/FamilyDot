@@ -28,6 +28,7 @@ class UsersTableSeeder extends Seeder {
         $user->birth_day = '1980-04-21';
         $user->family_id = 1;
         $user->image_url = '/uploads/mauro.jpg';
+        $user->twitter_username = 'joshfreemanIO';
         $user->save();
 
         $user = new User();
