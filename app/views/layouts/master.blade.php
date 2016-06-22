@@ -8,10 +8,6 @@
     <link rel="stylesheet" type="text/css" href="/../css/user.css">
     <!-- google fonts -->
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
-    <!-- jquery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-
-    <script href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.min.js"></script>
     
     @yield('topscript')
 </head>
