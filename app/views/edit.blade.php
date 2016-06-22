@@ -29,7 +29,12 @@ Edit page
     <br>
     <div>
         {{ Form::label('password', 'Password') }}
-        {{ Form::text('password', $user->password) }}
+        {{ Form::text('password', '') }}
+        <div>
+        <br>
+        {{ Form::label('password', 'Re-type Password') }}
+        {{ Form::text('password', '') }}
+        </div>
     </div>
     <br>
     <div class="row">

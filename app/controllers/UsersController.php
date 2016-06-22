@@ -82,7 +82,8 @@ class UsersController extends \BaseController {
       if($user_of_profile != null && $user_family_id == $user_of_profile->family_id) {
 
           $user=User::find($id);
-      		return View::make('user')->with("user", $user)->with("questions", $questions);
+          $twitter_element = Family::makeTwitterUrlwithUserNames($user_of_profile);
+      	  return View::make('user')->with("user", $user)->with("questions", $questions)->with('twitter_element', $twitter_element);
       }
 
       return View::make('errors.missing');
@@ -117,7 +118,10 @@ class UsersController extends \BaseController {
 		$user->username =Input::get('username');
 		$user->email =Input::get('email');
 		$user->image_url =Input::get('image_url');
-		$user->password =Input::get('password');
+
+		if(Input::get('password') != '') {
+			$user->password =Input::get('password');
+		}
 
 
 		if($user -> save())
