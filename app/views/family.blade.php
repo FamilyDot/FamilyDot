@@ -2,6 +2,7 @@
 @section('topscript')
     <!-- font awsome cdn -->
     <script src="https://use.fontawesome.com/f5fdf2e9f7.js"></script>
+    <!-- css file -->
     <link rel="stylesheet"  href="/../css/famdash.css">
 @stop
 
@@ -51,8 +52,6 @@
                     <input class="btn btn-primary" id="sub_survey"  type="submit" value="Submit Survey">
                     {{Form::close()}}
 
-
-
 <!--modal for posts -->
     <div class="modal fade" id="myModalPost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -95,7 +94,21 @@
     </div> -->
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
+<!-- this is our chart yall -->
+  <div id="chartContainer" style="height: 300px; width: 100%;">
+
+
+
+
+
+
+<!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<!-- chart cdn -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
+<!-- js for family view and chart js-->
 <script src="/js/family.js" type="text/javascript"></script>
+
+
 @stop
