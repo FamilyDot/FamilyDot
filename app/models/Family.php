@@ -42,6 +42,7 @@ class Family extends BaseModel
     {
        $arrayOfallFamilyMembers = $user->family->users;
        $twitter_url = '"https://twitter.com/search?q=from%3A';
+       $indexedArray = [];
        // will78006
        //%20OR%20
        //from%3A
@@ -52,6 +53,9 @@ class Family extends BaseModel
             if ($user['twitter_username']) {
                 $indexedArray[] = trim($user['twitter_username']);
             }
+            // if ($indexedArray) {
+            //     return $indexedArray;
+            // }
         }
         foreach($indexedArray as $index=>$twitter_username) {
             if ($index == (count($indexedArray) - 1)) {

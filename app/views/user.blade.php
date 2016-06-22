@@ -130,7 +130,7 @@
                 <h4 class="modal-title" id="myModalLabel">Enter Your Twitter Username</h4>
 
                 <!-- FORM -->
-                <form method="POST" action="{{{ action('UsersController@addTwitter', $user->id) }}}">
+                <form method="POST" action="{{{ action('UsersController@addTwitter') }}}">
                   {{ Form::token() }}
 
                   <div class="form-group">

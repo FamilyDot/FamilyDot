@@ -153,9 +153,9 @@ class UsersController extends \BaseController {
 		return Redirect::action ('HomeController@showHome');
 	}
 
-    public function addTwitter($id)
+    public function addTwitter()
     {
-        $user = User::find($id);
+        $user = Auth::user();
         $user->twitter_username = Input::get('twitter_username');
         $user->save();
         return Redirect::back();
