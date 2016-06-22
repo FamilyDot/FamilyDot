@@ -8,6 +8,9 @@
 <div class="row">
     <div id="ms">
         <h1 style='padding-top:70px;' class="container">{{{ $user->family->mission_statement }}}</h1>
+        @foreach( $user->family->users as $user)
+            <p>{{{ $user['username'] }}}</p>
+        @endforeach
         <hr>
     </div>
 
@@ -15,7 +18,7 @@
 
 
     <div class="col-md-4 col-md-offset-1">
-    <h1 id= "family_posts">Family Posts</h1> 
+    <h1 id= "family_posts">Family Posts</h1>
         @foreach($user->family->posts as $post)
             <div class="w3-card-4" id="card">
                 <p>{{{ $post->body }}}</p>
@@ -34,22 +37,22 @@
   <!--               <div class="w3-card-4" id="card">
                     <p>{{{ $post->survey_question }}}</p>
                     <div id="rad_btns">
-                        <input type="radio" name="answers[{{$post->id}}]" class="number" value="1"> 1 
-                        <input type="radio" name="answers[{{$post->id}}]" class="number" value="2"> 2 
-                        <input type="radio" name="answers[{{$post->id}}]" class="number" value="3"> 3 
-                        <input type="radio" name="answers[{{$post->id}}]" class="number" value="4"> 4 
-                        <input type="radio" name="answers[{{$post->id}}]" class="number" value="5"> 5 
-                        <input type="radio" name="answers[{{$post->id}}]" class="number" value="6"> 6 
-                        <input type="radio" name="answers[{{$post->id}}]" class="number" value="7"> 7 
-                        <input type="radio" name="answers[{{$post->id}}]" class="number" value="8"> 8 
-                        <input type="radio" name="answers[{{$post->id}}]" class="number" value="9"> 9 
-                        <input type="radio" name="answers[{{$post->id}}]" class="number" value="10"> 10 
+                        <input type="radio" name="answers[{{$post->id}}]" class="number" value="1"> 1
+                        <input type="radio" name="answers[{{$post->id}}]" class="number" value="2"> 2
+                        <input type="radio" name="answers[{{$post->id}}]" class="number" value="3"> 3
+                        <input type="radio" name="answers[{{$post->id}}]" class="number" value="4"> 4
+                        <input type="radio" name="answers[{{$post->id}}]" class="number" value="5"> 5
+                        <input type="radio" name="answers[{{$post->id}}]" class="number" value="6"> 6
+                        <input type="radio" name="answers[{{$post->id}}]" class="number" value="7"> 7
+                        <input type="radio" name="answers[{{$post->id}}]" class="number" value="8"> 8
+                        <input type="radio" name="answers[{{$post->id}}]" class="number" value="9"> 9
+                        <input type="radio" name="answers[{{$post->id}}]" class="number" value="10"> 10
                     </div>
                 </div> -->
       <!--       @endforeach
         </form> -->
         <input class="btn btn-primary" id="sub_survey"  type="submit" value="Submit Survey">
-    </div> 
+    </div>
 
                 <!-- modal for posts -->
             <div class="modal fade" id="myModalPost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -62,7 +65,7 @@
                                 <h4 class="modal-title" id="myModalLabel">Create a Post?</h4>
                         </div>
 
-                        {{Form::open(array('method' => 'POST', 'action' => 'PostController@store'))}}                      
+                        {{Form::open(array('method' => 'POST', 'action' => 'PostController@store'))}}
                             <div class="modal-body">
                                 <textarea name="body" rows="4" id="text" cols="50">
                                 </textarea>
@@ -72,7 +75,7 @@
                                 <button  type="submit" class="btn btn-primary">Save changes</button>
                             </div>
                         {{Form::close()}}
-                      
+
 
                     </div>
                 </div>

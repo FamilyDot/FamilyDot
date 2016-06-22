@@ -16,6 +16,7 @@ class UsersTableSeeder extends Seeder {
         $user->family_id = 1;
         $user->image_url = '/uploads/will.jpg';
         $user->isAdmin = 1;
+        $user->twitter_username = 'will78006';
         $user->save();
 
         $user = new User();
@@ -27,6 +28,7 @@ class UsersTableSeeder extends Seeder {
         $user->birth_day = '1980-04-21';
         $user->family_id = 1;
         $user->image_url = '/uploads/mauro.jpg';
+        $user->twitter_username = 'joshfreemanIO';
         $user->save();
 
         $user = new User();
@@ -38,6 +40,7 @@ class UsersTableSeeder extends Seeder {
         $user->birth_day = '1983-01-13';
         $user->family_id = 1;
         $user->image_url = '/uploads/micah.jpg';
+        $user->twitter_username = 'Ninzaburoz';
         $user->save();
 
     }
