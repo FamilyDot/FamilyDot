@@ -24,10 +24,10 @@
 
                             {{ $errors->first('password', '<span class="help-block">:message</span>') }}
                         {{ Form::label('password', 'Password', array('class' => 'sr-only')) }}
-                        {{ Form::password('password',  null,  array('class' =>'form-control', 'placeholder'=> 'Password (Required)','id'=>'password-field')) }}
+                        {{ Form::password('password',  array('class' =>'form-control', 'placeholder'=> 'Password (Required)','id'=>'password-field')) }}
                             {{ $errors->first('confirm password', '<span class="help-block">:message</span>') }}
                         {{ Form::label('passwordValidate', 'PasswordValidate', array('class' => 'sr-only')) }}
-                        {{ Form::password('passwordValidate',  null,  array('class' =>'form-control', 'placeholder'=> 'Confirm Password (Required)','id'=>'passwordValidate-field')) }}
+                        {{ Form::password('passwordValidate',  array('class' =>'form-control', 'placeholder'=> 'Confirm Password (Required)','id'=>'passwordValidate-field')) }}
 
                         {{ Form::label('birth_day', 'birth_day', array('class' => 'sr-only')) }}    
                         {{ Form::text('birth_day',  null,  array('class' =>'form-control', 'placeholder'=> 'Birthday', 'id'=>'birth_day-field')) }}

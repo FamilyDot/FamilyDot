@@ -39,3 +39,5 @@ Route::get('/family', "HomeController@showFamily");
 
 Route::post('/family', 'PostController@store');
 
+Route::post('/family', 'FamilyController@calculateFamilyHappiness');
+

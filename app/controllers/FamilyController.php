@@ -13,6 +13,26 @@ class FamilyController extends BaseController {
         return View::make('family')->with(['family' => $family]);
     }
 
+    public function calculateFamilyHappiness() 
+    {
+        // dd(Input::all());
+        $user = Auth::user();
+
+        $total = 0;
+        $numberOfQuestions = count(Input::all()) -1;    // -1 is to get rid of the token
+
+        for($i = 0; $i <10; $i ++) {
+            $input = Input::get('answers_' . $i);
+            $total += $input;
+        }
+        $score = $total;
+        $user->score =$score;
+        $user->save();
+        return Redirect::action("HomeController@showFamily");
+    }
+
+
+
     public function store()
     {
         $family = new Family();
