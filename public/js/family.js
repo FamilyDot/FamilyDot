@@ -1,12 +1,12 @@
 'use strict'
 $('#sub_survey').click(function(e){
+    e.preventDefault();// this is preventing the form to submit
     $('#myModal').modal('show');
-    var random = Math.floor((Math.random() * 100) + 1);
-    $("#health").html(random);
     // alert('Congratulations, your family\'s health score is: '+ random + '!');
 });
 
 $('#sub_posts').click(function(e){
+    e.preventDefault();
     $('#myModalPost').modal('show');
 });
 
