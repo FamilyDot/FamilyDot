@@ -95,9 +95,8 @@
 
 
 
-
-
-<canvas id="myChart" width="400" height="400"></canvas>
+<!-- this is our chart yall -->
+  <div id="chartContainer" style="height: 300px; width: 100%;">
 
 
 
@@ -107,8 +106,9 @@
 <!-- jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <!-- chart cdn -->
-<script href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.min.js"></script>
-<!-- js for family view -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
+<!-- js for family view and chart js-->
 <script src="/js/family.js" type="text/javascript"></script>
+
 
 @stop
