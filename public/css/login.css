@@ -1,5 +1,5 @@
 body{
-    background-color: #FF8F6E;;
+    background-color: rgb(27,177,178);
 }
 .container{
     margin-top: 10em;
@@ -33,8 +33,8 @@ body{
     visibility: hidden;
 }
 .btn-primary, .btn-primary:hover {
-    background: #9655a0;
-    border-color: #9655a0;
+    background: rgb(255,92,45);
+    border-color: rgb(255,92,45);
     color: #ffffff;
 }
 
