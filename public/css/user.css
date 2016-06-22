@@ -177,3 +177,7 @@ h1{
 .hidden {
     visibility: hidden;
 }
+
+#add-twitter {
+    width: 100%;
+}

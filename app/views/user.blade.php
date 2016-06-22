@@ -20,9 +20,8 @@
                 <div class="user-image">
                     <img class="img-rounded img-responsive profile_image" src="{{{ $user->image_url }}}">
                 </div>
-                <!-- <h3>@{{{ $user->username }}}</h3> -->
-                <h4> Hi, {{{ $user->first_name }}} {{{ $user->last_name }}}!</h4>
-                {{-- <h4>{{{ $user->email }}}</h4> --}}
+                <h4> Hi, @{{{ $user->username }}}!</h4>
+                <h4>Family: {{{ ucwords($user->family->name)}}}</h4>
             </div>
         </div> <!-- end of user column -->
 
@@ -62,6 +61,8 @@
         </div> <!-- end of questions -->
 
         <div class="col-md-3 social-feed">
+            <button class="btn btn-lg btn-primary" id="add-twitter" data-toggle="modal" data-target="#modal-twitter">Add your Twitter feed</button>
+
             {{ $twitter_element }}
 
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
@@ -120,6 +121,29 @@
             </div>
           </div>
         </div> <!-- end modal -->
+
+        <!-- Twitter add name MODAL -->
+        <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="modal-twitter">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="container">
+                <h4 class="modal-title" id="myModalLabel">Enter Your Twitter Username</h4>
+
+                <!-- FORM -->
+                <form method="POST" action="{{{ action('UsersController@addTwitter', $user->id) }}}">
+                  {{ Form::token() }}
+
+                  <div class="form-group">
+                    <label for="twitter_username">Twitter @</label>
+                    <input name="twitter_username">
+                    <button class="btn btn-sm btn-primary" type="submit">Submit Name</button>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div> <!-- end twitter modal -->
 
 @stop
 
