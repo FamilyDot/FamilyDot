@@ -57,7 +57,7 @@ class Family extends BaseModel
             if ($index == (count($indexedArray) - 1)) {
                 $twitter_url .= $twitter_username . '"';
             } else {
-                $twitter_url .= $twitter_username . '%20OR%20from%3A';
+                $twitter_url .= $twitter_username . '%2BOR%2Bfrom%3A';
             }
         }
        $twitter_url .= ' data-widget-id="745653492044312576"';

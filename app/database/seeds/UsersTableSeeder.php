@@ -39,6 +39,7 @@ class UsersTableSeeder extends Seeder {
         $user->birth_day = '1983-01-13';
         $user->family_id = 1;
         $user->image_url = '/uploads/micah.jpg';
+        $user->twitter_username = 'Ninzaburoz';
         $user->save();
 
     }
