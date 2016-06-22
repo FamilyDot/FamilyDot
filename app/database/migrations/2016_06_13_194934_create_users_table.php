@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration {
             $table->foreign('family_id')->references('id')->on('families')->onDelete('cascade');
             $table->string('image_url')->nullable();
             $table->boolean('isAdmin')->default(0);
+            $table->string('twitter_username')->unique()->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

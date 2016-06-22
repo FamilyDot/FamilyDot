@@ -16,6 +16,7 @@ class UsersTableSeeder extends Seeder {
         $user->family_id = 1;
         $user->image_url = '/uploads/will.jpg';
         $user->isAdmin = 1;
+        $user->twitter_username = 'will78006';
         $user->save();
 
         $user = new User();
