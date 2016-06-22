@@ -119,7 +119,10 @@ class UsersController extends \BaseController {
 		$user->username =Input::get('username');
 		$user->email =Input::get('email');
 		$user->image_url =Input::get('image_url');
-		$user->password =Input::get('password');
+
+		if(Input::get('password') != '') {
+			$user->password =Input::get('password');
+		}
 
 
 		if($user -> save())
