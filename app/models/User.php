@@ -38,7 +38,7 @@ class User extends BaseModel implements UserInterface, RemindableInterface {
       $user->birth_day = $attributes['birth_day'];
       $user->first_name = $attributes['first_name'];
       $user->last_name = $attributes['last_name'];
-      $user->image_url = $attributes['https://trip101.com/assets/default_profile_pic-9c5d869a996318867438aa3ccf9a9607daee021047c1088645fbdfbbed0e2aec.jpg'];
+      $user->image_url = '/Uploads/default_profile_pic.jpg';
       $user->family_id = $family->id;
       $user->save();
 
