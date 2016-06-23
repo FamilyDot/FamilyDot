@@ -51,18 +51,13 @@
         </ul>
         
 
-
-          <div class="form-group">
-         <!--    <input type="text" class="form-control" id="search-input" placeholder="Search Questions">
-            <div class="icon" id="fa-search">
-                <i class="fa fa-search" aria-hidden="true"></i> -->
-        <div>{{ Form::open(['method'=> 'GET', 'action' => 'PostController@search'])}}</div>
-        <div><input type="text" class="form-control" placeholder="Search Posts" name="search"></div>
-        <div><button id= 'navbutton' type="submit" class="btn btn-default">Submit</button></div>
-        {{Form::close()}}
+          <form class="navbar-form navbar-right" role="search" method="GET" action={{{"PostController@search"}}}>
+            {{ Form::token() }}
+            <div class="form-group">
+              <input type="text" id="search-input" class="form-control" placeholder="Search Posts" name="search">
+              <button id= 'navbutton' type="submit" class="btn btn-default">Submit</button>
             </div>
-          </div>
-        
+          </form>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
