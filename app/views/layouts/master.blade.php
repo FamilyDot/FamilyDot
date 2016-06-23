@@ -39,25 +39,25 @@
             <ul class="dropdown-menu">
               <li><a href="/users/{{{Auth::id()}}}">Profile</a></li>
               <li><a href="/users/{{{Auth::id()}}}/edit">Edit Profile</a></li>
-              <li><a href="#">Something else here</a></li>
               <li role="separator" class="divider"></li>
               <li><a href="{{ action('HomeController@doLogout') }}">Logout</a></li>
             </ul>
           </li>
-          <li>
-            <button type="button" span class="btn btn-xs " id='ask-button' data-toggle="modal" data-target="#askQuestion"><span class="ask-inner"><i class="fa fa-2x fa-comments-o" aria-hidden="true"></i>  Ask</span></button>
-          </li>
+          @if(Request::url() != 'http://familydot.dev/family')
+            <li>
+              <button type="button" span class="btn btn-xs " id='ask-button' data-toggle="modal" data-target="#askQuestion"><span class="ask-inner"><i class="fa fa-2x fa-comments-o" aria-hidden="true"></i>  Ask</span></button>
+            </li>
+          @endif
         </ul>
-        <form class="navbar-form navbar-right" role="search">
+        
 
-
-          <div class="form-group">
-            <input type="text" class="form-control" id="search-input" placeholder="Search Questions">
-            <div class="icon" id="fa-search">
-                <i class="fa fa-search" aria-hidden="true"></i>
+          <form class="navbar-form navbar-right" role="search" method="GET" action={{{"PostController@search"}}}>
+            {{ Form::token() }}
+            <div class="form-group">
+              <input type="text" id="search-input" class="form-control" placeholder="Search Posts" name="search">
+              <button id= 'navbutton' type="submit" class="btn btn-default">Submit</button>
             </div>
-          </div>
-        </form>
+          </form>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>

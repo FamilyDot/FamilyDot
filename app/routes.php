@@ -49,3 +49,7 @@ Route::post('/users', 'UsersController@addTwitter');
 Route::put('/family', 'FamilyController@calculateFamilyHappiness');
 
 
+Route::get('/search', 'PostController@search');
+
+
+
