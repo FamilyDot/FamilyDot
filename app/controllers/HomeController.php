@@ -16,7 +16,7 @@ class HomeController extends BaseController
     {
         if(Auth::check()) {
             $user = Auth::user();
-
+            $avg = Family::calculateFamilyHappiness();
             $survey = array(
             "How happy are you with the amount og time your family is spending together?",
             "Is your family happy?",
@@ -30,7 +30,7 @@ class HomeController extends BaseController
             "Does your family provide encouragement when you need it most?"
             );
 
-            return View::make('family')->with('user', $user)->with('survey', $survey);
+            return View::make('family')->with('user', $user)->with('survey', $survey)->with('avg', $avg);
         }
         return Redirect::action('HomeController@showLogin');
 	}

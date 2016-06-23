@@ -10,22 +10,10 @@ $('#sub_posts').click(function(e){
 });
 
 
-
-
-
 window.onload = function () {
-    var score = 0;
+    var score = parseInt($('#happiness-avg').val());
     // var userId = {{{ Auth::id() }}};
-
-    $.get('calulatefamilyhappiness/' + 1)
-    .done(function(data) {
-        // console.log(userId);
-        console.log(data);
-
-    }) 
-    .fail(function(data) {
-        console.log(data);
-    })
+    console.log(score);
     var chart = new CanvasJS.Chart("chartContainer",
 
     {
@@ -54,26 +42,15 @@ window.onload = function () {
         { x: new Date(2016, 2, 1), y: 95, indexLabel: "highest",markerColor: "red", markerType: "triangle"},
         { x: new Date(2016, 3, 1), y: 83 },
         { x: new Date(2016, 4, 1), y: 71 },
-        { x: new Date(2016, 5, 1), y: score } //this is june not may!!
+        { x: new Date(2016, 5, 1), y:  score} //this is june not may!!
 
             ]
         }
-      
-
 
     ]
 });
 chart.render();
 }
-
-
-
-
-
-
-
-
-
 
 
 
