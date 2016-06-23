@@ -65,4 +65,35 @@ class Family extends BaseModel
 
        return $twitter_elements;
     } //https://twitter.com/search?q=from%3Awill78006%20OR%20from%3A%20OR%20from%3Adata-widget-id="745653492044312576"
+    
+    public static function calculateFamilyHappiness()
+    {
+        $user = Auth::user();
+
+        $userFamilyId = $user->family_id;
+
+        // selct * from users where family_id = $familyId this is similar to that query 
+        $users = User::where('family_id', '=', $userFamilyId)->get();
+
+        $totalScores = 0;
+        $userCount = $users->count();
+
+        foreach ($users as $user) {
+            if($user->score == 0){
+                $userCount --;
+            }else {
+                $totalScores += $user->score;
+            }
+        }
+        $avgScore = $totalScores / $userCount;
+        return $avgScore;
+    }
+
+
+
+
+
+
+
+
 }

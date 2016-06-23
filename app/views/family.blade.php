@@ -31,7 +31,7 @@
     <div class="col-md-4 col-md-offset-1">
     <h1 id="family_survey">Family Survey</h1>
 
-        {{Form::open(array('method' => 'PUT', 'action' => 'FamilyController@updateUserScore'))}}
+        {{Form::open(array('method' => 'PUT', 'action' => array('FamilyController@updateUserScore', $user->id)))}}
 
             @foreach($survey as $key => $question)
                 <div class="w3-card-4" id="card">
@@ -100,6 +100,7 @@
 
   <div id="chartContainer" style="height: 300px; width: 100%;"></div>
 
+  <input type="hidden" id="happiness-avg" value="{{{ $avg }}}"></input>
 
 
 

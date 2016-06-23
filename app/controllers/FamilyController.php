@@ -32,33 +32,6 @@ class FamilyController extends BaseController {
         return Redirect::action("HomeController@showFamily");
     }
 
-
-    public function calculateFamilyHappiness()
-    {
-        $user = Auth::user();
-
-        $userFamilyId = $user->family_id;
-
-
-
-        // selct * from users where family_id = $familyId this is similar to that query 
-        $users = User::where('family_id', '=', $userFamilyId)->get();
-
-        $totalScores = 0;
-        $userCount = $users->count();
-
-        foreach ($users as $user) {
-            if($user->score == 0){
-                $userCount --;
-            }else {
-                $totalScores += $user->score;
-            }
-        }
-        $avgScore = $totalScores / $userCount;
-        return $avgScore;
-    }
-
-
     public function store()
     {
         $family = new Family();
