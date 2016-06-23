@@ -7,7 +7,6 @@ class PostController extends BaseController
 
         $validator = Validator::make(Input::all(), Post::$rules);
 
-
         $user = Auth::user();
         $family_id = $user->family_id;
 
@@ -18,12 +17,14 @@ class PostController extends BaseController
         // $post->img_url = ;
 
         if($validator->fails()) {
-            return Redirect::back();
             Session::flash('errorMessage', 'Could not save post');  //this line may have to be deleted
+            return Redirect::back();
         } else{
             $post->save();
+
+            Session::flash('successMessage', 'Post saved!');    
             return Redirect::back();
-            Session::flash('successMessage', 'Post saved!');
+
         }
 
     }

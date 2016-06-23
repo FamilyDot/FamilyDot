@@ -13,10 +13,10 @@ class FamilyController extends BaseController {
         return View::make('family')->with(['family' => $family]);
     }
 
-    public function calculateFamilyHappiness() 
+    public function updateUserScore($id) 
     {
         // dd(Input::all());
-        $user = Auth::user();
+        $user = User::find($id);
 
         $total = 0;
         $numberOfQuestions = count(Input::all()) -1;    // -1 is to get rid of the token
@@ -25,12 +25,38 @@ class FamilyController extends BaseController {
             $input = Input::get('answers_' . $i);
             $total += $input;
         }
+
         $score = $total;
         $user->score =$score;
         $user->save();
         return Redirect::action("HomeController@showFamily");
     }
 
+
+    public function calculateFamilyHappiness()
+    {
+        $user = Auth::user();
+
+        $userFamilyId = $user->family_id;
+
+
+
+        // selct * from users where family_id = $familyId this is similar to that query 
+        $users = User::where('family_id', '=', $userFamilyId)->get();
+
+        $totalScores = 0;
+        $userCount = $users->count();
+
+        foreach ($users as $user) {
+            if($user->score == 0){
+                $userCount --;
+            }else {
+                $totalScores += $user->score;
+            }
+        }
+        $avgScore = $totalScores / $userCount;
+        return $avgScore;
+    }
 
 
     public function store()

@@ -30,7 +30,9 @@
 <!-- this is the survey -->
     <div class="col-md-4 col-md-offset-1">
     <h1 id="family_survey">Family Survey</h1>
-        {{Form::open(array('method' => 'PUT', 'action' => 'FamilyController@calculateFamilyHappiness'))}}
+
+        {{Form::open(array('method' => 'PUT', 'action' => 'FamilyController@updateUserScore'))}}
+
             @foreach($survey as $key => $question)
                 <div class="w3-card-4" id="card">
                     <p>{{{ $question }}}</p>
@@ -79,24 +81,27 @@
     </div>
 
 <!-- Modal for survey -->
-<!--             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
-                                <h4 class="modal-title" id="myModalLabel">Congrats your family's average health is <span id="health"></span>!</h4>
+                                <!-- <h4 class="modal-title" id="myModalLabel">Congrats here's your family's health chart...</h4> -->
+                                <!-- this is our chart yall -->
                         </div>
                     </div>
                 </div>
             </div>
-    </div> -->
+  
+ 
+
+
+  <div id="chartContainer" style="height: 300px; width: 100%;"></div>
 
 
 
-<!-- this is our chart yall -->
-  <div id="chartContainer" style="height: 300px; width: 100%;">
 
 
 

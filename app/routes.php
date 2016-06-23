@@ -39,7 +39,13 @@ Route::get('/family', "HomeController@showFamily");
 
 Route::post('/family', 'PostController@store');
 
+//changing this to UPDATE the data 
+Route::put('/family', 'FamilyController@updateUserScore');
+
+Route::get('/calculatefamilyhappiness/{id}', 'FamilyController@calculateFamilyHappiness');
+
 Route::post('/users', 'UsersController@addTwitter');
 
 Route::put('/family', 'FamilyController@calculateFamilyHappiness');
+
 
