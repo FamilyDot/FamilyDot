@@ -60,12 +60,36 @@
             @endforeach
         </div> <!-- end of questions -->
 
-        <div class="col-md-3 social-feed">
-            <button class="btn btn-lg btn-primary" id="add-twitter" data-toggle="modal" data-target="#modal-twitter">Add your Twitter feed</button>
+        <div class="col-md-3 social-feed" >
+            @if(!$user->twitter_username)
+                <button class="btn btn-lg btn-primary" id="add-twitter" data-toggle="modal" data-target="#modal-twitter">Add your Twitter feed</button>
+            @endif
+            @if($twitter_elements)
+                @foreach ($twitter_elements as $twitter_element)
+                    <div class="twitter-user">
+                        {{ $twitter_element }}
+                    </div>
+                @endforeach
+            @endif
 
-            {{ $twitter_element }}
+            <script src="//platform.twitter.com/widgets.js">
 
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                function twit(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}twit(document,"script","twitter-wjs");
+                }
+            </script>
+            <script type="text/javascript">
+                // window.onload = function(){
+
+                //     console.log(twttr);
+                //     twttr.widgets.createTimeline({
+                //         sourceType: "list",
+                //         ownerScreenName: "{{{ $user->twitter_username }}}",
+                //         slug: "family"
+                //       }, document.getElementById("twitter-element"));
+                // };
+
+
+            </script>
 
         </div>
 

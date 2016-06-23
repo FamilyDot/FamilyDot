@@ -15,7 +15,7 @@ Route::get('/', 'HomeController@showHome');
 
 Route::resource('/users','UsersController');
 
-Route::get('/users', 'HomeController@showLogin');
+// Route::get('/users', 'HomeController@showLogin');
 
 Route::resource('/answer', 'AnswerController');
 
@@ -27,13 +27,13 @@ Route::post('/', 'HomeController@doSignup');
 
 Route::get('/logout', 'HomeController@doLogout');
 
-Route::post('/question', 'QuestionController@store');
+// Route::post('/question', 'QuestionController@store');
 
-Route::put('/question/{id}', 'QuestionController@update');
+// Route::put('/question/{id}', 'QuestionController@update');
 
 Route::resource('/question', 'QuestionController');
 
-Route::delete('/question', 'QuestionController@destroy');
+// Route::delete('/question', 'QuestionController@destroy');
 
 Route::get('/family', "HomeController@showFamily");
 
@@ -41,5 +41,5 @@ Route::post('/family', 'PostController@store');
 
 Route::post('/users', 'UsersController@addTwitter');
 
-Route::post('/family', 'FamilyController@calculateFamilyHappiness');
+Route::put('/family', 'FamilyController@calculateFamilyHappiness');
 

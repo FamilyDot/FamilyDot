@@ -30,22 +30,22 @@
 <!-- this is the survey -->
     <div class="col-md-4 col-md-offset-1">
     <h1 id="family_survey">Family Survey</h1>
-        {{Form::open(array('method' => 'POST', 'action' => 'FamilyController@calculateFamilyHappiness'))}}
+        {{Form::open(array('method' => 'PUT', 'action' => 'FamilyController@calculateFamilyHappiness'))}}
             @foreach($survey as $key => $question)
                 <div class="w3-card-4" id="card">
                     <p>{{{ $question }}}</p>
-                
+
                    <div id="rad_btns">
-                        <input type="radio" name="answers_{{{ $key }}}" class="number" value="1"> 1 
-                        <input type="radio" name="answers_{{{ $key }}}" class="number" value="2"> 2 
-                        <input type="radio" name="answers_{{{ $key }}}" class="number" value="3"> 3 
-                        <input type="radio" name="answers_{{{ $key }}}" class="number" value="4"> 4 
-                        <input type="radio" name="answers_{{{ $key }}}" class="number" value="5"> 5 
-                        <input type="radio" name="answers_{{{ $key }}}" class="number" value="6"> 6 
-                        <input type="radio" name="answers_{{{ $key }}}" class="number" value="7"> 7 
-                        <input type="radio" name="answers_{{{ $key }}}" class="number" value="8"> 8 
-                        <input type="radio" name="answers_{{{ $key }}}" class="number" value="9"> 9 
-                        <input type="radio" name="answers_{{{ $key }}}" class="number" value="10"> 10 
+                        <input type="radio" name="answers_{{{ $key }}}" class="number" value="1"> 1
+                        <input type="radio" name="answers_{{{ $key }}}" class="number" value="2"> 2
+                        <input type="radio" name="answers_{{{ $key }}}" class="number" value="3"> 3
+                        <input type="radio" name="answers_{{{ $key }}}" class="number" value="4"> 4
+                        <input type="radio" name="answers_{{{ $key }}}" class="number" value="5"> 5
+                        <input type="radio" name="answers_{{{ $key }}}" class="number" value="6"> 6
+                        <input type="radio" name="answers_{{{ $key }}}" class="number" value="7"> 7
+                        <input type="radio" name="answers_{{{ $key }}}" class="number" value="8"> 8
+                        <input type="radio" name="answers_{{{ $key }}}" class="number" value="9"> 9
+                        <input type="radio" name="answers_{{{ $key }}}" class="number" value="10"> 10
                     </div>
                 </div>
             @endforeach
