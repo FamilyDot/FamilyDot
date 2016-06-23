@@ -39,5 +39,9 @@ Route::get('/family', "HomeController@showFamily");
 
 Route::post('/family', 'PostController@store');
 
-Route::post('/family', 'FamilyController@calculateFamilyHappiness');
+
+//changing this to UPDATE the data 
+Route::put('/family', 'FamilyController@updateUserScore');
+
+Route::get('/calculatefamilyhappiness/{id}', 'FamilyController@calculateFamilyHappiness');
 

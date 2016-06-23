@@ -30,7 +30,7 @@
 <!-- this is the survey -->
     <div class="col-md-4 col-md-offset-1">
     <h1 id="family_survey">Family Survey</h1>
-        {{Form::open(array('method' => 'POST', 'action' => 'FamilyController@calculateFamilyHappiness'))}}
+        {{Form::open(array('method' => 'PUT', 'action' => 'FamilyController@updateUserScore'))}}
             @foreach($survey as $key => $question)
                 <div class="w3-card-4" id="card">
                     <p>{{{ $question }}}</p>
@@ -88,12 +88,15 @@
                             </button>
                                 <!-- <h4 class="modal-title" id="myModalLabel">Congrats here's your family's health chart...</h4> -->
                                 <!-- this is our chart yall -->
-                                  <div id="chartContainer" style="height: 200px; width: 100%;">
                         </div>
                     </div>
                 </div>
             </div>
-    </div>
+  
+ 
+
+
+  <div id="chartContainer" style="height: 300px; width: 100%;"></div>
 
 
 
