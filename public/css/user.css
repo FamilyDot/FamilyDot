@@ -177,3 +177,13 @@ h1{
 .hidden {
     visibility: hidden;
 }
+
+#add-twitter {
+    width: 100%;
+}
+
+.twitter-user {
+    margin: 2em auto;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+}

@@ -15,7 +15,7 @@ Route::get('/', 'HomeController@showHome');
 
 Route::resource('/users','UsersController');
 
-Route::get('/users', 'HomeController@showLogin');
+// Route::get('/users', 'HomeController@showLogin');
 
 Route::resource('/answer', 'AnswerController');
 
@@ -27,21 +27,25 @@ Route::post('/', 'HomeController@doSignup');
 
 Route::get('/logout', 'HomeController@doLogout');
 
-Route::post('/question', 'QuestionController@store');
+// Route::post('/question', 'QuestionController@store');
 
-Route::put('/question/{id}', 'QuestionController@update');
+// Route::put('/question/{id}', 'QuestionController@update');
 
 Route::resource('/question', 'QuestionController');
 
-Route::delete('/question', 'QuestionController@destroy');
+// Route::delete('/question', 'QuestionController@destroy');
 
 Route::get('/family', "HomeController@showFamily");
 
 Route::post('/family', 'PostController@store');
 
-
 //changing this to UPDATE the data 
 Route::put('/family', 'FamilyController@updateUserScore');
 
 Route::get('/calculatefamilyhappiness/{id}', 'FamilyController@calculateFamilyHappiness');
+
+Route::post('/users', 'UsersController@addTwitter');
+
+Route::put('/family', 'FamilyController@calculateFamilyHappiness');
+
 

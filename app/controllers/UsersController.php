@@ -82,8 +82,8 @@ class UsersController extends \BaseController {
       if($user_of_profile != null && $user_family_id == $user_of_profile->family_id) {
 
           $user=User::find($id);
-          $twitter_element = Family::makeTwitterUrlwithUserNames($user_of_profile);
-      	  return View::make('user')->with("user", $user)->with("questions", $questions)->with('twitter_element', $twitter_element);
+          $twitter_elements = Family::makeTwitterUrlwithUserNames($user_of_profile);
+      	  return View::make('user')->with("user", $user)->with("questions", $questions)->with('twitter_elements', $twitter_elements);
       }
 
       return View::make('errors.missing');
@@ -153,5 +153,11 @@ class UsersController extends \BaseController {
 		return Redirect::action ('HomeController@showHome');
 	}
 
-
+    public function addTwitter()
+    {
+        $user = Auth::user();
+        $user->twitter_username = Input::get('twitter_username');
+        $user->save();
+        return Redirect::back();
+    }
 }
