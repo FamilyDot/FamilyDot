@@ -30,6 +30,7 @@
             @foreach($questions as $question)
                 <div class="question" id="">
                     <div class="w3-card-4" id="card">
+                                <h4>{{{ User::find($question->user_id)->username }}}</h4>
                         <div class="row">
                             <div class="col-md-2">
                                 <img class="img-circle" src="{{{User::find($question->user_id)->image_url}}}">
@@ -43,13 +44,13 @@
                         </div>
 
                         <p class="answer-model-link" id="answer_to_question_{{{ $question->id }}}"><a class="answer-link" id="{{{ $question->id }}}" data-toggle="modal" data-target="#AnswerModal">Answer</a></p>
-                        @if (!empty($question->answers[0]))
+                        {{-- @if (!empty($question->answers)) --}}
                             <div><br><hr></div>
-                        @endif
+                        {{-- @endif --}}
                         <?php $answers = DB::table('answers')->where('question_id', $question->id)->orderBy('created_at', 'desc')->get(); ?>
                         @foreach($answers as $answer)
                             <div class="answers">
-                                <p><span class="username">{{{ User::find($answer->user_id)->first_name }}}    </span>{{{ $answer->answer }}}</p>
+                                <p><span class="username">{{{ User::find($answer->user_id)->username }}}    </span>{{{ $answer->answer }}}</p>
                              {{--    @if ($answer->user_id == Auth::user()->id)
                                     <i class="edit-answer" id="{{{ $answer->id }}}">
                                 @endif --}}

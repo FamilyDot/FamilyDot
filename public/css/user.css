@@ -183,7 +183,7 @@ h1{
 }
 
 .twitter-user {
-    margin: 2em auto;
+    margin-bottom: 1em;
     border: 1px solid #dddddd;
     border-radius: 5px;
 }
