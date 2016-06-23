@@ -20,9 +20,8 @@
                 <div class="user-image">
                     <img class="img-rounded img-responsive profile_image" src="{{{ $user->image_url }}}">
                 </div>
-                <!-- <h3>@{{{ $user->username }}}</h3> -->
-                <h4> Hi, {{{ $user->first_name }}} {{{ $user->last_name }}}!</h4>
-                {{-- <h4>{{{ $user->email }}}</h4> --}}
+                <h4> Hi, @{{{ $user->username }}}!</h4>
+                <h4>Family: {{{ ucwords($user->family->name)}}}</h4>
             </div>
         </div> <!-- end of user column -->
 
@@ -61,10 +60,36 @@
             @endforeach
         </div> <!-- end of questions -->
 
-        <div class="col-md-3 social-feed">
-            {{ $twitter_element }}
+        <div class="col-md-3 social-feed" >
+            @if(!$user->twitter_username)
+                <button class="btn btn-lg btn-primary" id="add-twitter" data-toggle="modal" data-target="#modal-twitter">Add your Twitter feed</button>
+            @endif
+            @if($twitter_elements)
+                @foreach ($twitter_elements as $twitter_element)
+                    <div class="twitter-user">
+                        {{ $twitter_element }}
+                    </div>
+                @endforeach
+            @endif
 
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            <script src="//platform.twitter.com/widgets.js">
+
+                function twit(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}twit(document,"script","twitter-wjs");
+                }
+            </script>
+            <script type="text/javascript">
+                // window.onload = function(){
+
+                //     console.log(twttr);
+                //     twttr.widgets.createTimeline({
+                //         sourceType: "list",
+                //         ownerScreenName: "{{{ $user->twitter_username }}}",
+                //         slug: "family"
+                //       }, document.getElementById("twitter-element"));
+                // };
+
+
+            </script>
 
         </div>
 
@@ -120,6 +145,29 @@
             </div>
           </div>
         </div> <!-- end modal -->
+
+        <!-- Twitter add name MODAL -->
+        <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="modal-twitter">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="container">
+                <h4 class="modal-title" id="myModalLabel">Enter Your Twitter Username</h4>
+
+                <!-- FORM -->
+                <form method="POST" action="{{{ action('UsersController@addTwitter') }}}">
+                  {{ Form::token() }}
+
+                  <div class="form-group">
+                    <label for="twitter_username">Twitter @</label>
+                    <input name="twitter_username">
+                    <button class="btn btn-sm btn-primary" type="submit">Submit Name</button>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div> <!-- end twitter modal -->
 
 @stop
 
