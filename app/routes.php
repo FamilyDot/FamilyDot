@@ -41,3 +41,7 @@ Route::post('/family', 'PostController@store');
 
 Route::post('/family', 'FamilyController@calculateFamilyHappiness');
 
+Route::get('/search', 'PostController@search');
+
+
+

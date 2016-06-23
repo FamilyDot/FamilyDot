@@ -45,4 +45,14 @@ class PostController extends BaseController
             Session::flash('successMessage', 'Post updated!'); 
         }
     }
+
+    public function search()
+    {   
+        $data = Input::get('search');
+
+        $user = Auth::user();
+        $posts = Post::where('body','LIKE', '%' . $data . '%')->get();
+        return View::make('search')->with('posts', $posts)->with('user', $user);
+        
+    }
 }

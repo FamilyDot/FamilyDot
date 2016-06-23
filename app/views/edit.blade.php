@@ -55,9 +55,10 @@ Edit page
     </div>
     <div class="form-group labels">
         {{ Form::label('image_url', 'Picture') }}
+        <h4>Link a picture to your profile. Paste a URL here!</h4>
     </div>
     <div class="form-group">
-        {{ Form::text('image_url', $user->image_url, ['class' => 'textBox']) }}
+        {{ Form::text('image_url', "", ['class' => 'textBox']) }}
     </div>
     <div class="form-group labels">
         {{ Form::label('twitter_username', 'Twitter User name') }}
@@ -77,16 +78,13 @@ Edit page
     <div class="form-group">
         {{ Form::password('password', '', ['class' => 'password']) }}
     </div>
-    <div>
+    <div class="row col-xs-4">
         {{ Form::submit('submit', ['class' => 'btn-lg btn-success']) }}
-    </div>
 {{ Form::close() }}
-
-<br>
-   
+    </div>
     <div>
         {{ Form::open(['method' => 'DELETE', 'action' => ['UsersController@destroy', $user->id], 'onsubmit' => 'return ConfirmDelete()']) }}
-        {{ Form::submit('Delete Profile', ['class' => 'btn btn-danger']) }}
+        {{ Form::submit('Delete Profile', ['class' => 'btn-lg btn-danger']) }}
     </div>
 {{ Form::close() }}
 
