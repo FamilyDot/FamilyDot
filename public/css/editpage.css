@@ -1,27 +1,18 @@
-
-.textBox    {
-
+.textBox{
     height:40px;
     width:400px;
 }
-
-input#password   {
-
+input #password{
     height:40px;
     width:400px;
 }
-    
-.labels {
-
+.labels{
     font-size:30px;
 }
-
-#bigDiv  {
+#bigDiv{
     padding-left:320px;
 } 
-
-#heading    {
-
+#heading{
     padding-top:60px; 
     color:gray;
 }
