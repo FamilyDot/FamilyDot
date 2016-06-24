@@ -13,7 +13,13 @@
         <hr>
     </div>
 
-
+<!-- chart -->
+    <div id="chart" class="col-md-4 col-md-offset-4">
+        @if ($avg != 0)
+          <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+          <input type="hidden" id="happiness-avg" value="{{{ $avg }}}"></input>
+        @endif
+    </div>
 
 <!-- these are posts -->
     <div class="col-md-4 col-md-offset-1">
@@ -95,10 +101,6 @@
         </div>
     </div>
 
-    @if ($avg != 0)
-      <div id="chartContainer" style="height: 300px; width: 100%;"></div>
-      <input type="hidden" id="happiness-avg" value="{{{ $avg }}}"></input>
-    @endif
 
 
 

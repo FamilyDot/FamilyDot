@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(27,177,178);
+    background-color: rgb(252,202,131);
 }
 .container{
     margin-top: 10em;
@@ -10,7 +10,7 @@ body{
 }*/
 #username-field, #email-field, #password-field, #passwordValidate-field, #birth_day-field,
 #last_name-field, #first_name-field, #name-field {
-        margin-bottom: 1em;
+        margin-bottom: .75em;
         height: 2em;
         width:20em;
     }
