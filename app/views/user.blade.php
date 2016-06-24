@@ -115,8 +115,8 @@
                                     <input id="question_input" name="question_id" type="hidden" value="">
                                 </div>
                         </div>
-                                <div class="modal-footer">
-                                    <button class="btn" id="answer-submit-btn" type="submit">Submit</button>
+                                <div class="modal-footer" id="button-div">
+                                    <button class="btn btn-info" id="answer-submit-btn" type="submit">Submit</button>
                                 </div>
                             </form>
                     </div>

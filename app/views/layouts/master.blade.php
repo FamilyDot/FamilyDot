@@ -87,11 +87,11 @@
                     <div class="form-group">
                         <textarea class="form-control" rows="4" cols="50" name="question"></textarea>
                     </div>
+            </div>
                     <div style="text-align:center;" class="modal-footer">
                     <button id="modalButton" type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </form>
-            </div>
         </div>
     </div>
 </div>

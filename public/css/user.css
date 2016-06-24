@@ -187,3 +187,7 @@ h1{
     border: 1px solid #dddddd;
     border-radius: 5px;
 }
+
+#button-div {
+    text-align: center;
+}
