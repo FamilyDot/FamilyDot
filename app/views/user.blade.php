@@ -18,7 +18,7 @@
         <div class="col-md-3">
             <div class="user_info well">
                 <div class="user-image">
-                    <img class="img-rounded img-responsive profile_image" src="{{{ $user->image_url }}}">
+                    <img class="img-rounded img-responsive profile_image" src="/{{{ $user->image_url }}}">
                 </div>
                 <h4> Hi, @{{{ $user->username }}}!</h4>
                 <h4>Family: {{{ ucwords($user->family->name)}}}</h4>
@@ -33,7 +33,7 @@
                                 <h4>{{{ User::find($question->user_id)->username }}}</h4>
                         <div class="row">
                             <div class="col-md-2">
-                                <img class="img-circle" src="{{{User::find($question->user_id)->image_url}}}">
+                                <img class="img-circle" src="/{{{User::find($question->user_id)->image_url}}}">
                             </div>
                             <div class="col-md-9">
                                 <h2 class="users_question" id="user-{{{ $question->user_id }}}" data-question-id="{{{ $question->id }}}" data-auth="{{{ ($question->user_id == Auth::user()->id) }}}"><span>{{{ $question->question }}}</span></h2>
