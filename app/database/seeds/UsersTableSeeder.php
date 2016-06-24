@@ -8,7 +8,7 @@ class UsersTableSeeder extends Seeder {
 
         $user = new User();
         $user->email = 'will78006@yahoo.com';
-        $user->password = 'password';
+        $user->password = $_ENV['userpassword'];
         $user->username = 'will78006';
         $user->first_name = 'Will';
         $user->last_name = 'Campbell';
@@ -21,7 +21,7 @@ class UsersTableSeeder extends Seeder {
 
         $user = new User();
         $user->email = 'mauro@example.com';
-        $user->password = 'password';
+        $user->password = $_ENV['userpassword'];
         $user->username = 'mauro';
         $user->first_name = 'Mauro';
         $user->last_name = 'Cabrales';
@@ -33,7 +33,7 @@ class UsersTableSeeder extends Seeder {
 
         $user = new User();
         $user->email = 'michah@site.com';
-        $user->password = 'password';
+        $user->password = $_ENV['userpassword'];
         $user->username = 'Mikeuh';
         $user->first_name = 'Micah';
         $user->last_name = 'Smith';
