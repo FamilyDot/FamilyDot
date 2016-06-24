@@ -9,6 +9,13 @@
     <link rel="stylesheet" type="text/css" href="/../css/user.css">
     <!-- google fonts -->
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    #modalButton  {
+      text-align:center;background: #9655a0;
+                      border-color: #9655a0;
+                      color: #ffffff;
+    }
+    </style>
 
     @yield('topscript')
 </head>
@@ -65,7 +72,7 @@
 @endif
 
 <!-- Modal -->
-<div class="modal fade" id="askQuestion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade allModal" id="askQuestion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -80,9 +87,9 @@
                     <div class="form-group">
                         <textarea class="form-control" rows="4" cols="50" name="question"></textarea>
                     </div>
-
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <div style="text-align:center;" class="modal-footer">
+                    <button id="modalButton" type="submit" class="btn btn-primary">Submit</button>
+                    </div>
                 </form>
             </div>
         </div>
