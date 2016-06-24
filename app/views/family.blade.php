@@ -61,7 +61,7 @@
                     {{Form::close()}}
 
 <!--modal for posts -->
-    <div class="modal fade" id="myModalPost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade allModal" id="myModalPost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -71,23 +71,23 @@
                     <h4 class="modal-title" id="myModalLabel">Create a Post?</h4>
                 </div>
                 <div>
-                    {{Form::open(array('method' => 'POST', 'action' => 'PostController@store'))}}
-                        <div class="modal-body">
-                            <textarea name="body" rows="4" id="text" cols="50">
-                            </textarea>
-                        </div>
-                        <!-- "modal-footer"> -->
-                        <div id="save_changes" class="modal-footer">
-                            <button  type="submit" class="btn btn-primary">Save changes</button>
-                        </div>
-                    {{Form::close()}}
+
+                        {{Form::open(array('method' => 'POST', 'action' => 'PostController@store'))}}
+                            <div class="modal-body">
+                                <textarea class='form-control' name="body" rows="4" id="text" cols="50" autofocus></textarea>
+                            </div>
+                            <!-- "modal-footer"> -->
+                            <div id="save_changes" class="modal-footer">
+                                <button  type="submit" class="btn btn-primary" style="text-align:center;">Save changes</button>
+                            </div>
+                        {{Form::close()}}
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Modal for survey -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade allModal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
