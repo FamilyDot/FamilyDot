@@ -1,6 +1,6 @@
 # Your Family App
 
-[yourfamilyapp.xyz](https://yourfamilyapp.xyz)
+[yourfamilyapp.xyz](http://yourfamilyapp.xyz)
 
 Our goal is to bring families closer together by providing a platform for promoting communication and openness.
 
