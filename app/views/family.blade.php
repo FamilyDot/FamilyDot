@@ -13,7 +13,7 @@
     </div>
 
 <!-- chart -->
-    <div id="chart" class="col-md-4 col-md-offset-4">
+    <div id="chart" class="col-md-6 col-md-offset-3">
         @if ($avg != 0)
           <div id="chartContainer"></div>
           <input type="hidden" id="happiness-avg" value="{{{ $avg }}}"></input>
