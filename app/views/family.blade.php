@@ -28,7 +28,9 @@
                 <p>{{{ $post->body }}}</p>
             </div>
         @endforeach
-        <input class="btn btn-primary" id="sub_posts"  type="submit" value="Add to Posts">
+        <div id="button">
+            <input class="btn btn-primary" id="sub_posts"  type="submit" value="Add to Posts">
+        </div>
     </div>
 
 
@@ -56,8 +58,10 @@
                     </div>
                 </div>
             @endforeach
+                <div id="button">
                     <input class="btn btn-primary" id="sub_survey"  type="submit" value="Submit Survey">
-                    {{Form::close()}}
+                </div>
+        {{Form::close()}}
 
 <!--modal for posts -->
     <div class="modal fade allModal" id="myModalPost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -77,7 +81,7 @@
                             </div>
                             <!-- "modal-footer"> -->
                             <div id="save_changes" class="modal-footer">
-                                <button  type="submit" class="btn btn-primary" style="text-align:center;">Save changes</button>
+                                <button  type="submit" class="btn btn-primary">Save changes</button>
                             </div>
                         {{Form::close()}}
                 </div>

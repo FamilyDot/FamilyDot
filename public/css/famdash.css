@@ -34,9 +34,13 @@ body{
     margin-top: 1.5em;
     margin-bottom: 1.5em;
 }
+#button{
+    text-align: center;
+}
 #sub_survey, #sub_posts{
     margin-top: 2em;
     margin-bottom: 5em;
+    text-align: center;
 }
 /*.card-block, #mission{
     background-color: white;
