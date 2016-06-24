@@ -97,7 +97,7 @@
 
 
             <!-- Modal -->
-            <div class="modal fade" id="AnswerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal fade allModal text-center" id="AnswerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -110,11 +110,15 @@
                         <div class="modal-body">
                             <form class="" method="POST" action="{{{ action('AnswerController@store') }}}">
                                 {{ Form::token() }}
-                                <textarea rows="2" cols="30" name="answer"></textarea>
-                                <input id="question_input" name="question_id" type="hidden" value="">
-                                <button class="btn btn-primary" type="submit">Submit</button>
-                            </form>
+                                <div class='form-group'>
+                                    <textarea class="form-control" rows="4" cols="50" name="answer"></textarea>
+                                    <input id="question_input" name="question_id" type="hidden" value="">
+                                </div>
                         </div>
+                                <div class="modal-footer">
+                                    <button class="btn" id="answer-submit-btn" type="submit">Submit</button>
+                                </div>
+                            </form>
                     </div>
                 </div>
             </div> <!-- end of modal -->
