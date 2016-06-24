@@ -17,6 +17,8 @@ class HomeController extends BaseController
         if(Auth::check()) {
             $user = Auth::user();
             $avg = Family::calculateFamilyHappiness();
+
+
             $survey = array(
             "How happy are you with the amount og time your family is spending together?",
             "Is your family happy?",

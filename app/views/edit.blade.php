@@ -1,41 +1,10 @@
 @extends('layouts.master')
 
+<link rel="stylesheet" type="text/css" href="/../css/editpage.css">
+<!-- <link rel="stylesheet" type="text/css" href="/../css/user.css"> -->
 
-<link rel="stylesheet" type="text/css" href="/../css/user.css">
-<style type="text/css">
 
-.textBox    {
-
-    height:40px;
-    width:400px;
-}
-
-input#password   {
-
-    height:40px;
-    width:400px;
-}
-    
-.labels {
-
-    font-size:30px;
-}
-
-#bigDiv  {
-    padding-left:320px;
-} 
-
-#heading    {
-
-    padding-top:60px; 
-    color:gray;
-}
-</style>
-@section('title')
-Edit page
-@stop
 @section('content')
-
 <div class="form-horizontal container-fluid" id="bigDiv">
 <h1 id="heading">Edit your profile!</h1>
 {{ Form::open(array('action' =>['UsersController@update', $user->id], 'method' => 'PUT')) }}
