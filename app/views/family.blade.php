@@ -7,16 +7,15 @@
 @stop
 
 @section('content')
-<div class="row">
-    <div id="ms">
-        <h1 style='padding-top:70px;' class="container">{{{ $user->family->mission_statement }}}</h1>
-        <hr>
+<div class='container'>
+    <div class="center-text" id="title">
+        <h1>{{{ $user->family->mission_statement }}}</h1><br>
     </div>
 
 <!-- chart -->
     <div id="chart" class="col-md-4 col-md-offset-4">
         @if ($avg != 0)
-          <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+          <div id="chartContainer"></div>
           <input type="hidden" id="happiness-avg" value="{{{ $avg }}}"></input>
         @endif
     </div>
