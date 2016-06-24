@@ -3,21 +3,19 @@ body{
 }
 .container{
     margin-top: 10em;
-    text-align: center;
+    /*text-align: center;*/
 }
 /*#logo{
     float:left;
 }*/
-#username-field, #email-field, #password-field, #passwordValidate-field, #birth_day-field,
-#last_name-field, #first_name-field, #name-field {
-        /*margin-bottom: .25em;*/
+/*#username-field, #email-field, #birth_day-field, #name-field {
+        margin-bottom: .25em;
         height: 2em;
         width:20em;
-    }
-    #btn_sub{
+}*/
+  #btn_sub{
         margin-bottom: 1em;
     }
-
 
 #navbar {
     visibility: hidden;
@@ -26,6 +24,10 @@ body{
     background: #9655a0;
     border-color: #9655a0;
     color: #ffffff;
+}
+
+.col-md-6 {
+  padding: 0px;
 }
 
 
