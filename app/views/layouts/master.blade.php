@@ -35,7 +35,7 @@
           <!-- Button trigger modal -->
 
           <li class="dropdown">
-            <a class="dropdown-toggle img-responsive img-rounded" style="padding-top:7px;" data-toggle="dropdown" role="button" aria-haspopup="true" ><img class="img-rounded" style="height:32px;width:32px;" src="/{{{ Auth::user()->image_url }}}"></a>
+            <a class="dropdown-toggle img-responsive img-rounded" style="padding-top:7px;" data-toggle="dropdown" role="button" aria-haspopup="true" ><img class="img-rounded" style="height:32px;width:32px;" src="{{{ Auth::user()->image_url }}}"></a>
             <ul class="dropdown-menu">
               <li><a href="/users/{{{Auth::id()}}}">Profile</a></li>
               <li><a href="/users/{{{Auth::id()}}}/edit">Edit Profile</a></li>
