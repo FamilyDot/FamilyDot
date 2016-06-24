@@ -56,7 +56,7 @@
             </li>
           @endif
         </ul>
-        
+
 
           <form class="navbar-form navbar-right" role="search" method="GET" action="/search">
             {{ Form::token() }}

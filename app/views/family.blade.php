@@ -68,9 +68,10 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                        <h4 class="modal-title" id="myModalLabel">Create a Post?</h4>
+                    <h4 class="modal-title" id="myModalLabel">Create a Post?</h4>
                 </div>
                 <div>
+
                         {{Form::open(array('method' => 'POST', 'action' => 'PostController@store'))}}
                             <div class="modal-body">
                                 <textarea class='form-control' name="body" rows="4" id="text" cols="50" autofocus></textarea>
