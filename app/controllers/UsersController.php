@@ -125,18 +125,14 @@ class UsersController extends \BaseController {
 		}
 
 
-		if($user -> save())
-
-			{
+		if($user->save()) {
 			Session::flash('successMessage', 'Your edit has been saved');
 			$value = Session::get('successMessage');
 			return Redirect::action('UsersController@show', $user->id);
-			}
-			else
-			{
+		}else{
 			Session::flash('errorMessage', 'Your Account edit has not been saved');
 			return Redirect::back()->withInput();
-			}
+		}
 	}
 
 
