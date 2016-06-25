@@ -6,6 +6,11 @@ body{
     color: gray;
 }
 
+h1, p, #rad_btns, #save_changes, #button, .row, .card-block {
+    text-align: center;
+}
+
+
 #chart{
     margin-top: 2em;
 }
@@ -16,17 +21,11 @@ body{
 #number {
     margin-left: .05em;
 }
-#save_changes{
-    text-align: center;
-}
-
 #close{
     margin-top: 1.5em;
     margin-bottom: 1.5em;
 }
-#button{
-    text-align: center;
-}
+
 #sub_survey, #sub_posts{
     margin-top: 2em;
     margin-bottom: 5em;
@@ -35,9 +34,6 @@ body{
 /*.card-block, #mission{
     background-color: white;
 }*/
-.row, h1, .card-block {
-    text-align: center;
-}
 .fa-trash, img{
     float: right;
 }

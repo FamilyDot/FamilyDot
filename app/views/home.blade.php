@@ -51,7 +51,7 @@
             </div>
             <div class="row">
                 <div class="form-group">
-                    {{ Form::text('birth_day',  null,  array('class' =>'form-control', 'placeholder'=> 'Birthday', 'id'=>'birth_day-field')) }}
+                    {{ Form::text('birth_day',  null,  array('class' =>'form-control', 'placeholder'=> 'Birthday (YYYY-MM-DD)', 'id'=>'birth_day-field')) }}
                 </div>
             </div>
  
@@ -64,7 +64,7 @@
     
             <div class="row">
                     <input class="btn btn-primary" id="btn_sub"  type="submit" value="Signup">
-                    <p><a href="{{{action('HomeController@showLogin')}}}">Have an account?</a></p>
+                    <p><a href="{{{action('HomeController@showLogin')}}}">Have an account?</a></p> 
             </div>
             {{ Form::close() }}     
         </div>
