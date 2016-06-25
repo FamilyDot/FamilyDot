@@ -108,7 +108,7 @@
 
 
 </div> <!-- end container -->
-        <!-- MODAL -->
+        <!-- Delete Question Modal -->
         <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="modal-delete">
           <div class="modal-dialog modal-sm">
 

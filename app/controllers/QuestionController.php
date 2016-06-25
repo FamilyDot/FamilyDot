@@ -48,6 +48,8 @@ class QuestionController extends BaseController
         $question = Question::find($id);
         $question->delete();
 
+        Session::flash('successMessage', 'Your question has been terminated.');
+
         return Redirect::action('UsersController@show', Auth::id());
     }
 }
