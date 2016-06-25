@@ -47,7 +47,8 @@
             <ul class="dropdown-menu">
               <li><a href="/users/{{{Auth::id()}}}">Profile</a></li>
               <li><a href="/users/{{{Auth::id()}}}/edit">Edit Profile</a></li>
-              <li><a href="/family">My Family</a></li>
+              <li><a href="/family" >Family Dashboard</li>
+
               <li role="separator" class="divider"></li>
               <li><a href="{{ action('HomeController@doLogout') }}">Logout</a></li>
             </ul>

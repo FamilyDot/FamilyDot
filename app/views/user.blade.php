@@ -10,13 +10,13 @@
 @section('content')
 
 <div class='container'>
-    <div class="center-text" id="title">
-        <div class="title-image">
-            {{-- <img src="https://lh5.googleusercontent.com/-pfFQmTyWNZM/VCR67wUB5yI/AAAAAAAAABw/nhuBlZ8i3QM/w338-h339/2013-10-10_codeup_mark_icon.png"> --}}
-            {{ HTML::image('img/gocodeup.png', 'gocodeup shadow', array('class' => 'image')) }}
-            {{ HTML::image('img/gocodeup-shadow.png', 'gocodeup shadow', array('id' => 'codeup-shadow')) }}
-        </div>
-        <p>{{{ $user->family->mission_statement }}}</p><br>
+    <div class='rel'>
+        <div class="text-center" id="title">
+            <h1 class="hate">{{{ $user->family->mission_statement }}}</h1><br>
+
+            {{ HTML::image('img/gocodeup.png', 'gocodeup', array('class' => 'image-codeup')) }}
+           {{--  {{ HTML::image('img/gocodeup-shadow.png', 'gocodeup shadow', array('id' => 'codeup-shadow')) }}
+--}}    </div>
     </div>
     <br>
     <section class="page-content">
