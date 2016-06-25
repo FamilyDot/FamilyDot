@@ -1,3 +1,8 @@
+h1{
+    margin-top: 10%;
+    color: black;
+    text-align: center;
+}
 .textBox{
     height:40px;
     width:400px;
@@ -6,13 +11,13 @@ input #password{
     height:40px;
     width:400px;
 }
-.labels{
-    font-size:30px;
-}
 #bigDiv{
     padding-left:320px;
 } 
 #heading{
     padding-top:60px; 
     color:gray;
+}
+label {
+    font-size: 1.5em;
 }
