@@ -73,31 +73,12 @@
                 @endforeach
             @endif
 
-            <script src="//platform.twitter.com/widgets.js">
-
-                function twit(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}twit(document,"script","twitter-wjs");
-                }
-            </script>
-            <script type="text/javascript">
-                // window.onload = function(){
-
-                //     console.log(twttr);
-                //     twttr.widgets.createTimeline({
-                //         sourceType: "list",
-                //         ownerScreenName: "{{{ $user->twitter_username }}}",
-                //         slug: "family"
-                //       }, document.getElementById("twitter-element"));
-                // };
-
-
-            </script>
-
         </div>
 
 
 
             <!-- Modal -->
-            <div class="modal fade" id="AnswerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal fade allModal text-center" id="AnswerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -110,11 +91,15 @@
                         <div class="modal-body">
                             <form class="" method="POST" action="{{{ action('AnswerController@store') }}}">
                                 {{ Form::token() }}
-                                <textarea rows="2" cols="30" name="answer"></textarea>
-                                <input id="question_input" name="question_id" type="hidden" value="">
-                                <button class="btn btn-primary" type="submit">Submit</button>
-                            </form>
+                                <div class='form-group'>
+                                    <textarea class="form-control" rows="4" cols="50" name="answer"></textarea>
+                                    <input id="question_input" name="question_id" type="hidden" value="">
+                                </div>
                         </div>
+                                <div class="modal-footer" id="button-div">
+                                    <button class="btn btn-info" id="answer-submit-btn" type="submit">Submit</button>
+                                </div>
+                            </form>
                     </div>
                 </div>
             </div> <!-- end of modal -->
@@ -123,7 +108,7 @@
 
 
 </div> <!-- end container -->
-        <!-- MODAL -->
+        <!-- Delete Question Modal -->
         <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="modal-delete">
           <div class="modal-dialog modal-sm">
 
@@ -174,6 +159,15 @@
 
 @section('bottomscript')
     <script src="/../js/userspage_edit_question.js" type="text/javascript"></script>
+
+    <!-- Add Twitter widgets -->
+        <script src="//platform.twitter.com/widgets.js">
+        $(document).ready(function(){
+            "use strict";
+            function twit(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}twit(document,"script","twitter-wjs");
+            }
+        })
+        </script>
 @stop
 
 </body>

@@ -54,7 +54,7 @@ h1{
     height: 60px;
 }
 
-.alert {
+.alert-top-screen {
     padding-top: 60px;
     z-index: 100;
 }
@@ -186,4 +186,8 @@ h1{
     margin-bottom: 1em;
     border: 1px solid #dddddd;
     border-radius: 5px;
+}
+
+#button-div {
+    text-align: center;
 }

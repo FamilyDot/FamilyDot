@@ -51,7 +51,8 @@
               <li><a href="{{ action('HomeController@doLogout') }}">Logout</a></li>
             </ul>
           </li>
-          @if(Request::url() != 'http://familydot.dev/family')
+
+          @if(Request::url() == "http://familydot.dev/users/$user->id")
             <li>
               <button type="button" class="btn btn-xs " id='ask-button' data-toggle="modal" data-target="#askQuestion"><span class="ask-inner"><i class="fa fa-2x fa-comments-o" aria-hidden="false"></i> Ask</span></button>
             </li>
@@ -87,11 +88,11 @@
                     <div class="form-group">
                         <textarea class="form-control" rows="4" cols="50" name="question"></textarea>
                     </div>
+            </div>
                     <div style="text-align:center;" class="modal-footer">
                     <button id="modalButton" type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </form>
-            </div>
         </div>
     </div>
 </div>
@@ -102,10 +103,10 @@
         </div>
     @endif --}}
     @if (Session::has('errorMessage'))
-        <div class="alert alert-danger">{{{ Session::get('errorMessage') }}}</div>
+        <div class="text-center alert alert-danger alert-top-screen">{{{ Session::get('errorMessage') }}}</div>
     @endif
     @if(Session::has('successMessage'))
-      <div class="alert alert-success">{{{Session::get('successMessage')}}}</div>
+      <div class="text-center alert alert-success alert-top-screen">{{{Session::get('successMessage')}}}</div>
     @endif
 
     @yield('content')

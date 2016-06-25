@@ -1,4 +1,4 @@
-// $(document).ready(function(){
+$(document).ready(function(){
     "use strict";
 
     var $question_id = null;
@@ -13,7 +13,6 @@
 
         var questionId = $("#question-input").attr('data-question-id');
         $('#question-id-input').val(questionId);
-        console.log('zach was right');
 
     }
 
@@ -44,9 +43,6 @@
     // Refactoring to allow user to edit question in place sending an AJAX
     // request to update the DB and component
     // When I click on data-userid="user_{{{ $question->user_id }}}" open input for update to question
-
-    // If user owns question
-    // if ($('.users_question').data('auth') === 1) {
     var originalQuestion = "";
 
     function onUsersQuestionClick(){
@@ -87,7 +83,6 @@
     $(document).on('blur','#question-input', function(e){
         // check and see if the event target is the delete button: If it is, just stop
 
-        console.log(e.relatedTarget);
         var target = e.relatedTarget;
 
         if ($(target).attr('id') == 'delete') {
@@ -100,32 +95,37 @@
         var id = $(this).data('question-id');
         var $that = $(this);
         $.ajax({
-          type: 'put',
-          data: {'question':question, '_token':token},
-          url: "/question/" + id,
-          success: function(data){
-            if (data.success) {
+            type: 'put',
+            data: {'question':question, '_token':token},
+            url: "/question/" + id,
+            success: function(data){
+                if (data.success) {
                 // do success stuff
                 // $('.users_question').text(question);
-                $that.parent().html(question);
-            } else {
+                    $that.parent().html(question);
+                } else {
                 // validation Failed
-            }
-          },
-          error: function(xhr, error, code) {
-            if (xhr.code == 500) {
-                alert('server error');
-                return;
-            }
+                }
+            },
+            error: function(xhr, error, code) {
+                if (xhr.code == 500) {
+                    alert('server error');
+                    return;
+                }
                 console.log("Something Failed yo!");
                 $that.val(originalQuestion);
                 $that.focus();
             }
         });
+
         $('.users_question').click(onUsersQuestionClick);
         var $deleteButton = $(this).parent().parent().next().children();
         $deleteButton.toggleClass('hidden');
 
+        // add success checkmark after edit
+        var $questionDiv = $(this).parent().parent();
+        $($questionDiv).prepend("<p class='alert alert-success' role='alert'><i class='fa fa-check' aria-hidden='true'></i>Your edits have been saved!</p>");
+
         setHoverEffect();
     });
-// })
+})
