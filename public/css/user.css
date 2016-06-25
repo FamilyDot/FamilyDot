@@ -36,9 +36,10 @@ h1{
 
 #title {
     margin: 0px auto;
+    margin-right: 62px;
     margin-top: 100px;
     margin-bottom: 25px;
-    /*position: absolute;*/
+    position: absolute;
     padding: 15px 40px;
     z-index: 99;
     background-color: rgb(27,177,178);
@@ -52,6 +53,25 @@ h1{
     margin: 0
     font-weight: 500;
     width: 60%;
+    float: left;
+}
+
+.title-image {
+    position: absolute;
+    margin-left: 688px;
+    margin-top: -78px;
+    z-index: 100;
+}
+
+#codeup-shadow {
+    margin-top: -320px;
+    margin-left: -15px;
+    position: absolute;
+    z-index: -20;
+    height: 340px;
+    width: 340px;
+    opacity: 1;
+    filter: blur(180px);
 }
 
 .img-circle {
@@ -198,4 +218,8 @@ h1{
 
 #button-div {
     text-align: center;
+}
+
+.page-content {
+    margin-top: 440px;
 }
