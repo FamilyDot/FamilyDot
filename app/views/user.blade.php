@@ -11,7 +11,9 @@
 
 <div class='container'>
     <div class="center-text" id="title">
-        <h1>{{{ $user->family->mission_statement }}}</h1><br>
+        <p>{{{ $user->family->mission_statement }}}</p><br>
+        <div class="title-image">
+        </div>
     </div>
     <br>
     <div id= 'pic_row' class= 'row'>
