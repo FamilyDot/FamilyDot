@@ -19,7 +19,7 @@ window.onload = function () {
     {
       theme: "theme2",
       title:{
-        text: "Family Health Score Avg This Month"
+        text: "Family Health Avg This Month"
       },
       animationEnabled: true,
       axisX: {

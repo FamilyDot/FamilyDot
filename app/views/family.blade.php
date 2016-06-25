@@ -7,16 +7,15 @@
 @stop
 
 @section('content')
-<div class="row">
-    <div id="ms">
-        <h1 style='padding-top:70px;' class="container">{{{ $user->family->mission_statement }}}</h1>
-        <hr>
+<div class='container'>
+    <div class="center-text" id="title">
+        <h1>{{{ $user->family->mission_statement }}}</h1><br>
     </div>
 
 <!-- chart -->
-    <div id="chart" class="col-md-4 col-md-offset-4">
+    <div id="chart" class="col-md-6 col-md-offset-3">
         @if ($avg != 0)
-          <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+          <div id="chartContainer"></div>
           <input type="hidden" id="happiness-avg" value="{{{ $avg }}}"></input>
         @endif
     </div>
@@ -29,7 +28,9 @@
                 <p>{{{ $post->body }}}</p>
             </div>
         @endforeach
-        <input class="btn btn-primary" id="sub_posts"  type="submit" value="Add to Posts">
+        <div id="button">
+            <input class="btn btn-primary" id="sub_posts"  type="submit" value="Add to Posts">
+        </div>
     </div>
 
 
@@ -57,8 +58,10 @@
                     </div>
                 </div>
             @endforeach
+                <div id="button">
                     <input class="btn btn-primary" id="sub_survey"  type="submit" value="Submit Survey">
-                    {{Form::close()}}
+                </div>
+        {{Form::close()}}
 
 <!--modal for posts -->
     <div class="modal fade allModal" id="myModalPost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -78,7 +81,7 @@
                             </div>
                             <!-- "modal-footer"> -->
                             <div id="save_changes" class="modal-footer">
-                                <button  type="submit" class="btn btn-primary" style="text-align:center;">Save changes</button>
+                                <button  type="submit" class="btn btn-primary">Save changes</button>
                             </div>
                         {{Form::close()}}
                 </div>

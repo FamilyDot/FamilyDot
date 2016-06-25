@@ -9,7 +9,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-7" id="picture">
-            <img src="/img/Final-contestant.png">
+            <img src="/img/yourfamily.png">
         </div>
         <div class="col-md-3" id="form"> 
        <!-- the action is temporary need to go back and redo -->

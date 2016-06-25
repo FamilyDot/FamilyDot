@@ -10,9 +10,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4 col-md-offset-1">
-            <img src="/img/Final-contestant.png">
+            <img src="/img/yourfamily.png">
         </div>
-        <div class="col-md-4 col-md-offset-1">
+
+        <div class="col-md-5" id="form-back">
             <div class="row">
                 {{ Form::open(array('action' =>('HomeController@doSignup'), 'method' => 'POST')) }}
                     <div class="form-group">
@@ -67,6 +68,7 @@
             </div>
             {{ Form::close() }}     
         </div>
+     
     </div> <!-- end row -->
 </div>
 @stop
