@@ -64,7 +64,7 @@
     
             <div class="row">
                     <input class="btn btn-primary" id="btn_sub"  type="submit" value="Signup">
-                    <p><a href="{{{action('HomeController@showLogin')}}}">Have an account?</a></p>
+                    <p><a href="{{{action('HomeController@showLogin')}}}">Have an account?</a></p> 
             </div>
             {{ Form::close() }}     
         </div>
