@@ -8,11 +8,14 @@
 
 @section('content')
 <div class='container'>
-    <div class="center-text" id="title">
-        <h1>{{{ $user->family->mission_statement }}}</h1><br>
+    <div class='rel'>
+        <div class="center-text" id="title">
+            <h1>{{{ $user->family->mission_statement }}}</h1><br>
+        </div>
     </div>
 
 <!-- chart -->
+<div class="dumb">
     <div id="chart" class="col-md-6 col-md-offset-3">
         @if ($avg != 0)
           <div id="chartContainer"></div>
@@ -62,7 +65,7 @@
                     <input class="btn btn-primary" id="sub_survey"  type="submit" value="Submit Survey">
                 </div>
         {{Form::close()}}
-
+    </div>
 <!--modal for posts -->
     <div class="modal fade allModal" id="myModalPost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
