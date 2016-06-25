@@ -1,23 +1,12 @@
 h1{
-    margin-top: 10%;
-    color: black;
+    margin-top: 5%;
+    color: rgb(51,51,51);
     text-align: center;
-}
-.textBox{
-    height:40px;
-    width:400px;
-}
-input #password{
-    height:40px;
-    width:400px;
-}
-#bigDiv{
-    padding-left:320px;
-} 
-#heading{
-    padding-top:60px; 
-    color:gray;
 }
 label {
     font-size: 1.5em;
+}
+#sub_btn, #del_btn{
+    text-align: center;
+    margin-bottom: 1em;
 }
