@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 <div id="sub_btn">
-                    {{ Form::submit('submit', ['class' => 'btn btn-primary']) }}
+                    {{ Form::submit('Submit', ['class' => 'btn btn-primary']) }}
                 </div>
 
             {{ Form::close() }}
