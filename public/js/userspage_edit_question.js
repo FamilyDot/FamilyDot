@@ -122,6 +122,10 @@ $(document).ready(function(){
         var $deleteButton = $(this).parent().parent().next().children();
         $deleteButton.toggleClass('hidden');
 
+        // add success checkmark after edit
+        var $questionDiv = $(this).parent().parent();
+        $($questionDiv).prepend("<p class='alert alert-success' role='alert'><i class='fa fa-check' aria-hidden='true'></i>Your edits have been saved!</p>");
+
         setHoverEffect();
     });
 })

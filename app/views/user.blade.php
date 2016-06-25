@@ -73,25 +73,6 @@
                 @endforeach
             @endif
 
-            <script src="//platform.twitter.com/widgets.js">
-
-                function twit(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}twit(document,"script","twitter-wjs");
-                }
-            </script>
-            <script type="text/javascript">
-                // window.onload = function(){
-
-                //     console.log(twttr);
-                //     twttr.widgets.createTimeline({
-                //         sourceType: "list",
-                //         ownerScreenName: "{{{ $user->twitter_username }}}",
-                //         slug: "family"
-                //       }, document.getElementById("twitter-element"));
-                // };
-
-
-            </script>
-
         </div>
 
 
@@ -178,6 +159,15 @@
 
 @section('bottomscript')
     <script src="/../js/userspage_edit_question.js" type="text/javascript"></script>
+
+    <!-- Add Twitter widgets -->
+        <script src="//platform.twitter.com/widgets.js">
+        $(document).ready(function(){
+            "use strict";
+            function twit(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}twit(document,"script","twitter-wjs");
+            }
+        })
+        </script>
 @stop
 
 </body>
