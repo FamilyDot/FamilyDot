@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <link rel="icon" href="/uploads/FamilyDot-logo (1).png">
     <!-- bootstrap cdn -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -53,7 +54,7 @@
 
           @if(Request::url() == "http://familydot.dev/users/$user->id")
             <li>
-              <button type="button" span class="btn btn-xs " id='ask-button' data-toggle="modal" data-target="#askQuestion"><span class="ask-inner"><i class="fa fa-2x fa-comments-o" aria-hidden="true"></i>  Ask</span></button>
+              <button type="button" class="btn btn-xs " id='ask-button' data-toggle="modal" data-target="#askQuestion"><span class="ask-inner"><i class="fa fa-2x fa-comments-o" aria-hidden="false"></i> Ask</span></button>
             </li>
           @endif
         </ul>
@@ -63,8 +64,8 @@
             {{ Form::token() }}
             <div class="form-group">
               <input type="text" id="search-input" class="form-control" placeholder="Search Posts" name="search">
-              <button id= 'navbutton' type="submit" class="btn btn-default">Submit</button>
             </div>
+              <button id= 'navbutton' type="submit" class="btn btn-default">Submit</button>
           </form>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -117,7 +118,11 @@
 
 
   <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-
+</body>
+
+
+</html>0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <script src="https://use.fontawesome.com/8687895f96.js"></script>
 <script type="text/javascript">
     $("#modalopener").click(function() {
@@ -129,7 +134,3 @@
 
 @yield('bottomscript')
 
-</body>
-
-
-</html>
