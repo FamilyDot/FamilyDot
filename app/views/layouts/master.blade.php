@@ -102,10 +102,10 @@
         </div>
     @endif --}}
     @if (Session::has('errorMessage'))
-        <div class="alert alert-danger alert-top-screen">{{{ Session::get('errorMessage') }}}</div>
+        <div class="text-center alert alert-danger alert-top-screen">{{{ Session::get('errorMessage') }}}</div>
     @endif
     @if(Session::has('successMessage'))
-      <div class="alert alert-success alert-top-screen">{{{Session::get('successMessage')}}}</div>
+      <div class="text-center alert alert-success alert-top-screen">{{{Session::get('successMessage')}}}</div>
     @endif
 
     @yield('content')
