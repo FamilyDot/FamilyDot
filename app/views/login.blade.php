@@ -13,7 +13,7 @@
             <img src="/img/yourfamily.png">
         </div>
 
-        <div class="col-md-4 col-md-offset-1" id="form-back">
+        <div class="col-md-5" id="form-back">
             <div class="row">
                 <div class="form-group">
             {{ Form::open(array('action' =>('HomeController@doLogin'), 'method' => 'POST')) }}

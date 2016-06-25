@@ -10,7 +10,11 @@ body{
 }
 
 #form-back {
-    margin-top: 10%;
+    margin-top: 8%;
+    background-color: #FCD891;
+    padding-top: 3em;
+    padding-left: 3em;
+    padding-right: 3em;
 }
 #navbar {
     visibility: hidden;
