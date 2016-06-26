@@ -36,10 +36,10 @@
                 @foreach($questions as $question)
                     <div class="question" id="">
                         <div class="w3-card-4" id="card">
-                                    <h4>{{{ User::find($question->user_id)->username }}}</h4>
                             <div class="row">
                                 <div class="col-md-2">
-                                    <img class="img-circle" src="{{{User::find($question->user_id)->image_url}}}">
+
+                                    <p><img class="img-circle" src="{{{User::find($question->user_id)->image_url}}}">{{{ User::find($question->user_id)->username }}}</p>
                                 </div>
                                 <div class="col-md-9">
                                     <h2 class="users_question" id="user-{{{ $question->user_id }}}" data-question-id="{{{ $question->id }}}" data-auth="{{{ ($question->user_id == Auth::user()->id) }}}"><span>{{{ $question->question }}}</span></h2>
@@ -56,7 +56,7 @@
                             <?php $answers = DB::table('answers')->where('question_id', $question->id)->orderBy('created_at', 'desc')->get(); ?>
                             @foreach($answers as $answer)
                                 <div class="answers">
-                                    <p><span class="username">{{{ User::find($answer->user_id)->username }}}    </span>{{{ $answer->answer }}}</p>
+                                    <p><span class="username">{{{ User::find($answer->user_id)->username }}}    </span><span class="user-answer">{{{ $answer->answer }}}</span></p>
                                  {{--    @if ($answer->user_id == Auth::user()->id)
                                         <i class="edit-answer" id="{{{ $answer->id }}}">
                                     @endif --}}
