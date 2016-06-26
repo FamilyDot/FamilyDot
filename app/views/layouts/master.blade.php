@@ -9,11 +9,12 @@
     <link rel="stylesheet" type="text/css" href="/../css/user.css">
     <!-- google fonts -->
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Happy+Monkey' rel='stylesheet' type='text/css'>
     <style type="text/css">
     #modalButton, #myModalLabelAsk{
-      text-align:center;       
+      text-align:center;
     }
- 
+
     </style>
 
     @yield('topscript')
@@ -34,7 +35,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-      <a href="/family">{{ HTML::image('img/yourfamily.png', 'family dot logo', array('class' => 'familydot-logo')) }}</a>
+      <a href="/family">{{ HTML::image('img/your-family-logo-long.png', 'family dot logo', array('class' => 'familydot-logo')) }}</a>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
