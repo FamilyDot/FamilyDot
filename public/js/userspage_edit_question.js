@@ -128,7 +128,7 @@ $(document).ready(function(){
 
         // add success message element upon edit
         var $questionDiv = $(this).parent().parent();
-        $($questionDiv).prepend("<p class='alert alert-success' role='alert'><i class='fa fa-check' aria-hidden='true'></i> Your edits have been saved!</p>");
+        $($questionDiv).prepend("<p class=' alert-question-edit' role='alert'><i class='fa fa-check' aria-hidden='true'></i> Your edits have been saved!</p>");
 
         setHoverEffect();
     });

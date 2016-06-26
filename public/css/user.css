@@ -239,3 +239,8 @@ h1{
     font-family: 400 Helvetica;
     color: black;
 }
+
+.alert-question-edit {
+    background-color: none;
+    color: #3c763d;
+}
