@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>Your Family App</title>
-    <link rel="icon" href="/img/your-family-logo.png">
+    <link rel="icon" href="/img/house_logo.png">
     <!-- bootstrap cdn -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -54,21 +54,22 @@
             </ul>
           </li>
 
-          @if(Request::url() == "http://familydot.dev/users/$user->id")
+          @if(Request::url() == "http://familydot.dev/users/$user->id" || Request::url() == "http://yourfamilyapp.xyz/users/$user->id")
             <li>
               <button type="button" class="btn btn-xs " id='ask-button' data-toggle="modal" data-target="#askQuestion"><span class="ask-inner"><i class="fa fa-2x fa-comments-o" aria-hidden="false"></i> Ask</span></button>
             </li>
           @endif
         </ul>
 
-
-          <form class="navbar-form navbar-right" role="search" method="GET" action="/search">
+        @if(Request::url() == "http://familydot.dev/family" || Request::url() == "http://yourfamilyapp.xyz/family")
+            <form class="navbar-form navbar-right" role="search" method="GET" action="/search">
             {{ Form::token() }}
-            <div class="form-group">
-              <input type="text" id="search-input" class="form-control" placeholder="Search Posts" name="search">
-            </div>
-              <button id= 'navbutton' type="submit" class="btn btn-default">Submit</button>
-          </form>
+                <div class="form-group">
+                  <input type="text" id="search-input" class="form-control" placeholder="Search Posts" name="search">
+                </div>
+                  <button id= 'navbutton' type="submit" class="btn btn-default">Submit</button>
+            </form>
+        @endif
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>

@@ -10,9 +10,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4 col-md-offset-1">
-            <img class="logo" src="/img/Your Family-logo.png">
+            {{ HTML::image('img/your-family-logo.png', 'your family', array('class' => 'logo')) }}
         </div>
-
         <div class="col-md-5 col-md-offset-1" id="form-back-signup">
             <div class="row">
                 {{ Form::open(array('action' =>('HomeController@doSignup'), 'method' => 'POST')) }}
