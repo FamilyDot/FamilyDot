@@ -1,6 +1,5 @@
 @extends('layouts.master')
 @section('topscript')
-    {{-- <link rel="stylesheet"  href="/../css/login.css"> --}}
     <link rel="stylesheet" type="text/css" href="/../css/user.css">
     <!-- google fonts -->
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
@@ -15,7 +14,7 @@
             <h1 class="hate">{{{ $user->family->mission_statement }}}</h1><br>
 
             {{ HTML::image('img/gocodeup.png', 'gocodeup', array('class' => 'image-codeup')) }}
-           {{--  {{ HTML::image('img/gocodeup-shadow.png', 'gocodeup shadow', array('id' => 'codeup-shadow')) }}
+
 --}}    </div>
     </div>
     <br>
@@ -50,16 +49,12 @@
                             </div>
 
                             <p class="answer-model-link" id="answer_to_question_{{{ $question->id }}}"><a class="answer-link" id="{{{ $question->id }}}" data-toggle="modal" data-target="#AnswerModal">Answer</a></p>
-                            {{-- @if (!empty($question->answers)) --}}
-                                <div><br><hr></div>
-                            {{-- @endif --}}
+                            <div><br><hr></div>
                             <?php $answers = DB::table('answers')->where('question_id', $question->id)->orderBy('created_at', 'desc')->get(); ?>
                             @foreach($answers as $answer)
                                 <div class="answers">
                                     <p><span class="username">{{{ User::find($answer->user_id)->username }}}    </span><span class="user-answer">{{{ $answer->answer }}}</span></p>
-                                 {{--    @if ($answer->user_id == Auth::user()->id)
-                                        <i class="edit-answer" id="{{{ $answer->id }}}">
-                                    @endif --}}
+
                                 </div>
                             @endforeach
                         </div>
@@ -80,8 +75,6 @@
                 @endif
 
             </div>
-
-
 
                 <!-- Modal -->
                 <div class="modal fade allModal text-center" id="AnswerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -168,13 +161,13 @@
     <script src="/../js/userspage_edit_question.js" type="text/javascript"></script>
 
     <!-- Add Twitter widgets -->
-        <script src="//platform.twitter.com/widgets.js">
-        $(document).ready(function(){
-            "use strict";
-            function twit(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}twit(document,"script","twitter-wjs");
-            }
-        })
-        </script>
+    <script src="//platform.twitter.com/widgets.js">
+    $(document).ready(function(){
+        "use strict";
+        function twit(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}twit(document,"script","twitter-wjs");
+        }
+    })
+    </script>
 @stop
 
 </body>
