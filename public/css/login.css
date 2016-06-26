@@ -1,5 +1,6 @@
 body{
     background-color: rgb(252,202,131);
+    font-family: 'Happy Monkey', cursive;
 }
 .container{
     margin-top: 10em;
@@ -26,4 +27,12 @@ body{
     text-align: center;
 }
 
+input {
+    font-family: 'Happy Monkey', cursive;
+}
+
+.logo {
+    width: 400px;
+    height: 450px;
+}
 
