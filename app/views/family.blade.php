@@ -25,7 +25,7 @@
 
 <!-- these are posts -->
     <div class="col-md-4 col-md-offset-1">
-    <h1 id= "family_posts">Family Posts</h1>
+    <h1 id= "family_posts">Family Wall</h1>
         @foreach($user->family->posts as $post)
             <div class="w3-card-4" id="card">
                 <p class="multi-posts">{{{ $post->body }}}</p>
@@ -45,7 +45,7 @@
 
             @foreach($survey as $key => $question)
                 <div class="w3-card-4" id="card">
-                    <p>{{{ $question }}}</p>
+                    <p id="quest">{{{ $question }}}</p>
 
                    <div id="rad_btns">
                         <input type="radio" name="answers_{{{ $key }}}" class="number" value="1"> 1

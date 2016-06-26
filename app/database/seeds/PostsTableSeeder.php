@@ -56,6 +56,13 @@ class PostsTableSeeder extends Seeder {
         $post->img_url = 'http://www.adweek.com/socialtimes/wp-content/uploads/sites/2/2016/02/DeadpoolLogo.jpg';
         $post->save();
 
-    }
+        $post = new Post();
+        $post->body = 'Does anyone have an idea of what we should do for the Fourth of July weekend?';
+        $post->user_id = '1';
+        $post->family_id = '1';
+        $post->img_url = 'http://www.adweek.com/socialtimes/wp-content/uploads/sites/2/2016/02/DeadpoolLogo.jpg';
+        $post->save();
+
+ }
 
 }
