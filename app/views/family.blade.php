@@ -48,7 +48,7 @@
 
             @foreach($survey as $key => $question)
                 <div class="w3-card-4" id="card">
-                    <p>{{{ $question }}}</p>
+                    <p class="survey">{{{ $question }}}</p>
 
                    <div id="rad_btns">
                         <input type="radio" name="answers_{{{ $key }}}" class="number" value="1"> 1
