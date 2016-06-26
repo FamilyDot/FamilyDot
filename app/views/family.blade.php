@@ -9,8 +9,9 @@
 @section('content')
 <div class='container'>
     <div class='rel'>
-        <div class="center-text" id="title">
-            <h1>{{{ $user->family->mission_statement }}}</h1><br>
+        <div id="title">
+            <h1 class="hate">{{{ $user->family->mission_statement }}}</h1><br>
+            {{ HTML::image('img/gocodeup.png', 'gocodeup', array('class' => 'image-codeup')) }}
         </div>
     </div>
 
@@ -28,7 +29,8 @@
     <h1 id= "family_posts">Family Posts</h1>
         @foreach($user->family->posts as $post)
             <div class="w3-card-4" id="card">
-                <p class="multi-posts">{{{ $post->body }}}</p>
+
+                <p class="multi-posts"><img class="img-circle" src="{{{User::find($post->user_id)->image_url}}}">{{{ $post->body }}}</p>
             </div>
         @endforeach
         <div id="button">
@@ -66,6 +68,7 @@
                 </div>
         {{Form::close()}}
 </div><!-- this closes the dumb class-->
+
 <!--modal for posts -->
     <div class="modal fade allModal" id="myModalPost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">

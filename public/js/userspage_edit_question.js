@@ -70,6 +70,10 @@ $(document).ready(function(){
             .appendTo($(this));
         $('#question-input').focus();
         $('.users_question').off();
+
+        // remove success after multiple edits to keep them from stacking up
+        var $successElement = $(this).prev();
+        $successElement.remove();
     }
 
     // Set listener
@@ -122,9 +126,9 @@ $(document).ready(function(){
         var $deleteButton = $(this).parent().parent().next().children();
         $deleteButton.toggleClass('hidden');
 
-        // add success checkmark after edit
+        // add success message element upon edit
         var $questionDiv = $(this).parent().parent();
-        $($questionDiv).prepend("<p class='alert alert-success' role='alert'><i class='fa fa-check' aria-hidden='true'></i>Your edits have been saved!</p>");
+        $($questionDiv).prepend("<p class=' alert-question-edit' role='alert'><i class='fa fa-check' aria-hidden='true'></i> Your edits have been saved!</p>");
 
         setHoverEffect();
     });

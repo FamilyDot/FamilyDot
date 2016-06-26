@@ -5,7 +5,7 @@ body{
 #family_survey, #family_posts{
     color: rgb(227,164,93);
 }
-h1, p, #rad_btns, #save_changes, #button, .row, .card-block, #myModalLabel{
+#rad_btns, #save_changes, #button, .row, .card-block, #myModalLabel{
     text-align: center;
 }
 p{
@@ -24,7 +24,13 @@ h1{
 #chartContainer{
     height: 450px;
     width: 100%;
+    border: 1px solid #dddddd;
 }
+
+.canvasjs-chart-canvas {
+    position: relative !important;
+}
+
 #number {
     margin-left: .05em;
 }
@@ -37,9 +43,9 @@ h1{
     margin-bottom: 5em;
     text-align: center;
 }
-.fa-trash, img{
+/*.fa-trash, img{
     float: right;
-}
+}*/
 .fa-smile-o{
     float:left;
 }

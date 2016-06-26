@@ -30,6 +30,7 @@ h1{
 
 #card {
   padding: 16px;
+  padding-top: 0;
   background-color: white;
   border-left: 1px solid #dddddd;
   border-right: 1px solid #dddddd;
@@ -84,8 +85,9 @@ h1{
 }
 
 .img-circle {
-    border: 5px solid #FFFFFF !important;
-    float:left;
+    /*border: 2px solid white;*/
+    margin-top: 7px;
+    margin-right: 10px;
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -121,8 +123,9 @@ h1{
 
 .username {
     font-size: 1.7rem;
-    font-weight: bold;
-    color: #777;
+    /*font-weight: bold;*/
+    /*color: #777;*/
+    color: #128ee9;
 }
 
 #search-input {
@@ -202,13 +205,18 @@ h1{
 }
 .answer-model-link {
     float: right;
+}
 
+.answer-link {
+    color: #128ee9;
 }
 
 #delete {
     margin-top: 20px;
     color: red;
     float: right;
+    background-color: transparent;
+    border: none;
 }
 
 .hidden {
@@ -227,4 +235,29 @@ h1{
 
 #button-div {
     text-align: center;
+}
+
+.user-answer {
+    font-family: 400 Helvetica;
+    color: black;
+}
+
+.alert-question-edit {
+    background-color: none;
+    color: #3c763d;
+}
+
+.dumb {
+    position: relative;
+}
+
+.question-username {
+    color: #128ee9;
+    font-size: 3rem;
+    color: white;
+}
+
+.user-pic-name {
+    background-color: rgb(27,177,178);
+    margin-top: 0px;
 }
