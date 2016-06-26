@@ -14,14 +14,14 @@ label {
 }
 
 .btn-danger {
-    background-color: #2b9aec;
-    border-color: #2b9aec;
+    background-color: #e00b28;
+    border-color: #e00b28;
     border-radius: 0px;
 }
 
 .btn-primary {
-    background-color: #e00b28;
-    border-color: #e00b28;
+    background-color: #2b9aec;
+    border-color: #2b9aec;
     border-radius: 0px;
 }
 
