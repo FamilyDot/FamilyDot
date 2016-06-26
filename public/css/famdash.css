@@ -3,16 +3,23 @@ body{
     font-family: 'Roboto Condensed', sans-serif !important;
 }
 #family_survey, #family_posts{
-    color: gray;
+    color: rgb(227,164,93);
 }
-
-h1, p, #rad_btns, #save_changes, #button, .row, .card-block {
+h1, p, #rad_btns, #save_changes, #button, .row, .card-block, #myModalLabel{
     text-align: center;
 }
-
-
+p{
+    color: gray;
+}
+h1{
+    font-size: 2.3em;
+}
+.multi-posts {
+    font-size: 1.2em;
+}
 #chart{
     margin-top: 2em;
+    margin-bottom: 2em;
 }
 #chartContainer{
     height: 450px;
@@ -25,19 +32,14 @@ h1, p, #rad_btns, #save_changes, #button, .row, .card-block {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
 }
-
 #sub_survey, #sub_posts{
     margin-top: 2em;
     margin-bottom: 5em;
     text-align: center;
 }
-/*.card-block, #mission{
-    background-color: white;
-}*/
 .fa-trash, img{
     float: right;
 }
-
 .fa-smile-o{
     float:left;
 }
@@ -48,4 +50,5 @@ h1, p, #rad_btns, #save_changes, #button, .row, .card-block {
     border-color: #9655a0;
     color: #ffffff;
 }
+
 

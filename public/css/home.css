@@ -1,11 +1,11 @@
 body{
-    background-color: rgb(252,202,131);
+    background-color: #BBDFFF;
 }
 .container{
     margin-top: 10em;
 }
 #form-back{
-  background-color: #FCD891;
+  background-color: #D0DCEA;
   padding-top: 3em;
   padding-left: 3em;
   padding-right: 3em;
@@ -27,7 +27,9 @@ body{
   padding: 0px;
 }
 
-
+#btn_sub{
+  text-align: center;
+}
 
 
 
