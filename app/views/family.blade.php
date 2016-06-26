@@ -9,8 +9,9 @@
 @section('content')
 <div class='container'>
     <div class='rel'>
-        <div class="center-text" id="title">
-            <h1>{{{ $user->family->mission_statement }}}</h1><br>
+        <div id="title">
+            <h1 class="hate">{{{ $user->family->mission_statement }}}</h1><br>
+            {{ HTML::image('img/gocodeup.png', 'gocodeup', array('class' => 'image-codeup')) }}
         </div>
     </div>
 
@@ -66,6 +67,7 @@
                 </div>
         {{Form::close()}}
 </div><!-- this closes the dumb class-->
+
 <!--modal for posts -->
     <div class="modal fade allModal" id="myModalPost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">

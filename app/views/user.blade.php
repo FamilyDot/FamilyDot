@@ -11,7 +11,7 @@
 
 <div class='container'>
     <div class='rel'>
-        <div class="text-center" id="title">
+        <div id="title">
             <h1 class="hate">{{{ $user->family->mission_statement }}}</h1><br>
 
             {{ HTML::image('img/gocodeup.png', 'gocodeup', array('class' => 'image-codeup')) }}

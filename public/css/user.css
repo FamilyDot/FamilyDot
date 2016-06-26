@@ -244,3 +244,7 @@ h1{
     background-color: none;
     color: #3c763d;
 }
+
+.dumb {
+    position: relative;
+}
