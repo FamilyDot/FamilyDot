@@ -61,14 +61,15 @@
           @endif
         </ul>
 
-
-          <form class="navbar-form navbar-right" role="search" method="GET" action="/search">
+        @if(Request::url() == "http://familydot.dev/family" || Request::url() == "http://yourfamilyapp.xyz/family")
+            <form class="navbar-form navbar-right" role="search" method="GET" action="/search">
             {{ Form::token() }}
-            <div class="form-group">
-              <input type="text" id="search-input" class="form-control" placeholder="Search Posts" name="search">
-            </div>
-              <button id= 'navbutton' type="submit" class="btn btn-default">Submit</button>
-          </form>
+                <div class="form-group">
+                  <input type="text" id="search-input" class="form-control" placeholder="Search Posts" name="search">
+                </div>
+                  <button id= 'navbutton' type="submit" class="btn btn-default">Submit</button>
+            </form>
+        @endif
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
