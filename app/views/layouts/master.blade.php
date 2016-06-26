@@ -54,7 +54,7 @@
             </ul>
           </li>
 
-          @if(Request::url() == "http://familydot.dev/users/$user->id")
+          @if(Request::url() == "http://familydot.dev/users/$user->id" || Request::url() == "http://yourfamilyapp.xyz/users/$user->id")
             <li>
               <button type="button" class="btn btn-xs " id='ask-button' data-toggle="modal" data-target="#askQuestion"><span class="ask-inner"><i class="fa fa-2x fa-comments-o" aria-hidden="false"></i> Ask</span></button>
             </li>
