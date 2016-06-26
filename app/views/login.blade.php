@@ -10,7 +10,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4 col-md-offset-1">
-            <img class="logo" src="/img/Your Family-logo.png">
+            <img class="logo" src="/img/your-family-logo.png">
         </div>
 
         <div class="col-md-5 col-md-offset-1" id="form-back-login">
