@@ -15,7 +15,7 @@
 
             {{ HTML::image('img/gocodeup.png', 'gocodeup', array('class' => 'image-codeup')) }}
 
---}}    </div>
+    </div>
     </div>
     <br>
     <section class="page-content">
