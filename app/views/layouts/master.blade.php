@@ -10,11 +10,10 @@
     <!-- google fonts -->
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
     <style type="text/css">
-    #modalButton  {
-      text-align:center;background: #9655a0;
-                      border-color: #9655a0;
-                      color: #ffffff;
+    #modalButton, #myModalLabelAsk{
+      text-align:center;       
     }
+ 
     </style>
 
     @yield('topscript')
@@ -82,7 +81,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title" id="myModalLabel">Ask a Question</h4>
+                <h4 class="modal-title" id="myModalLabelAsk">Ask a Question</h4>
             </div>
             <div class="modal-body">
                 <form method="POST" action="{{{ action('QuestionController@store') }}}">
@@ -92,7 +91,7 @@
                     </div>
             </div>
                     <div style="text-align:center;" class="modal-footer">
-                    <button id="modalButton" type="submit" class="btn btn-primary">Submit</button>
+                    <button id="modalButton" type="submit" class="btn btn-info">Submit</button>
                     </div>
                 </form>
         </div>
