@@ -93,6 +93,11 @@ h1{
     height: 60px;
 }
 
+.post-img {
+    height: 40px;
+    width: 40px;
+}
+
 .alert-top-screen {
     z-index: 100;
 }

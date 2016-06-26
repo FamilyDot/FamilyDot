@@ -27,10 +27,11 @@
 <!-- these are posts -->
     <div class="col-md-4 col-md-offset-1">
     <h1 id= "family_posts">Family Posts</h1>
-        @foreach($user->family->posts as $post)
+        <?php $posts = DB::table('posts')->where('family_id', $user->family->id)->orderBy('created_at', 'DESC')->get();?>
+        @foreach( $posts as $post)
             <div class="w3-card-4" id="card">
 
-                <p class="multi-posts"><img class="img-circle" src="{{{User::find($post->user_id)->image_url}}}">{{{ $post->body }}}</p>
+                <p class="multi-posts"><img class="img-circle post-img" src="{{{User::find($post->user_id)->image_url}}}">{{{ $post->body }}}</p>
             </div>
         @endforeach
         <div id="button">
