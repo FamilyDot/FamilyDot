@@ -13,8 +13,7 @@ $(document).ready(function(){
 
     window.onload = function () {
         var score = parseInt($('#happiness-avg').val());
-        // var userId = {{{ Auth::id() }}};
-        console.log(score);
+
         var chart = new CanvasJS.Chart("chartContainer",
 
         {
