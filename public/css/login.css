@@ -7,8 +7,8 @@ body{
 
 #btn_sub{
     margin-bottom: 1em;
+    /*text-align: center;*/
 }
-
 #form-back {
     margin-top: 8%;
     background-color: #FCD891;
@@ -20,8 +20,10 @@ body{
     visibility: hidden;
 }
 .btn-primary, .btn-primary:hover {
-    background: rgb(255,92,45);
-    border-color: rgb(255,92,45);
+    background: #FF9B58;
+    border-color: #FF9B58;
     color: #ffffff;
+    text-align: center;
 }
+
 

@@ -28,7 +28,7 @@
     <h1 id= "family_posts">Family Posts</h1>
         @foreach($user->family->posts as $post)
             <div class="w3-card-4" id="card">
-                <p>{{{ $post->body }}}</p>
+                <p class="multi-posts">{{{ $post->body }}}</p>
             </div>
         @endforeach
         <div id="button">
@@ -65,7 +65,7 @@
                     <input class="btn btn-primary" id="sub_survey"  type="submit" value="Submit Survey">
                 </div>
         {{Form::close()}}
-    </div>
+</div><!-- this closes the dumb class-->
 <!--modal for posts -->
     <div class="modal fade allModal" id="myModalPost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -84,7 +84,7 @@
                             </div>
                             <!-- "modal-footer"> -->
                             <div id="save_changes" class="modal-footer">
-                                <button  type="submit" class="btn btn-primary">Save changes</button>
+                                <button  type="submit" class="btn btn-info">Save changes</button>
                             </div>
                         {{Form::close()}}
                 </div>
