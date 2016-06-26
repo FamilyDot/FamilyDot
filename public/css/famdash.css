@@ -3,7 +3,8 @@ body{
     font-family: 'Roboto Condensed', sans-serif !important;
 }
 #family_survey, #family_posts{
-    color: rgb(227,164,93);
+    color: orange;
+    text-align: center;
 }
 #rad_btns, #save_changes, #button, .row, .card-block, #myModalLabel{
     text-align: center;
