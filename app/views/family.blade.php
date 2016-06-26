@@ -28,7 +28,7 @@
     <h1 id= "family_posts">Family Posts</h1>
         @foreach($user->family->posts as $post)
             <div class="w3-card-4" id="card">
-                <p>{{{ $post->body }}}</p>
+                <p class="multi-posts">{{{ $post->body }}}</p>
             </div>
         @endforeach
         <div id="button">

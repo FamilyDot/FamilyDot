@@ -9,10 +9,15 @@ body{
 h1, p, #rad_btns, #save_changes, #button, .row, .card-block {
     text-align: center;
 }
-
-
+h1{
+    font-size: 2.3em;
+}
+.multi-posts {
+    font-size: 1.2em;
+}
 #chart{
     margin-top: 2em;
+    margin-bottom: 2em;
 }
 #chartContainer{
     height: 450px;
