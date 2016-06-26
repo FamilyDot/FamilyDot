@@ -37,11 +37,11 @@
                     <div class="question" id="">
                         <div class="w3-card-4" id="card">
                             <div class="row">
-                                <div class="col-md-2">
+                                <div class="col-md-12 user-pic-name">
 
-                                    <p><img class="img-circle" src="{{{User::find($question->user_id)->image_url}}}">{{{ User::find($question->user_id)->username }}}</p>
+                                    <p class="question-username"><img class="img-circle" src="{{{User::find($question->user_id)->image_url}}}">{{{ User::find($question->user_id)->username }}}</p>
                                 </div>
-                                <div class="col-md-9">
+                                <div class="col-md-10 col-md-offset-1">
                                     <h2 class="users_question" id="user-{{{ $question->user_id }}}" data-question-id="{{{ $question->id }}}" data-auth="{{{ ($question->user_id == Auth::user()->id) }}}"><span>{{{ $question->question }}}</span></h2>
                                 </div>
                                 <div class="col-md-1" >
