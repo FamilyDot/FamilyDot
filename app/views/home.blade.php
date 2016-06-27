@@ -28,8 +28,8 @@
             </div>
             <div class="row">
                 <div class="form-group"> <!-- relook at -->
+                    {{ $errors->first('password', '<span class="help-block">:message</span>') }}
                     <div class="col-md-6">
-                        {{ $errors->first('password', '<span class="help-block">:message</span>') }}
                         {{ Form::password('password',  array('class' =>'form-control password-field','placeholder'=> 'Password (Required)','id'=>'password-field')) }}
                     </div>
                     <div class=" form-group col-md-6">
@@ -50,13 +50,12 @@
             </div>
             <div class="row">
                 <div class="form-group">
-                    {{ Form::text('birth_day',  null,  array('class' =>'form-control', 'placeholder'=> 'Birthday (YYYY-MM-DD)', 'id'=>'birth_day-field')) }}
+                    <input name="birth_day" placeholder="Birthday (YYYY-MM-DD)" type="date" class="form-control" id="birth_day-field">
                 </div>
             </div>
-
             <div class="row">
                 <div class="form-group">
-                        {{ $errors->first('Family Name', '<span class="help-block">:message</span>') }}
+                    {{ $errors->first('Family Name', '<span class="help-block">:message</span>') }}
                     {{ Form::text('name',  null,  array('class' =>'form-control', 'placeholder'=> 'Family Name (Required)','id'=>'name-field')) }}
                 </div>
             </div>

@@ -10,6 +10,7 @@ class SignUpValidator
             'password'          => 'required|min:8',
             'passwordValidate'  => 'required|same:password',
             'name'              => 'required',
+            'birth_day'         => 'date'
         );
 
         $validator = Validator::make($attributes, $signUpRules);
