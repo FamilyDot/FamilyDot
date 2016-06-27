@@ -36,7 +36,7 @@
           <span class="icon-bar"></span>
         </button>
         <?php $user = Auth::user() ?>
-        @if(Request::url() == "http://familydot.dev/users/$user->id")
+        @if(Request::url() == "http://familydot.dev/users/$user->id" || Request::url() == "http://yourfamilyapp.xyz/users/$user->id"))
           <a href="/family">{{ HTML::image('img/your-family-logo-long.png', 'family dot logo', array('class' => 'familydot-logo')) }}</a>
         @else
           <a href="/users/{{{ $user->id }}}">{{ HTML::image('img/your-family-logo-long.png', 'family dot logo', array('class' => 'familydot-logo')) }}</a>
