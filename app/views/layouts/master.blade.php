@@ -35,7 +35,12 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-      <a href="/family">{{ HTML::image('img/your-family-logo-long.png', 'family dot logo', array('class' => 'familydot-logo')) }}</a>
+        <?php $user = Auth::user() ?>
+        @if(Request::url() == "http://familydot.dev/users/$user->id")
+          <a href="/family">{{ HTML::image('img/your-family-logo-long.png', 'family dot logo', array('class' => 'familydot-logo')) }}</a>
+        @else
+          <a href="/users/{{{ $user->id }}}">{{ HTML::image('img/your-family-logo-long.png', 'family dot logo', array('class' => 'familydot-logo')) }}</a>
+        @endif
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
