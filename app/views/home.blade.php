@@ -50,7 +50,7 @@
             </div>
             <div class="row">
                 <div class="form-group">
-                    <input name="birth_day" placeholder="Birthday (YYYY-MM-DD)" type="date" class="form-control" id="birth_day-field">
+                    <input name="birth_day" max="{{{ date('Y-m-d') }}}" placeholder="Birthday (YYYY-MM-DD)" type="date" class="form-control" id="birth_day-field">
                 </div>
             </div>
             <div class="row">
