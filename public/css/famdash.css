@@ -6,8 +6,11 @@ body{
     color: orange;
     text-align: center;
 }
-#rad_btns, #save_changes, #button, .row, .card-block, #myModalLabel{
+#rad_btns, #save_changes, #button, .row, .card-block, #myModalLabel, .survey{
     text-align: center;
+}
+.survey{
+    margin-top: .3em;
 }
 p{
     color: gray;
@@ -52,10 +55,10 @@ h1{
 }
 
 /*should the button be used this color can be changed kind of hacky*/
-.btn-primary, .btn-primary:hover {
-    background: #9655a0;
-    border-color: #9655a0;
-    color: #ffffff;
+.btn-primary {
+    background-color: #2b9aec;
+    border-color: #2b9aec;
+    border-radius: 0px;
 }
 
 
