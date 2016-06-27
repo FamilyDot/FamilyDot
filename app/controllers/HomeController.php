@@ -18,7 +18,7 @@ class HomeController extends BaseController
             $avg = Family::calculateFamilyHappiness();
 
             $survey = array(
-            "How happy are you with the amount og time your family is spending together?",
+            "How happy are you with the amount of time your family is spending together?",
             "Is your family happy?",
             "How active is your family",
             "How healthy are the foods your family eats",
