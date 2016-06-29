@@ -51,7 +51,7 @@ h1{
 }
 
 #title>p {
-    font-size: 3.7rem;
+    font-size: 3rem;
     color: #f5f8fa;
     margin: 0
     font-weight: 500;
@@ -61,6 +61,7 @@ h1{
 .hate {
     width: 62%;
     float: left;
+    font-size: 31px;
 }
 .title-image {
     position: absolute;
@@ -72,6 +73,8 @@ h1{
     position: relative;
     top: -120px;
     margin-bottom: -130px;
+    height: 300px;
+    width: 300px;
 }
 #codeup-shadow {
     margin-top: -337px;
