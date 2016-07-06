@@ -21,8 +21,8 @@ class CreateUsersTable extends Migration {
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->date('birth_day')->nullable();
-            $table->integer('family_id')->unsigned();
             $table->integer('score')->unsigned();
+            $table->integer('family_id')->unsigned();
             $table->foreign('family_id')->references('id')->on('families')->onDelete('cascade');
             $table->string('image_url')->nullable();
             $table->boolean('isAdmin')->default(0);
